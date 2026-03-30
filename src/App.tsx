@@ -538,7 +538,7 @@ function App() {
         MOVER | Movimento Organizacional Vencer, Educar e Realizar
       </p>
       <p className="text-gray-500 text-sm">
-        Todos os direitos reservados @MoverHelipa - 2026
+        Todos os direitos reservados @Mover - 2026
       </p>
     </div>
 
