@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaPhoneAlt, FaLinkedinIn, FaYoutube, FaTimes, FaPaperPlane, FaRobot } from 'react-icons/fa';
-import { GoogleGenAI } from "@google/genai";
+// import { GoogleGenAI } from "@google/genai";
 
 // Inicialização do Gemini - Próximo project - criar chat IA
 // const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
@@ -51,30 +51,21 @@ function App() {
     setIsTyping(true);
 
     try {
-      const response = await genAI.models.generateContent({
-        model: model,
-        contents: [
-          { 
-            role: 'user', 
-            parts: [{ text: `Você é o Assistente Virtual da MOVER Helipa, uma organização focada em mobilidade e impacto social em Heliópolis. Responda de forma curta, amigável e prestativa. Pergunta do usuário: ${inputValue}` }] 
-          }
-        ],
-      });
-
+      // Bloco de IA comentado para evitar erros de API Key
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: response.text || "Desculpe, tive um problema ao processar sua mensagem. Pode repetir?",
+        text: "Olá! O assistente da MOVER está sendo configurado. Em breve estarei pronto para ajudar!",
         sender: 'bot',
         timestamp: new Date()
       };
 
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
-      console.error("Erro no Gemini:", error);
+      console.error("Erro no chat:", error);
     } finally {
       setIsTyping(false);
     }
-  };
+  }; // Verifique se esta chave fecha a função corretamente
 
   useEffect(() => {
     // Simulação básica do comportamento do Elementor/jQuery se necessário
@@ -97,7 +88,25 @@ function App() {
     <div id="page" className="hfeed site">
       <header id="masthead" itemScope itemType="https://schema.org/WPHeader">
         <p className="main-title bhf-hidden" itemProp="headline">
-          <a href="https://moverhelipa.org.br/" title="MOVER" rel="home">MOVER</a>
+          <header className="bg-white shadow-sm py-4">
+  <div className="container mx-auto px-4 flex justify-between items-center">
+    {/* O Link Principal com o nome da ONG */}
+    <a 
+      href="https://moverhelipa.org.br/" 
+      title="MOVER | Movimento Organizacional Vencer, Educar e Realizar" 
+      rel="home"
+      className="text-2xl font-bold text-blue-600 hover:text-blue-800 transition-colors"
+    >
+      MOVER
+    </a>
+
+    {/* Menu Simples (Exemplo) */}
+    <nav className="space-x-6 text-gray-600 font-medium">
+      <a href="#sobre" className="hover:text-blue-600">Sobre nós</a>
+      <a href="#contato" className="hover:text-blue-600">Contato</a>
+    </nav>
+  </div>
+</header>
         </p>
         <div data-elementor-type="wp-post" data-elementor-id="16" className="elementor elementor-16">
           <section className="elementor-section elementor-top-section elementor-element elementor-element-5bc9bc1 elementor-section-height-min-height elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-items-middle py-2" style={{ backgroundColor: '#1e428a' }}>
@@ -511,18 +520,42 @@ function App() {
       </main>
 
       <footer id="colophon" className="py-12 px-4 bg-black text-white border-t border-gray-800">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-8 md:mb-0">
-            <img width="120" src="https://moverhelipa.org.br/wp-content/uploads/2023/02/F60366C7-E702-45A7-A336-2ED7BDE66F68-2-300x300.png" alt="Logo Footer" className="brightness-0 invert" />
-          </div>
-          <p className="text-gray-500">Todos os direitos reservados @MoverHelipa - 2026</p>
-          <div className="mt-8 md:mt-0">
-            <a href="http://wa.me/5511996744126" target="_blank" className="bg-green-600 text-white px-6 py-2 rounded-full font-bold hover:bg-green-700 transition flex items-center space-x-2">
-              <span>WhatsApp</span>
-            </a>
-          </div>
-        </div>
-      </footer>
+  <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+    
+    {/* Logo da ONG */}
+    <div className="mb-8 md:mb-0">
+      <img 
+        width="120" 
+        src="https://moverhelipa.org.br/wp-content/uploads/2023/02/F60366C7-E702-45A7-A336-2ED7BDE66F68-2-300x300.png" 
+        alt="Logo Footer" 
+        className="brightness-0 invert mx-auto md:mx-0" 
+      />
+    </div>
+
+    {/* Nome Institucional e Direitos */}
+    <div className="flex flex-col items-center md:items-start space-y-2">
+      <p className="font-bold text-gray-300">
+        MOVER | Movimento Organizacional Vencer, Educar e Realizar
+      </p>
+      <p className="text-gray-500 text-sm">
+        Todos os direitos reservados @MoverHelipa - 2026
+      </p>
+    </div>
+
+    {/* Botão de WhatsApp */}
+    <div className="mt-8 md:mt-0">
+      <a 
+        href="http://wa.me/5511996744126" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="bg-green-600 text-white px-6 py-2 rounded-full font-bold hover:bg-green-700 transition flex items-center space-x-2"
+      >
+        <span>WhatsApp</span>
+      </a>
+    </div>
+
+  </div>
+</footer>
 
       {/* Janela do Chat e Botão Flutuante (ChatboxMover) */}
       <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
