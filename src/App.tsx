@@ -558,9 +558,9 @@ function App() {
         alt="WhatsApp" 
         className="absolute max-w-none"
         style={{
-          width: '240px', // Ajuste para o tamanho da sua folha de ícones
-          left: '-5px',   // Ajuste para centralizar o ícone do Whats
-          top: '-5px'     // Ajuste para centralizar o ícone do Whats
+          width: '400px',   // Tamanho total da imagem original
+          left: '-240px',   // VALOR PARA TESTE: move a folha para a esquerda
+          top: '-10px'      // VALOR PARA TESTE: move a folha para cima
         }}
       />
     </div>
