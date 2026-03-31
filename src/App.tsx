@@ -521,49 +521,34 @@ function App() {
         </section>
       </main>
 
+      {/*RODAPÉ (FOOTER) - Identidade e Direitos Autorais*/}                    
       <footer id="colophon" className="py-12 px-4 bg-black text-white border-t border-gray-800">
-  <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
     
-    {/* Logo da ONG */}
-    <div className="mb-8 md:mb-0">
-      <img 
-        width="120" 
-        src="https://moverhelipa.org.br/wp-content/uploads/2023/02/F60366C7-E702-45A7-A336-2ED7BDE66F68-2-300x300.png" 
-        alt="Logo Footer" 
-        className="brightness-0 invert mx-auto md:mx-0" 
-      />
-    </div>
+          {/* Logo da ONG */}
+          <div className="mb-8 md:mb-0">
+            <img 
+              width="120" 
+              src="https://moverhelipa.org.br/wp-content/uploads/2023/02/F60366C7-E702-45A7-A336-2ED7BDE66F68-2-300x300.png" 
+              alt="Logo Footer" 
+              className="brightness-0 invert mx-auto md:mx-0" 
+            />
+          </div>
 
-    {/* Nome Institucional e Direitos */}
-    <div className="flex flex-col items-center md:items-start space-y-2">
-      <p className="font-bold text-gray-300">
-        MOVER | Movimento Organizacional Vencer, Educar e Realizar
-      </p>
-      <p className="text-gray-500 text-sm">
-        Todos os direitos reservados @Mover - 2026
-      </p>
-    </div>
+          {/* Nome Institucional e Direitos */}
+          <div className="flex flex-col items-center md:items-start space-y-1">
+            <p className="font-bold text-gray-300 text-sm">
+              MOVER | Movimento Organizacional Vencer, Educar e Realizar
+            </p>
+            <p className="text-gray-500 text-[10px]">
+              Todos os direitos reservados @Mover - 2026
+            </p>
+          </div>
+        </div>
+      </footer>
 
-    {/* Botão de WhatsApp no Rodapé com Ícone Oficial */}
-<div className="mt-8 md:mt-0">
-  <a 
-    href="http://wa.me/5511996744126" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    className="bg-green-600 text-white px-6 py-2 rounded-full font-bold hover:bg-green-700 transition flex items-center space-x-3 shadow-lg"
-  >
-    {/* Ícone oficial da biblioteca - Funciona 100% na Vercel e no Local */}
-    <FaWhatsapp size={24} />
-    <span>WhatsApp</span>
-  </a>
-</div>
-
-  </div>
-</footer>
-
-      {/* Janela do Chat e Botão Flutuante (ChatboxMover) */}
+      {/*INTERFACE DE CHAT (CHATBOX) Botão Flutuante - Janela e Mensagens*/}
       <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
-        {/* Janela do Chat */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -572,7 +557,7 @@ function App() {
               exit={{ opacity: 0, y: 20, scale: 0.95 }}
               className="mb-4 w-80 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col"
             >
-              {/* Header do Chat */}
+              {/* Header do Chat (Robô e Status) */}
               <div className="bg-[#1e428a] p-4 text-white flex justify-between items-center shrink-0">
                 <div className="flex items-center gap-3">
                   <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
@@ -588,7 +573,7 @@ function App() {
                 </button>
               </div>
 
-              {/* Corpo das Mensagens */}
+              {/* Área de Histórico de Mensagens */}
               <div className="h-80 p-4 bg-gray-50 overflow-y-auto text-sm flex flex-col gap-3">
                 {messages.map((msg) => (
                   <div 
@@ -613,7 +598,7 @@ function App() {
                 <div ref={messagesEndRef} />
               </div>
 
-              {/* Input de Mensagem */}
+              {/* Campo de Entrada de Texto e Botão Enviar */}
               <div className="p-3 bg-white border-t flex gap-2 shrink-0">
                 <input 
                   type="text" 
@@ -635,7 +620,7 @@ function App() {
           )}
         </AnimatePresence>
 
-        {/* Botão Flutuante (O Gatilho) */}
+        {/* Botão Flutuante (TRIGGER) - Abre/Fecha Chat (O Balão que vamos analisar depois) */}
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
