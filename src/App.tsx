@@ -628,10 +628,11 @@ function App() {
           className="w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-white border border-white/10"
           style={{ 
             background: isOpen 
-              ? 'linear-gradient(135deg, #666 0%, #333 100%)' 
+              ? 'linear-gradient(135deg, #ffffff 0%, #fcfbfb 100%)' 
               : 'radial-gradient(circle at 35% 35%, #25D366 0%, #128C7E 100%)' 
           }}
         >
+          {/* A LÓGICA: Se o chat abrir, mostra o 'X'. Se fechar, mostra o ícone do Zap da sua busca */}
           {isOpen ? <FaTimes size={28} /> : <FaWhatsapp size={38} />}
         </motion.button>
       </div>
