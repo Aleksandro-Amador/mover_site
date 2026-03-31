@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaPhoneAlt, FaLinkedinIn, FaYoutube, FaTimes, FaPaperPlane, FaRobot } from 'react-icons/fa';
-import WhatsAppIcon from './assets/icon-whatsapp.svg'
+import SocialIcons from './assets/Social-Media-Logo-collection-CIRCLE-2023.svg';
 // import { GoogleGenAI } from "@google/genai";
 
 // Inicialização do Gemini - Próximo project - criar chat IA
@@ -543,19 +543,27 @@ function App() {
       </p>
     </div>
 
-    {/* Botão de WhatsApp no Rodapé - Versão Final Profissional */}
+    {/* Botão de WhatsApp no Rodapé com Ícone Oficial */}
 <div className="mt-8 md:mt-0">
   <a 
     href="http://wa.me/5511996744126" 
     target="_blank" 
     rel="noopener noreferrer" 
-    className="bg-[#25D366] text-white px-6 py-2 rounded-full font-bold hover:bg-[#128C7E] transition-all flex items-center space-x-3 shadow-lg hover:scale-105"
+    className="bg-green-600 text-white px-6 py-2 rounded-full font-bold hover:bg-green-700 transition flex items-center space-x-3 shadow-lg"
   >
-    <img 
-      src={WhatsAppIcon} 
-      alt="WhatsApp MOVER" 
-      className="w-6 h-6" // Agora ele se ajusta perfeitamente sem cortes!
-    />
+    {/* Div que serve de "moldura" para o seu SVG */}
+    <div className="w-6 h-6 overflow-hidden relative flex items-center justify-center bg-white rounded-full">
+      <img 
+        src={SocialIcons} 
+        alt="WhatsApp" 
+        className="absolute max-w-none"
+        style={{
+          width: '400px',   // Tamanho total da imagem original
+        left: '-240px',   // VALOR PARA TESTE: move a folha para a esquerda
+        top: '-10px'      // VALOR PARA TESTE: move a folha para cima
+        }}
+      />
+    </div>
     <span>WhatsApp</span>
   </a>
 </div>
