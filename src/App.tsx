@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaPhoneAlt, FaLinkedinIn, FaYoutube, FaTimes, FaPaperPlane, FaRobot } from 'react-icons/fa';
-import WhatsAppIcon from './assets/Ícon_WhatsApp.svg';
+import WhatsAppIcon from './assets/icon-whatsapp.svg'
 // import { GoogleGenAI } from "@google/genai";
 
 // Inicialização do Gemini - Próximo project - criar chat IA
@@ -554,7 +554,7 @@ function App() {
     <img 
       src={WhatsAppIcon} 
       alt="WhatsApp MOVER" 
-      className="w-6 h-6" // Agora ele se ajusta perfeitamente sem cortes!
+      className="w-10 h-" // Agora ele se ajusta perfeitamente sem cortes!
     />
     <span>WhatsApp</span>
   </a>
@@ -637,7 +637,7 @@ function App() {
           )}
         </AnimatePresence>
 
-        {/* Botão Flutuante (O Gatilho) */}
+        {/* Botão Flutuante (O Gatilho) - Usando seu Ícone Oficial */}
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -649,7 +649,15 @@ function App() {
               : 'radial-gradient(circle at 35% 35%, #25D366 0%, #128C7E 100%)' 
           }}
         >
-          {isOpen ? <FaTimes size={28} /> : <FaWhatsapp size={38} />}
+          {isOpen ? (
+            <FaTimes size={28} />
+          ) : (
+            <img 
+              src={WhatsAppIcon} 
+              alt="WhatsApp" 
+              className="w-10 h-10 drop-shadow-md" 
+            />
+          )}
         </motion.button>
       </div>
     </div>
