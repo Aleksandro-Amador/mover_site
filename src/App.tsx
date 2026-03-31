@@ -563,10 +563,7 @@ function App() {
         {/* Ícone Circular Verde */}
         <div className="bg-[#25d366] text-white w-[60px] h-[60px] rounded-full flex justify-center items-center shadow-xl transition-all duration-300 group-hover:bg-[#128c7e] group-hover:scale-110">
           {/* SVG que você encontrou no View-Source (Mais bonito que o padrão) */}
-          <svg width="32" height="32" viewBox="0 0 400 400" fill="currentColor">
-            <path d="M168.83 200.504H79.218L33.04 44.284a1 1 0 0 1 1.386-1.188L365.083 199.04a1 1 0 0 1 .003 1.808L34.432 357.903a1 1 0 0 1-1.388-1.187l29.42-99.427"/>
-            <path d="M318.087 318.087c-52.982 52.982-132.708 62.922-195.725 29.82l-80.449 10.18 10.358-80.112C18.956 214.905 28.836 134.99 81.913 81.913c65.218-65.217 170.956-65.217 236.174 0 42.661 42.661 57.416 102.661 44.265 157.316"/>
-          </svg>
+          <FaWhatsapp size={35} />
         </div>
       </a>
 
