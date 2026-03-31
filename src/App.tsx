@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { FaWhatsapp, FaFacebookF, FaInstagram, FaPhoneAlt, FaLinkedinIn, FaYoutube, FaTimes, FaPaperPlane, FaRobot } from 'react-icons/fa';
+import { FaPhoneAlt, FaTimes,  } from 'react-icons/fa';
+import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaPaperPlane, FaRobot } from 'react-icons/fa6';
 // import SocialIcons from './assets/Social-Media-Logo-collection-CIRCLE-2023.svg';
 // import { GoogleGenAI } from "@google/genai";
 
