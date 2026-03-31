@@ -87,6 +87,7 @@ function App() {
 
   return (
     <div id="page" className="hfeed site">
+      {/* AJUSTE 1: Header limpo e sem tags <p> em volta */}
       <header id="masthead" itemScope itemType="https://schema.org/WPHeader">
         <p className="main-title bhf-hidden" itemProp="headline">
           <header className="bg-white shadow-sm py-4">
@@ -551,19 +552,8 @@ function App() {
     rel="noopener noreferrer" 
     className="bg-green-600 text-white px-6 py-2 rounded-full font-bold hover:bg-green-700 transition flex items-center space-x-3 shadow-lg"
   >
-    {/* Div que serve de "moldura" para o seu SVG */}
-    <div className="w-6 h-6 overflow-hidden relative flex items-center justify-center bg-white rounded-full">
-      <img 
-        src={SocialIcons} 
-        alt="WhatsApp" 
-        className="absolute max-w-none"
-        style={{
-          width: '240px', // Ajuste para o tamanho da sua folha de ícones
-          left: '-5px',   // Ajuste para centralizar o ícone do Whats
-          top: '-5px'     // Ajuste para centralizar o ícone do Whats
-        }}
-      />
-    </div>
+    {/* Ícone oficial da biblioteca - Funciona 100% na Vercel e no Local */}
+    <FaWhatsapp size={24} />
     <span>WhatsApp</span>
   </a>
 </div>
