@@ -548,96 +548,29 @@ function App() {
         </div>
       </footer>
 
-      {/*INTERFACE DE CHAT (CHATBOX) Botão Flutuante - Janela e Mensagens*/}
-      <div className="fixed bottom-6 right-6 z-[9999] flex flex-col items-end">
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 20, scale: 0.95 }}
-              className="mb-4 w-80 bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col"
-            >
-              {/* Header do Chat (Robô e Status) */}
-              <div className="bg-[#1e428a] p-4 text-white flex justify-between items-center shrink-0">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                    <FaRobot className="text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold leading-none">Assistente MOVER</p>
-                    <p className="text-[10px] opacity-80">Online agora</p>
-                  </div>
-                </div>
-                <button onClick={() => setIsOpen(false)} className="hover:rotate-90 transition-transform">
-                  <FaTimes />
-                </button>
-              </div>
+      {/*BLOCO: WHATSAPP FLUTUANTE (ESTILO JOINCHAT + ANIMAÇÕES CSS)*/}
+      <a 
+        href="https://wa.me/5511996744126" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed bottom-5 right-5 flex items-center gap-3 z-[99999] group no-underline animate-[fadeInSlide_0.5s_ease]"
+      >
+        {/* Balão de Ajuda (Aparece no Hover) */}
+        <div className="bg-white text-[#333] py-2.5 px-4 rounded-[20px] shadow-lg text-sm font-medium transition-all duration-300 opacity-0 translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 whitespace-nowrap hidden md:block border border-gray-100">
+          Podemos te ajudar?
+        </div>
 
-              {/* Área de Histórico de Mensagens */}
-              <div className="h-80 p-4 bg-gray-50 overflow-y-auto text-sm flex flex-col gap-3">
-                {messages.map((msg) => (
-                  <div 
-                    key={msg.id} 
-                    className={`max-w-[85%] p-3 rounded-2xl shadow-sm ${
-                      msg.sender === 'user' 
-                        ? 'bg-[#1e428a] text-white self-end rounded-tr-none' 
-                        : 'bg-white text-gray-700 self-start rounded-tl-none'
-                    }`}
-                  >
-                    {msg.text}
-                  </div>
-                ))}
-                {isTyping && (
-                  <div className="bg-white text-gray-400 self-start p-3 rounded-2xl rounded-tl-none shadow-sm italic text-xs flex items-center gap-2">
-                    <span className="animate-bounce">.</span>
-                    <span className="animate-bounce [animation-delay:0.2s]">.</span>
-                    <span className="animate-bounce [animation-delay:0.4s]">.</span>
-                    Assistente está digitando
-                  </div>
-                )}
-                <div ref={messagesEndRef} />
-              </div>
+        {/* Ícone Circular Verde */}
+        <div className="bg-[#25d366] text-white w-[60px] h-[60px] rounded-full flex justify-center items-center shadow-xl transition-all duration-300 group-hover:bg-[#128c7e] group-hover:scale-110">
+          {/* SVG que você encontrou no View-Source (Mais bonito que o padrão) */}
+          <svg width="32" height="32" viewBox="0 0 400 400" fill="currentColor">
+            <path d="M168.83 200.504H79.218L33.04 44.284a1 1 0 0 1 1.386-1.188L365.083 199.04a1 1 0 0 1 .003 1.808L34.432 357.903a1 1 0 0 1-1.388-1.187l29.42-99.427"/>
+            <path d="M318.087 318.087c-52.982 52.982-132.708 62.922-195.725 29.82l-80.449 10.18 10.358-80.112C18.956 214.905 28.836 134.99 81.913 81.913c65.218-65.217 170.956-65.217 236.174 0 42.661 42.661 57.416 102.661 44.265 157.316"/>
+          </svg>
+        </div>
+      </a>
 
-              {/* Campo de Entrada de Texto e Botão Enviar */}
-              <div className="p-3 bg-white border-t flex gap-2 shrink-0">
-                <input 
-                  type="text" 
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                  placeholder="Digite sua dúvida..." 
-                  className="flex-1 bg-gray-100 border-none rounded-full px-4 py-2 text-xs focus:ring-2 focus:ring-blue-500 outline-none"
-                />
-                <button 
-                  onClick={handleSendMessage}
-                  disabled={isTyping}
-                  className="bg-[#1e428a] text-white p-2 rounded-full hover:scale-110 transition-transform disabled:opacity-50"
-                >
-                  <FaPaperPlane size={12} />
-                </button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Botão Flutuante (TRIGGER) - Abre/Fecha Chat (O Balão que vamos analisar depois) */}
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => setIsOpen(!isOpen)}
-          className="w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-white border border-white/10"
-          style={{ 
-            background: isOpen 
-              ? 'linear-gradient(135deg, #ffffff 0%, #fcfbfb 100%)' 
-              : 'radial-gradient(circle at 35% 35%, #25D366 0%, #128C7E 100%)' 
-          }}
-        >
-          {/* A LÓGICA: Se o chat abrir, mostra o 'X'. Se fechar, mostra o ícone do Zap da sua busca */}
-          {isOpen ? <FaTimes size={28} /> : <FaWhatsapp size={38} />}
-        </motion.button>
-      </div>
-    </div>
+    </div> // Fim do id="page"
   );
 }
 
