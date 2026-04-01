@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FaPhoneAlt, FaTimes,  } from 'react-icons/fa';
-import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaPaperPlane, FaRobot } from 'react-icons/fa6';
+import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
 // import SocialIcons from './assets/Social-Media-Logo-collection-CIRCLE-2023.svg';
 // import { GoogleGenAI } from "@google/genai";
 
@@ -118,7 +118,10 @@ function App() {
                 <div className="elementor-widget-wrap elementor-element-populated flex items-center">
                   <div className="elementor-element elementor-element-aaa3382 elementor-widget elementor-widget-text-editor flex items-center" style={{ margin: 0, padding: 0 }}>
                     <p className="text-white m-0 flex items-center font-bold" style={{ lineHeight: '32px', margin: 0 }}>
-                      <a style={{ color: '#ffffff', textDecoration: 'none' }} href="mailto:moverhelipa@gmail.com" target="_blank" rel="noopener">moverhelipa@gmail.com</a>
+                      <span className="flex items-center gap-2">
+                        <FaEnvelope size={14} />
+                        <a style={{ color: '#ffffff', textDecoration: 'none' }} href="mailto:moverhelipa@gmail.com" target="_blank" rel="noopener">moverhelipa@gmail.com</a>
+                      </span>
                       <span className="mx-6">|</span>
                       <a style={{ color: '#ffffff', textDecoration: 'none' }} href="tel:5511996744126">(11) 99674-4126</a>
                     </p>
