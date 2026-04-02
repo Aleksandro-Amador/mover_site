@@ -17,6 +17,21 @@ interface Message {
   timestamp: Date;
 }
 
+// 🏗️ COMPONENTE REUTILIZÁVEL: LogoCatavento
+// Centralizamos a lógica aqui. Se mudar o logo, muda em todo lugar.
+const LogoCatavento = ({ comBrilho = false, tamanho = "h-16" }) => (
+  <div className={`relative ${tamanho} aspect-square flex items-center justify-center`}>
+    {comBrilho && (
+      <div className="absolute inset-0 bg-[#0459A7] rounded-full opacity-20 blur-xl animate-pulse"></div>
+    )}
+    <img 
+      src={logo_mover_catavento} 
+      className="w-full h-full object-contain animate-spin-slow" 
+      alt="Logo MOVER" 
+    />
+  </div>
+);
+
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -151,13 +166,9 @@ function App() {
         <header className="bg-white shadow-md py-4 sticky top-0 z-50">
           <div className="container mx-auto px-4 flex justify-between items-center">
             
-            {/* 🖼️ Logo 1.0: Imagem do Logo Importada Localmente - 'animate-spin-slow' abaixo de className="h-14*/}
+            {/* 🖼️ Logo 1.0: função do Logo 'animate-spin-slow sem brilho'*/}
             <a href="/" className="flex items-center">
-              <img 
-                src={logo_mover_catavento} 
-                alt="Logo MOVER" 
-                className="h-14 md:h-16 w-auto object-contain animate-spin-slow hover:scale-105 transition-transform"
-              />
+              <LogoCatavento tamanho="h-14 md:h-16" />
             </a>
 
             {/* 🔗 Menu de Links: Escondido no Mobile (hidden), visível em telas Médias (md:flex) */}
