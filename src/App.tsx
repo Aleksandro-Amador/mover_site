@@ -2,7 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { FaPhoneAlt, FaTimes,  } from 'react-icons/fa';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
-// import SocialIcons from './assets/Social-Media-Logo-collection-CIRCLE-2023.svg';
+import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.png';
+
 // import { GoogleGenAI } from "@google/genai";
 
 // Inicialização do Gemini - Próximo project - criar chat IA
@@ -87,227 +88,96 @@ function App() {
   }, []);
 
   return (
-    <div id="page" className="hfeed site">
-      {/* AJUSTE 1: Header limpo e sem tags <p> em volta */}
-      <header id="masthead" itemScope itemType="https://schema.org/WPHeader">
-        <p className="main-title bhf-hidden" itemProp="headline">
-          <header className="bg-white shadow-sm py-4">
-  <div className="container mx-auto px-4 flex justify-between items-center">
-    {/* O Link Principal com o nome da ONG */}
-    <a 
-      href="https://moverhelipa.org.br/" 
-      title="MOVER | Movimento Organizacional Vencer, Educar e Realizar" 
-      rel="home"
-      className="text-2xl font-bold text-blue-600 hover:text-blue-800 transition-colors"
-    >
-      MOVER
-    </a>
+      <div id="page" className="min-h-screen bg-white">
+        
+        {/* 🟦 SEÇÃO 1.0: TOP BAR (Barra de Contato Superior) 
+            Responsável por: Acesso rápido, Redes Sociais e Identidade Visual imediata. */}
+        <section className="relative z-[60] py-2" style={{ backgroundColor: '#1e428a' }}>
+          <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between">
+            
+            {/* 📞 Bloco de Contatos Diretos (E-mail e Telefone) */}
+            <div className="flex items-center gap-6 py-1">
+              
+              {/* Item: E-mail com ícone Envelope */}
+              <span className="flex items-center gap-2 text-white font-bold text-xs md:text-sm">
+                <FaEnvelope size={14} />
+                <a href="mailto:moverhelipa@gmail.com" className="hover:underline">moverhelipa@gmail.com</a>
+              </span>
 
-    {/* Menu Simples (Exemplo) */}
-    <nav className="space-x-6 text-gray-600 font-medium">
-      <a href="#sobre" className="hover:text-blue-600">Sobre nós</a>
-      <a href="#contato" className="hover:text-blue-600">Contato</a>
-    </nav>
-  </div>
-</header>
-        </p>
-        <div data-elementor-type="wp-post" data-elementor-id="16" className="elementor elementor-16">
-          <section className="elementor-section elementor-top-section elementor-element elementor-element-5bc9bc1 elementor-section-height-min-height elementor-section-content-middle elementor-section-boxed elementor-section-height-default elementor-section-items-middle py-2" style={{ backgroundColor: '#1e428a' }}>
-            <div className="elementor-container elementor-column-gap-default flex items-center">
-              <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-e5907dd">
-                <div className="elementor-widget-wrap elementor-element-populated flex items-center">
-                  <div className="elementor-element elementor-element-aaa3382 elementor-widget elementor-widget-text-editor flex items-center" style={{ margin: 0, padding: 0 }}>
-                    <p className="text-white m-0 flex items-center font-bold" style={{ lineHeight: '32px', margin: 0 }}>
-                      <span className="flex items-center gap-2">
-                        <FaEnvelope size={14} />
-                        <a style={{ color: '#ffffff', textDecoration: 'none' }} href="mailto:moverhelipa@gmail.com" target="_blank" rel="noopener">moverhelipa@gmail.com</a>
-                      </span>
-                      <span className="mx-6">|</span>
-                      <a style={{ color: '#ffffff', textDecoration: 'none' }} href="tel:5511996744126">(11) 99674-4126</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-1e8e40a">
-                <div className="elementor-widget-wrap elementor-element-populated flex items-center justify-end">
-                  <div className="elementor-element elementor-element-8f1c087 e-grid-align-right elementor-shape-rounded elementor-grid-0 elementor-widget elementor-widget-social-icons">
-                    <div className="elementor-social-icons-wrapper flex items-center justify-end gap-3">
-                      <span className="elementor-grid-item">
-                        <a 
-                          style={{ 
-                            background: 'linear-gradient(135deg, #1877F2 0%, #0A56B3 100%)', 
-                            color: '#ffffff', 
-                            width: '32px', 
-                            height: '32px', 
-                            borderRadius: '50%', 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            justifyContent: 'center', 
-                            transition: 'all 0.3s',
-                            boxShadow: '0 4px 8px rgba(24, 119, 242, 0.3)'
-                          }} 
-                          className="hover:scale-110 hover:shadow-lg" 
-                          href="https://www.facebook.com/people/Mover-Helipa/100095108914003/?mibextid=b06tZ0" 
-                          target="_blank"
-                        >
-                          <span className="elementor-screen-only">Facebook</span>
-                          <FaFacebookF size={16} />
-                        </a>
-                      </span>
-                      <span className="elementor-grid-item">
-                        <a 
-                          style={{ 
-                            background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', 
-                            color: '#ffffff', 
-                            width: '32px', 
-                            height: '32px', 
-                            borderRadius: '50%', 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            justifyContent: 'center', 
-                            transition: 'all 0.3s',
-                            boxShadow: '0 4px 8px rgba(220, 39, 67, 0.3)'
-                          }} 
-                          className="hover:scale-110 hover:shadow-lg" 
-                          href="https://www.instagram.com/mover_helipa/?igshid=MzRlODBiNWFlZA%3D%3D" 
-                          target="_blank"
-                        >
-                          <span className="elementor-screen-only">Instagram</span>
-                          <FaInstagram size={18} />
-                        </a>
-                      </span>
-                      <span className="elementor-grid-item">
-                        <a 
-                          style={{ 
-                            background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)', 
-                            color: '#ffffff', 
-                            width: '32px', 
-                            height: '32px', 
-                            borderRadius: '50%', 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            justifyContent: 'center', 
-                            transition: 'all 0.3s',
-                            boxShadow: '0 4px 8px rgba(37, 211, 102, 0.3)'
-                          }} 
-                          className="hover:scale-110 hover:shadow-lg" 
-                          href="https://wa.me/5511996744126" 
-                          target="_blank"
-                        >
-                          <span className="elementor-screen-only">WhatsApp</span>
-                          <FaWhatsapp size={18} />
-                        </a>
-                      </span>
-                      <span className="elementor-grid-item">
-                        <a 
-                          style={{ 
-                            background: 'linear-gradient(135deg, #0077B5 0%, #005983 100%)', 
-                            color: '#ffffff', 
-                            width: '32px', 
-                            height: '32px', 
-                            borderRadius: '50%', 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            justifyContent: 'center', 
-                            transition: 'all 0.3s',
-                            boxShadow: '0 4px 8px rgba(0, 119, 181, 0.3)'
-                          }} 
-                          className="hover:scale-110 hover:shadow-lg" 
-                          href="#" 
-                          target="_blank"
-                        >
-                          <span className="elementor-screen-only">LinkedIn</span>
-                          <FaLinkedinIn size={16} />
-                        </a>
-                      </span>
-                      <span className="elementor-grid-item">
-                        <a 
-                          style={{ 
-                            background: 'linear-gradient(135deg, #FF0000 0%, #C4302B 100%)', 
-                            color: '#ffffff', 
-                            width: '32px', 
-                            height: '32px', 
-                            borderRadius: '50%', 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            justifyContent: 'center', 
-                            transition: 'all 0.3s',
-                            boxShadow: '0 4px 8px rgba(255, 0, 0, 0.3)'
-                          }} 
-                          className="hover:scale-110 hover:shadow-lg" 
-                          href="#" 
-                          target="_blank"
-                        >
-                          <span className="elementor-screen-only">YouTube</span>
-                          <FaYoutube size={16} />
-                        </a>
-                      </span>
-                      <span className="elementor-grid-item">
-                        <a 
-                          style={{ 
-                            backgroundColor: '#ffffff', 
-                            color: '#1e428a', 
-                            width: '32px', 
-                            height: '32px', 
-                            borderRadius: '50%', 
-                            display: 'flex', 
-                            alignItems: 'center', 
-                            justifyContent: 'center', 
-                            transition: 'all 0.3s',
-                            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
-                          }} 
-                          className="hover:scale-110 hover:shadow-lg" 
-                          href="tel:+5511996744126" 
-                          target="_blank"
-                        >
-                          <span className="elementor-screen-only">Telefone</span>
-                          <FaPhoneAlt size={14} />
-                        </a>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* Divisor Visual (Barrinha vertical) */}
+              <span className="text-white opacity-50 hidden md:block">|</span>
+
+              {/* Item: Telefone com ícone Phone (Ajustado para padrão Kabelo Rock) */}
+              <span className="flex items-center gap-2 text-white font-bold text-xs md:text-sm">
+                <FaPhoneAlt size={14} />
+                <a href="tel:5511996744126" className="hover:underline">(11) 99674-4126</a>
+              </span>
             </div>
-          </section>
 
-          {/* Navegação Principal */}
-          <section className="elementor-section elementor-top-section elementor-element elementor-element-07c5665 elementor-section-content-space-evenly elementor-section-height-min-height elementor-section-boxed elementor-section-height-default elementor-section-items-middle sticky top-0 z-50 bg-white shadow-md">
-            <div className="elementor-container elementor-column-gap-wider">
-              <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-6ebfddb">
-                <div className="elementor-widget-wrap elementor-element-populated">
-                  <div className="elementor-element elementor-element-f33ccf3 elementor-widget elementor-widget-image">
-                    <a href="/">
-                      <img width="150" height="150" src="https://moverhelipa.org.br/wp-content/uploads/2023/02/F60366C7-E702-45A7-A336-2ED7BDE66F68-2-300x300.png" alt="Logo MOVER" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-7d27384">
-                <div className="elementor-widget-wrap elementor-element-populated">
-                  <nav className="hfe-nav-menu__layout-horizontal">
-                    <ul id="menu-1-a9e317d" className="hfe-nav-menu flex items-center gap-8 font-bold text-sm uppercase tracking-wide">
-                      <li className="menu-item"><a href="/" className="text-[#1a1a8c] hover:scale-110 transition-transform inline-block">Início</a></li>
-                      <li className="menu-item"><a href="#sobre-nos" className="text-gray-500 hover:text-[#1a1a8c] hover:scale-110 transition-transform inline-block">Sobre Nós</a></li>
-                      <li className="menu-item"><a href="#projetos" className="text-gray-500 hover:text-[#1a1a8c] hover:scale-110 transition-transform inline-block">Projetos</a></li>
-                      <li className="menu-item"><a href="#galeria" className="text-gray-500 hover:text-[#1a1a8c] hover:scale-110 transition-transform inline-block">Impactos</a></li>
-                      <li className="menu-item"><a href="/comocolaborar" className="text-gray-500 hover:text-[#1a1a8c] hover:scale-110 transition-transform inline-block">Como Colaborar</a></li>
-                      <li className="menu-item">
-                        <a href="#contato" className="bg-[#1a1aff] text-white px-8 py-3 rounded-full hover:bg-blue-700 hover:scale-105 transition-all inline-block">
-                          Contato
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
+            {/* 📱 Bloco de Redes Sociais (Ícones com degradê oficial) */}
+            <div className="flex items-center gap-3 py-1">
+              
+              {/* Link: Facebook (Azul institucional) */}
+              <a style={{ background: 'linear-gradient(135deg, #1877F2 0%, #0A56B3 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://www.facebook.com/people/Mover-Helipa/100095108914003/" target="_blank" rel="noopener noreferrer">
+                <FaFacebookF size={14} />
+              </a>
+
+              {/* Link: Instagram (Degradê pôr-do-sol oficial) */}
+              <a style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://www.instagram.com/mover_helipa/" target="_blank" rel="noopener noreferrer">
+                <FaInstagram size={16} />
+              </a>
+
+              {/* Link: WhatsApp (Verde Zap com degradê) */}
+              <a style={{ background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://wa.me/5511996744126" target="_blank" rel="noopener noreferrer">
+                <FaWhatsapp size={16} />
+              </a>
+
+              {/* Link: LinkedIn (Azul Profissional) */}
+              <a style={{ background: 'linear-gradient(135deg, #0077B5 0%, #005983 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="#" target="_blank" rel="noopener noreferrer">
+                <FaLinkedinIn size={14} />
+              </a>
+
+              {/* Link: YouTube (Vermelho oficial) */}
+              <a style={{ background: 'linear-gradient(135deg, #FF0000 0%, #C4302B 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="#" target="_blank" rel="noopener noreferrer">
+                <FaYoutube size={14} />
+              </a>
             </div>
-          </section>
-        </div>
-      </header>
+          </div>
+        </section>
 
+        {/* ⚪ SEÇÃO 2.0: HEADER (Menu de Navegação Principal) 
+            Responsável por: Navegação estrutural e Logotipo principal.
+            Nota: 'sticky top-0' mantém o menu fixo no topo ao rolar a página. */}
+        <header className="bg-white shadow-md py-4 sticky top-0 z-50">
+          <div className="container mx-auto px-4 flex justify-between items-center">
+            
+            {/* 🖼️ Logo 1.0: Imagem do Logo Importada Localmente - 'animate-spin-slow' abaixo de className="h-14*/}
+            <a href="/" className="flex items-center">
+              <img 
+                src={logo_mover_catavento} 
+                alt="Logo MOVER" 
+                className="h-14 md:h-16 w-auto object-contain animate-spin-slow hover:scale-105 transition-transform"
+              />
+            </a>
+
+            {/* 🔗 Menu de Links: Escondido no Mobile (hidden), visível em telas Médias (md:flex) */}
+            <nav className="hidden md:flex space-x-8 text-gray-700 font-bold uppercase text-xs items-center">
+              <a href="#sobre" className="hover:text-[#1e428a] transition-colors">Sobre nós</a>
+              <a href="#projetos" className="hover:text-[#1e428a] transition-colors">Projetos</a>
+              <a href="#contato" className="hover:text-[#1e428a] transition-colors">Contato</a>
+              
+              {/* 🔴 Call to Action: Botão de Doação em destaque */}
+              <button className="bg-[#ed1e24] text-white px-6 py-2 rounded-full hover:bg-red-700 transition-all shadow-md">
+                DOAR
+              </button>
+            </nav>
+          </div>
+        </header>
+
+        {/* 🏁 CONTEÚDO PRINCIPAL DO SITE */}
       <main id="content" className="site-main">
-        {/* Hero Section (Imagem 1) */}
+        
+        {/* Hero Section */}
         <section id="inicio" className="relative h-[600px] flex items-center justify-center overflow-hidden text-white">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(https://moverhelipa.org.br/wp-content/uploads/2023/02/MagicEraser_230118_195138-1.png)' }}></div>
@@ -324,17 +194,25 @@ function App() {
           </div>
         </section>
 
-        {/* Seção Estilo Imagem 3 (Cata-vento e Marca d'água) */}
+        {/* Seção Estilo Imagem 3 (Cata-vento Animado) */}
         <section className="relative py-24 bg-gray-50 overflow-hidden">
           <div className="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center select-none">
             <span className="text-[20vw] font-black rotate-[-15deg] whitespace-nowrap text-gray-900">MOVER HELIPA</span>
           </div>
           <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
             <div className="mb-8 flex justify-center">
-              {/* Representação do Cata-vento colorido */}
+            
+              {/* Logo 1.1 giratório da Mover */}
               <div className="relative w-32 h-32 animate-spin-slow">
+                {/* O Brilho (Aura) */}
                 <div className="absolute inset-0 bg-[#0459A7] rounded-full opacity-20 blur-xl"></div>
-                <img src="https://moverhelipa.org.br/wp-content/uploads/2023/02/F60366C7-E702-45A7-A336-2ED7BDE66F68-2-300x300.png" alt="Cata-vento" className="w-full h-full object-contain" />
+                
+                {/* O Logo Local (que você baixou) */}
+                <img
+                  src={logo_mover_catavento} // Usando a variável que você importou lá no topo
+                  alt="Cata-vento" 
+                  className="w-full h-full object-contain" 
+                />
               </div>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
@@ -346,58 +224,26 @@ function App() {
           </div>
         </section>
 
-        {/* Seção de Programas e Inscrição (Imagem 2) */}
-        <section className="py-16 bg-white border-t border-gray-100">
-          <div className="max-w-6xl mx-auto px-4">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-16 group">
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                <img src="https://moverhelipa.org.br/wp-content/uploads/2024/10/escola-1024x1024.jpg" alt="Culinária Mover 1" className="w-full h-[300px] md:h-[450px] object-cover" />
-                <img src="https://moverhelipa.org.br/wp-content/uploads/2024/10/cozinha-escola-1024x1024.jpg" alt="Culinária Mover 2" className="w-full h-[300px] md:h-[450px] object-cover" />
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center bg-black/10 group-hover:bg-black/20 transition-all duration-300">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScHZSjy2ZPUAeHFOlJxGLX9bFGo0Rj1UBTN8QPfSGvYJNpwzg/viewform" target="_blank" rel="noopener noreferrer" className="bg-white/95 backdrop-blur-sm text-gray-900 px-10 py-4 rounded-xl font-extrabold text-2xl border-4 border-white hover:scale-105 transition-transform shadow-2xl">
-                  Inscreva-se
-                </a>
-              </div>
-            </div>
-            
-            {/* Logos de Parceiros (Fiel à Imagem 2) */}
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 py-8 border-y border-gray-100">
-              <div className="flex items-center gap-3">
-                <div className="w-12 h-12 bg-gray-200 rounded-full flex items-center justify-center font-bold text-gray-500">MQ</div>
-                <div className="flex flex-col">
-                  <span className="text-[9px] font-bold text-gray-400 uppercase leading-none">Programa</span>
-                  <span className="text-xs font-black text-gray-700">MANUEL QUERINO</span>
-                </div>
-              </div>
-              <img src="https://moverhelipa.org.br/wp-content/uploads/2023/02/F60366C7-E702-45A7-A336-2ED7BDE66F68-2-300x300.png" alt="Logo Mover" className="h-12 w-auto" />
-              <div className="flex flex-col items-center">
-                <span className="text-[9px] font-bold text-gray-400 uppercase leading-none">Ministério do</span>
-                <span className="text-xs font-black text-gray-700">TRABALHO E EMPREGO</span>
-              </div>
-              <div className="flex flex-col items-center text-center">
-                <span className="text-[9px] font-bold text-gray-400 uppercase leading-none">Desenvolvimento Social</span>
-                <span className="text-[9px] font-black text-gray-700">FAMÍLIA E COMBATE À FOME</span>
-              </div>
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Logo_do_Governo_Federal_do_Brasil_%282023%29.svg/2560px-Logo_do_Governo_Federal_do_Brasil_%282023%29.svg.png" alt="Governo Federal" className="h-8 w-auto" />
-            </div>
-          </div>
-        </section>
-
         {/* Sobre Nós */}
         <section id="sobre-nos" className="py-20 px-4 bg-white">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold mb-8 border-l-4 border-blue-600 pl-4">Sobre nós</h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed">
-                <p>O <strong>Movimento Organizacional Vencer, Educar e Realizar – MOVER</strong> é uma organização da sociedade civil, sem fins lucrativos, fundada em 17 de outubro de 2008, com sede em São Paulo, nos entornos da maior favela da cidade: <strong>Heliópolis</strong>.</p>
-                <p>Desde o início, nossa missão é enfrentar os problemas vividos pela comunidade, tendo como meta alcançar a democracia, solidariedade, respeito, educação, cultura, esporte, saúde, defesa dos direitos humanos e a criação de políticas públicas que enfrentem, de forma direta, a miséria e a desinformação.</p>
-                <p>Nossa história é feita por lideranças nascidas e criadas dentro do Helipa, que conhecem de perto os desafios e, principalmente, as potências da favela de Heliópolis.</p>
+              <div className="space-y-4 text-gray-700">
+                <p>O <strong>Movimento Organizacional Vencer, Educar e Realizar – MOVER</strong> é uma organização sem fins lucrativos, sediada em Heliópolis.</p>
+                <p>Nossa missão é enfrentar os problemas da comunidade através da educação, cultura e esportes.</p>
               </div>
             </div>
-            <div>
-              <img src="https://moverhelipa.org.br/wp-content/uploads/2023/02/MagicEraser_230118_195138-1-768x543.png" alt="Sobre nós" className="rounded-lg shadow-xl" />
-            </div>
+            <img src="https://moverhelipa.org.br/wp-content/uploads/2023/02/MagicEraser_230118_195138-1-768x543.png" alt="Sobre nós" className="rounded-lg shadow-xl" />
+          </div>
+        </section>
+
+        {/* Impactos */}
+        <section id="galeria" className="py-20 px-4 bg-gray-50 text-center">
+          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div><div className="text-4xl font-bold text-blue-600">400.000+</div><p>Marmitas entregues</p></div>
+            <div><div className="text-4xl font-bold text-blue-600">25.000+</div><p>Cestas básicas</p></div>
+            <div><div className="text-4xl font-bold text-blue-600">30+</div><p>Cozinhas acompanhadas</p></div>
           </div>
         </section>
 
@@ -525,28 +371,13 @@ function App() {
         </section>
       </main>
 
-      {/*RODAPÉ (FOOTER) - Identidade e Direitos Autorais*/}                    
-      <footer id="colophon" className="py-12 px-4 bg-black text-white border-t border-gray-800">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-    
-          {/* Logo da ONG */}
-          <div className="mb-8 md:mb-0">
-            <img 
-              width="120" 
-              src="https://moverhelipa.org.br/wp-content/uploads/2023/02/F60366C7-E702-45A7-A336-2ED7BDE66F68-2-300x300.png" 
-              alt="Logo Footer" 
-              className="brightness-0 invert mx-auto md:mx-0" 
-            />
-          </div>
-
-          {/* Nome Institucional e Direitos */}
-          <div className="flex flex-col items-center md:items-start space-y-1">
-            <p className="font-bold text-gray-300 text-sm">
-              MOVER | Movimento Organizacional Vencer, Educar e Realizar
-            </p>
-            <p className="text-gray-500 text-[10px]">
-              Todos os direitos reservados @Mover - 2026
-            </p>
+      {/* 🏁 RODAPÉ */}
+      <footer className="py-12 px-4 bg-black text-white text-center md:text-left">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
+          <img width="120" src="https://moverhelipa.org.br/wp-content/uploads/2023/02/F60366C7-E702-45A7-A336-2ED7BDE66F68-2-300x300.png" alt="Logo Footer" className="brightness-0 invert mb-4 md:mb-0" />
+          <div className="text-sm">
+            <p className="font-bold text-gray-300">MOVER | Heliópolis</p>
+            <p className="text-gray-500 text-xs">Todos os direitos reservados @Mover - 2026</p>
           </div>
         </div>
       </footer>
