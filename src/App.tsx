@@ -108,29 +108,29 @@ function App() {
         {/* 🟦 SEÇÃO 1.0: TOP BAR (Barra de Contato Superior) 
             Responsável por: Acesso rápido, Redes Sociais e Identidade Visual imediata. */}
         <section className="relative z-[60] py-2" style={{ backgroundColor: '#1e428a' }}>
-          <div className="max-w-7xl mx-auto px-4 flex flex-wrap items-center justify-between">
-            
+          <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">   
+
             {/* 📞 Bloco de Contatos Diretos (E-mail e Telefone) */}
-            <div className="flex items-center gap-6 py-1">
+            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
               
               {/* Item: E-mail com ícone Envelope */}
               <span className="flex items-center gap-2 text-white font-bold text-xs md:text-sm">
-                <FaEnvelope size={14} />
-                <a href="mailto:moverhelipa@gmail.com" className="hover:underline">moverhelipa@gmail.com</a>
+                <FaEnvelope size={12} />
+                <a href="mailto:moverhelipa@gmail.com">moverhelipa@gmail.com</a>
               </span>
 
               {/* Divisor Visual (Barrinha vertical) */}
               <span className="text-white opacity-50 hidden md:block">|</span>
 
               {/* Item: Telefone com ícone Phone (Ajustado para padrão Kabelo Rock) */}
-              <span className="flex items-center gap-2 text-white font-bold text-xs md:text-sm">
-                <FaPhoneAlt size={14} />
-                <a href="tel:5511996744126" className="hover:underline">(11) 99674-4126</a>
+              <span className="flex items-center gap-2 text-white font-bold text-[10px] md:text-xs">
+                <FaPhoneAlt size={12} />
+                <a href="tel:5511996744126">(11) 99674-4126</a>
               </span>
             </div>
 
             {/* 📱 Bloco de Redes Sociais (Ícones com degradê oficial) */}
-            <div className="flex items-center gap-3 py-1">
+            <div className="flex items-center gap-3">
               
               {/* Link: Facebook (Azul institucional) */}
               <a style={{ background: 'linear-gradient(135deg, #1877F2 0%, #0A56B3 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://www.facebook.com/people/Mover-Helipa/100095108914003/" target="_blank" rel="noopener noreferrer">
@@ -163,22 +163,22 @@ function App() {
         {/* ⚪ SEÇÃO 2.0: HEADER (Menu de Navegação Principal) 
             Responsável por: Navegação estrutural e Logotipo principal.
             Nota: 'sticky top-0' mantém o menu fixo no topo ao rolar a página. */}
-        <header className="bg-white shadow-md py-4 sticky top-0 z-50">
-          <div className="container mx-auto px-4 flex justify-between items-center">
+        <header className="bg-white shadow-md py-4 sticky top-0 z-50 w-full">
+          <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
             
             {/* 🖼️ Logo 1.0: função do Logo 'animate-spin-slow sem brilho'*/}
-            <a href="/" className="flex items-center">
-              <LogoCatavento tamanho="h-14 md:h-16" />
+            <a href="/" className="flex items-center justify-center">
+              <LogoCatavento tamanho="h-16 md:h-20" />
             </a>
 
             {/* 🔗 Menu de Links: Escondido no Mobile (hidden), visível em telas Médias (md:flex) */}
-            <nav className="hidden md:flex space-x-8 text-gray-700 font-bold uppercase text-xs items-center">
-              <a href="#sobre" className="hover:text-[#1e428a] transition-colors">Sobre nós</a>
-              <a href="#projetos" className="hover:text-[#1e428a] transition-colors">Projetos</a>
+            <nav className="flex flex-wrap justify-center gap-4 md:gap-8 items-center font-bold uppercase text-[9px] md:text-xs">
+              <a href="#sobre-nos" className="text-gray-600 hover:text-[#1e428a]">Sobre nós</a>
+              <a href="#projetos" className="text-gray-600 hover:text-[#1e428a]">Projetos</a>
               <a href="#contato" className="hover:text-[#1e428a] transition-colors">Contato</a>
               
               {/* 🔴 Call to Action: Botão de Doação em destaque */}
-              <button className="bg-[#ed1e24] text-white px-6 py-2 rounded-full hover:bg-red-700 transition-all shadow-md">
+              <button className="bg-[#ed1e24] text-white px-4 py-1.5 md:px-6 md:py-2 rounded-full text-[10px] md:text-xs">
                 DOAR
               </button>
             </nav>
