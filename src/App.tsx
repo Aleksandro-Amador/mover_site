@@ -114,18 +114,18 @@ function App() {
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
               
               {/* Item: E-mail com ícone Envelope */}
-              <span className="flex items-center gap-2 text-white font-bold text-xs md:text-sm">
-                <FaEnvelope size={12} />
-                <a href="mailto:moverhelipa@gmail.com">moverhelipa@gmail.com</a>
+              <span className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm">
+                <FaEnvelope size={1} />
+                <a href="mailto:moverhelipa@gmail.com" className="text-white">moverhelipa@gmail.com</a>
               </span>
 
               {/* Divisor Visual (Barrinha vertical) */}
               <span className="text-white opacity-50 hidden md:block">|</span>
 
-              {/* Item: Telefone com ícone Phone (Ajustado para padrão Kabelo Rock) */}
-              <span className="flex items-center gap-2 text-white font-bold text-[10px] md:text-xs">
-                <FaPhoneAlt size={12} />
-                <a href="tel:5511996744126">(11) 99674-4126</a>
+              {/* TELEFONE */}
+              <span className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm">
+                <FaPhoneAlt size={14} />
+                <a href="tel:5511996744126" className="text-white">(11) 99674-4126</a>
               </span>
             </div>
 
