@@ -24,11 +24,22 @@ body {
     }
 }
 
+/* 🌀 Logo 1.1 giratório da Mover - MOTOR DO CATA-VENTO */
 @keyframes spin-slow {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    from { transform: rotate(0deg); }   /* Começa no grau zero */
+    to { transform: rotate(360deg); }   /* Vai até completar uma volta */
 }
 
+/* Logo 1.2 giratório da Mover  A configuração do motor */
 .animate-spin-slow {
-    animation: spin-slow 20s linear infinite;
+    animation: spin-slow 20s linear infinite; 
+    /* 20s = Velocidade (quanto maior o número, mais lento) */
+    /* linear = Movimento constante, sem solavancos */
+    /* infinite = Não para nunca */
+}
+
+/* ✨ TOQUE FINAL: Ajuste de Imagens Globais */
+img {
+    max-width: 100%;
+    height: auto;
 }
