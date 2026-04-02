@@ -160,30 +160,51 @@ function App() {
           </div>
         </section>
 
-        {/* ⚪ SEÇÃO 2.0: HEADER (Menu de Navegação Principal) 
+        {/* ⚪ SEÇÃO 2.0: HEADER BRANCO (Assinatura de Marca) 
             Responsável por: Navegação estrutural e Logotipo principal.
             Nota: 'sticky top-0' mantém o menu fixo no topo ao rolar a página. */}
-        <header className="bg-white shadow-md py-4 sticky top-0 z-50 w-full">
-          <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-            
-            {/* 🖼️ Logo 1.0: função do Logo 'animate-spin-slow sem brilho'*/}
-            <a href="/" className="flex items-center justify-center">
-              <LogoCatavento tamanho="h-16 md:h-20" />
+        <header className="bg-white py-6 border-b border-gray-100 w-full">
+          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6"> 
+
+            {/* 🖼️ Logo 1.0: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho'*/}
+            <a href="/" className="flex items-center justify-center gap-6">
+              <LogoCatavento tamanho="h-16 md:h-20" comBrilho={false} />
+
+              {/* Nome Colorido 'MOVER' */}
+              <span className="text-5xl font-bold tracking-tighter">
+                <span style={{ color: '#0459A7' }}>M</span>
+                <span style={{ color: '#ed1e24' }}>O</span>
+                <span style={{ color: '#026745' }}>V</span>
+                <span style={{ color: '#fff100' }}>E</span>
+                <span style={{ color: '#666' }}>R</span>
+              </span>
             </a>
 
-            {/* 🔗 Menu de Links: Escondido no Mobile (hidden), visível em telas Médias (md:flex) */}
-            <nav className="flex flex-wrap justify-center gap-4 md:gap-8 items-center font-bold uppercase text-[9px] md:text-xs">
-              <a href="#sobre-nos" className="text-gray-600 hover:text-[#1e428a]">Sobre nós</a>
-              <a href="#projetos" className="text-gray-600 hover:text-[#1e428a]">Projetos</a>
-              <a href="#contato" className="hover:text-[#1e428a] transition-colors">Contato</a>
-              
-              {/* 🔴 Call to Action: Botão de Doação em destaque */}
-              <button className="bg-[#ed1e24] text-white px-4 py-1.5 md:px-6 md:py-2 rounded-full text-[10px] md:text-xs">
+            {/* 🎯 Lado Direito: Nome Completo com Quebra */}
+            <div className="flex flex-col text-center md:text-right text-[#1e428a] font-bold text-sm md:text-base leading-snug">
+              <span>Movimento Organizacional Vencer,</span>
+              <span>Educar e Realizar</span>
+          </div>
+        </div>
+      </header>
+
+        {/* 🟦 SEÇÃO 2.5: FAIXA AZUL DO MENU (Navegação Isolada) */}
+        <section className="relative w-full py-4 shadow-inner sticky top-0 z-50" style={{ backgroundColor: '#1e428a' }}>
+          <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
+
+            {/* Menu com Links e o Botão 'DOAR' */}
+            <nav className="flex flex-wrap justify-center gap-8 md:gap-12 items-center font-bold uppercase text-[9px] md:text-xs">
+              <a href="#sobre-nos" className="text-white hover:text-red-400 transition-colors">Sobre nós</a>
+              <a href="#projetos" className="text-white hover:text-red-400 transition-colors">Projetos</a>
+              <a href="#contato" className="text-white hover:text-red-400 transition-colors">Contato</a>
+
+              {/* 🔴 Call to Action: Botão de Doação em destaque (Estilo Kabelo Rock) */}
+              <button className="bg-[#ed1e24] text-white px-6 py-2 rounded-full text-[10px] md:text-xs shadow-lg hover:scale-105 transition-all">
                 DOAR
               </button>
             </nav>
           </div>
-        </header>
+        </section>
 
         {/* 🏁 CONTEÚDO PRINCIPAL DO SITE */}
       <main id="content" className="site-main">
