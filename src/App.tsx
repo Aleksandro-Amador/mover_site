@@ -163,19 +163,19 @@ function App() {
         {/* ⚪ SEÇÃO 2.0: HEADER BRANCO (Assinatura de Marca) 
             Responsável por: Navegação estrutural e Logotipo principal.
             Nota: 'sticky top-0' mantém o menu fixo no topo ao rolar a página. */}
-        <header className="bg-white py-3 border-b border-gray-100 w-full">
-          <div className="max-w-7xl mx-auto px-6 flex items-center justify-start gap-8 md:gap-12">
+        <header className="bg-white py-2 border-b border-gray-100 w-full">
+          <div className="max-w-7xl mx-auto px-4 flex items-center justify-between md:justify-start gap-4">
             
             {/* 🖼️ Logo 1.0: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho - h-16 md:h-20 '*/}
             <a href="/" className="flex items-center justify-center gap-6">
-              <LogoCatavento tamanho="h-12 md:h-16" comBrilho={false} /> 
+              <LogoCatavento tamanho="h-10 md:h-14" comBrilho={false} /> 
 
               {/* Nome Colorido 'MOVER' com BookmanSwash (.woff2)*/}
               <span 
-                className="text-3xl md:text-4xl font-bold italic tracking-tighter leading-none"
+                className="text-2xl md:text-4xl font-bold italic tracking-tighter"
                 style={{ 
                   fontFamily: "'BookmanSwash', serif", 
-                  filter: "drop-shadow(2px 2px 0px rgba(0,0,0,0.1))" 
+                  filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" 
                 }}
               >
                 <span style={{ color: '#0459A7' }}>M</span>
@@ -186,10 +186,10 @@ function App() {
               </span>
             </a>
 
-            {/* 🎯 Lado Direito: Nome Completo com Quebra */}
-            <div className="flex flex-col text-left text-[#1e428a] font-black text-[10px] md:text-sm leading-tight border-l-2 border-gray-100 pl-4 md:pl-8">
-              <span className="whitespace-nowrap uppercase">Movimento Organizacional Vencer,</span>
-              <span className="whitespace-nowrap uppercase text-[#ed1e24]">Educar e Realizar</span>
+            {/* 🎯 Lado Direito: Nome Completo com Quebra (Ajustado para mobile) */}
+            <div className="flex flex-col text-right md:text-left text-[#1e428a] font-black leading-none border-l-2 border-gray-100 pl-3">
+              <span className="text-[8px] md:text-xs uppercase">Movimento Organizacional Vencer,</span>
+              <span className="text-[8px] md:text-xs uppercase text-[#ed1e24]">Educar e Realizar</span>
             </div>
           </div>
         </header>
