@@ -163,16 +163,16 @@ function App() {
         {/* ⚪ SEÇÃO 2.0: HEADER BRANCO (Assinatura de Marca) 
             Responsável por: Navegação estrutural e Logotipo principal.
             Nota: 'sticky top-0' mantém o menu fixo no topo ao rolar a página. */}
-        <header className="bg-white py-6 border-b border-gray-100 w-full">
-          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6"> 
-
-            {/* 🖼️ Logo 1.0: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho'*/}
+        <header className="bg-white py-3 border-b border-gray-100 w-full">
+          <div className="max-w-7xl mx-auto px-6 flex items-center justify-start gap-8 md:gap-12">
+            
+            {/* 🖼️ Logo 1.0: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho - h-16 md:h-20 '*/}
             <a href="/" className="flex items-center justify-center gap-6">
-              <LogoCatavento tamanho="h-16 md:h-20" comBrilho={false} />
+              <LogoCatavento tamanho="h-12 md:h-16" comBrilho={false} /> 
 
               {/* Nome Colorido 'MOVER' com BookmanSwash (.woff2)*/}
               <span 
-                className="text-5xl font-bold italic tracking-tighter"
+                className="text-3xl md:text-4xl font-bold italic tracking-tighter leading-none"
                 style={{ 
                   fontFamily: "'BookmanSwash', serif", 
                   filter: "drop-shadow(2px 2px 0px rgba(0,0,0,0.1))" 
@@ -187,12 +187,12 @@ function App() {
             </a>
 
             {/* 🎯 Lado Direito: Nome Completo com Quebra */}
-            <div className="flex flex-col text-center md:text-right text-[#1e428a] font-bold text-sm md:text-base leading-snug">
-              <span>Movimento Organizacional Vencer,</span>
-              <span>Educar e Realizar</span>
+            <div className="flex flex-col text-left text-[#1e428a] font-black text-[10px] md:text-sm leading-tight border-l-2 border-gray-100 pl-4 md:pl-8">
+              <span className="whitespace-nowrap uppercase">Movimento Organizacional Vencer,</span>
+              <span className="whitespace-nowrap uppercase text-[#ed1e24]">Educar e Realizar</span>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
 
         {/* 🟦 SEÇÃO 2.5: FAIXA AZUL DO MENU (Navegação Isolada) */}
         <section className="relative w-full py-4 shadow-inner sticky top-0 z-50" style={{ backgroundColor: '#1e428a' }}>
