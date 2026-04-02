@@ -170,8 +170,14 @@ function App() {
             <a href="/" className="flex items-center justify-center gap-6">
               <LogoCatavento tamanho="h-16 md:h-20" comBrilho={false} />
 
-              {/* Nome Colorido 'MOVER' */}
-              <span className="text-5xl font-bold tracking-tighter">
+              {/* Nome Colorido 'MOVER' com BookmanSwash (.woff2)*/}
+              <span 
+                className="text-5xl font-bold italic tracking-tighter"
+                style={{ 
+                  fontFamily: "'BookmanSwash', serif", 
+                  filter: "drop-shadow(2px 2px 0px rgba(0,0,0,0.1))" 
+                }}
+              >
                 <span style={{ color: '#0459A7' }}>M</span>
                 <span style={{ color: '#ed1e24' }}>O</span>
                 <span style={{ color: '#026745' }}>V</span>
