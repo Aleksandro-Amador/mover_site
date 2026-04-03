@@ -172,10 +172,11 @@ function App() {
             Responsável por: Navegação estrutural e Logotipo principal.
             Nota: 'sticky top-0' mantém o menu fixo no topo ao rolar a página. */}
         <header className="bg-white py-2 border-b border-gray-100 w-full">
-          <div className="max-w-7xl mx-auto px-4 flex items-center justify-between md:justify-start gap-4">
+          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
             
             {/* 🖼️ Logo 1.0: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho - h-16 md:h-20 '*/}
-            <a href="/" className="flex items-center justify-center gap-6">
+            <div className="flex items-center justify-center gap-4 md:gap-6">
+              <a href="/" className="flex items-center gap-4">
               <LogoCatavento tamanho="h-10 md:h-14" comBrilho={false} /> 
 
               {/* Nome Colorido 'MOVER' com BookmanSwash (.woff2)*/}
@@ -193,10 +194,11 @@ function App() {
                 <span style={{ color: '#666' }}>R</span>
               </span>
             </a>
+          </div>  
 
-            {/* 🎯 Lado Direito: Nome Completo com Quebra (Ajustado para mobile) */}
-            <div className="flex flex-col items-center justify-center text-center text-[#1e428a] font-black leading-tight border-l-2 border-gray-100 pl-3">
-              <span className="text-[8px] md:text-xs uppercase max-w-[150px] md:max-w-none">
+            {/* 🎯 Bloco 2: Texto Explicativo (Lado Direito do Centro) */}
+            <div className="flex flex-col items-center md:items-start justify-center text-center md:text-left text-[#1e428a] font-black leading-none md:border-l-2 md:border-gray-100 md:pl-6">
+              <span className="text-[10px] md:text-xs uppercase max-w-[250px] md:max-w-[300px]">
                 Movimento Organizacional Vencer, Educar e Realizar
               </span>
             </div>
