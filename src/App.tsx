@@ -501,33 +501,33 @@ export default function App() {
         </section>
       </main>
 
-      {/* 🏁 6.0 RODAPÉ - Organização Desktop */}
+      {/* 🏁 6.0 RODAPÉ - Organização mobile empilha (col), no desktop separa (row) * */}
       <footer className="bg-black py-4 px-1 border-t border-gray-900">
-        <div className="max-w-6xl mx-auto flex flex-row items-center justify-between">
+        <div className="max-w-6xl mx-auto flex flex-col flex-row items-center justify-between gap-6 md:gap-0">
           
           {/* 📸 6.1 Logo (Lado Esquerdo) */}
           <img 
             width="100" 
             src={logo_mover_catavento} 
             alt="Logo Footer" 
-            className="opacity-90 hover:opacity-100 transition-opacity"
+            className="mx-auto md:mx-0"
           />
 
           {/* 📦 6.2 Bloco de Texto (Lado Direito, mas centralizado internamente) */}
-          <div className="flex flex-col items-center md:items-center text-center">
+          <div className="flex flex-col items-center text-center leading-tight">
             
             {/* Nome Principal */}
-            <p className="font-bold text-gray-200 text-lg leading-none">
+            <p className="font-bold text-gray-200 text-[16px] md:text-lg">
               MOVER
             </p>
             
             {/* Nome por Extenso */}
-            <p className="font-bold text-gray-300 text-sm mt-1 whitespace-nowrap">
+            <p className="font-bold text-gray-300 text-[12px] md:text-sm mt-1 whitespace-normal md:whitespace-nowrap max-w-[280px] md:max-w-none">
               Movimento Organizacional Vencer, Educar e Realizar
             </p>
             
             {/* Direitos Autorais */}
-            <p className="text-gray-500 text-xs mt-2">
+            <p className="text-gray-500 text-[10px] md:text-xs mt-2">
               © 2026 MOVER. Todos os direitos reservados.
             </p>
 
