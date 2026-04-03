@@ -215,8 +215,14 @@ function App() {
               <a href="#projetos" className="text-white hover:text-red-400 transition-colors">Projetos</a>
               <a href="#contato" className="text-white hover:text-red-400 transition-colors">Contato</a>
 
-              {/* 🔴 Call to Action: Botão de Doação em destaque (Estilo Kabelo Rock) */}
-              <button className="bg-[#ed1e24] text-white px-6 py-2 rounded-full text-[10px] md:text-xs shadow-lg hover:scale-105 transition-all">
+              {/* 🔴 Call to Action: Botão de Doação com Efeito Magnético Suave */}
+              <button 
+                className="bg-[#ed1e24] text-white px-8 py-2.5 rounded-full text-[10px] md:text-sm font-black shadow-lg hover:scale-110 hover:shadow-red-500/50 transition-all duration-300 active:scale-95"
+                style={{ 
+                  border: 'none', // Garante que não apareça borda fantasma
+                  letterSpacing: '1px'
+                }}
+              >
                 DOAR
               </button>
             </nav>
