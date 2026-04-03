@@ -238,6 +238,7 @@ export default function App() {
                 Movimento Organizacional Vencer, Educar e Realizar
               </span>
             </div>
+          </div>
         </header>
 
         {/* 🟦 SEÇÃO 2.5: FAIXA AZUL DO MENU (Navegação Isolada) */}
