@@ -113,14 +113,19 @@ function App() {
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
               
               {/* Item: E-MAIL com Expansão */}
-              <a 
-                href="mailto:moverhelipa@gmail.com" 
-                className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm transition-all duration-300 hover:scale-105 hover:text-white group"
-                style={{ textDecoration: 'none' }}
-              >
-                <FaEnvelope size={14} className="group-hover:text-red-400 transition-colors" />
-                <span className="text-white">moverhelipa@gmail.com</span>
-              </a>
+            <a 
+              href="mailto:moverhelipa@gmail.com" 
+              className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm transition-all duration-300 hover:scale-105 hover:text-white group"
+              style={{ textDecoration: 'none', color: 'white' }}
+            >
+              <FaEnvelope 
+                size={14} 
+                className="text-white transition-colors" 
+              />
+              <span className="text-white">
+                moverhelipa@gmail.com
+              </span>
+            </a>
 
               {/* Divisor Visual */}
               <span className="text-white opacity-50 hidden md:block">|</span>
@@ -129,10 +134,14 @@ function App() {
               <a 
                 href="tel:5511996744126" 
                 className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm transition-all duration-300 hover:scale-105 hover:text-white group"
-                style={{ textDecoration: 'none' }}
+                style={{ textDecoration: 'none', color: 'white' }}
               >
-                <FaPhoneAlt size={12} className="group-hover:text-green-400 transition-colors" />
-                <span className="text-white">(11) 99674-4126</span>
+                <FaPhoneAlt size={12}
+                className="text-white transition-colors"
+              />
+              <span className="text-white">
+                  (11) 99674-4126
+                </span>
               </a>
             </div>
 
