@@ -226,13 +226,15 @@ export default function App() {
 
             {/* 🎯 Bloco 2: Texto Explicativo (Lado Direito do Centro) */}
             <div className="flex flex-col items-center justify-center text-center text-[#1e428a] leading-tight md:border-l-2 md:border-gray-100 md:pl-6">
-              <span className="uppercase tracking-wider"
+              <span 
                 style={{ 
-                  fontFamily: "'Italianno', cursive", 
-                  fontSize: '22px', // fontes cursivas tendem a parecer menores
-                  fontWeight: '400', // Fontes cursivas com peso normal
-                  textTransform: 'none', // reduzi uppercase total para a cursiva brilhar mais
-                  maxWidth: '280px'
+                  fontFamily: "'Satisfy', cursive", 
+                  fontSize: '18px', // Reduzi um pouco para ficar elegante
+                  fontWeight: '400',
+                  color: '#1e428a',
+                  maxWidth: '280px',
+                  display: 'block',
+                  lineHeight: '1.4'
                 }}
               >
                 Movimento Organizacional Vencer, Educar e Realizar
