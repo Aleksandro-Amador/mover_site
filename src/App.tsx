@@ -195,9 +195,10 @@ function App() {
             </a>
 
             {/* 🎯 Lado Direito: Nome Completo com Quebra (Ajustado para mobile) */}
-            <div className="flex flex-col text-right md:text-left text-[#1e428a] font-black leading-none border-l-2 border-gray-100 pl-3">
-              <span className="text-[8px] md:text-xs uppercase">Movimento Organizacional Vencer,</span>
-              <span className="text-[8px] md:text-xs uppercase text-[#ed1e24]">Educar e Realizar</span>
+            <div className="flex flex-col items-center justify-center text-center text-[#1e428a] font-black leading-tight border-l-2 border-gray-100 pl-3">
+              <span className="text-[8px] md:text-xs uppercase max-w-[150px] md:max-w-none">
+                Movimento Organizacional Vencer, Educar e Realizar
+              </span>
             </div>
           </div>
         </header>
