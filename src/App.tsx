@@ -232,7 +232,7 @@ export default function App() {
                   fontFamily: "'Alice', serif", 
                   fontSize: '20px', 
                   fontWeight: '400', // Sem negrito
-                  fontStyle: 'normal', // Sem itálico
+                  //fontStyle: 'italic', // Sem itálico
                   color: '#1e428a',
                   letterSpacing: '1px',
                   textTransform: 'none',
