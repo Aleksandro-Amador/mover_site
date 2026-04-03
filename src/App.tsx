@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence, useMotionValue, useSpring } from 'motion/react';
 import { FaPhoneAlt, FaTimes,  } from 'react-icons/fa';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
 import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.png';
@@ -32,7 +32,33 @@ const LogoCatavento = ({ comBrilho = false, tamanho = "h-16" }) => (
   </div>
 );
 
-function App() {
+// 1. Lógica do Ímã (mouseX, mouseY...)
+export default function App() {
+  
+  // 2. DEFINIÇÃO DAS VARIÁVEIS (Onde o vermelho deve sumir)
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  // Aqui criamos o mouseX e mouseY que o botão vai ler
+  const mouseX = useSpring(x, { stiffness: 150, damping: 15 });
+  const mouseY = useSpring(y, { stiffness: 150, damping: 15 });
+
+  // 3. A FUNÇÃO handleMouseMove (Também antes do return)
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    
+    x.set(e.clientX - centerX);
+    y.set(e.clientY - centerY);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  // 2. States do Chat (isOpen, messages...)
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -50,6 +76,7 @@ function App() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  // 3. Funções de Apoio (scrollToBottom...)
   useEffect(() => {
     scrollToBottom();
   }, [messages, isTyping]);
@@ -216,13 +243,16 @@ function App() {
               <a href="#contato" className="text-white hover:text-red-400 transition-colors">Contato</a>
 
               {/* 🔴 Call to Action: Botão de Doação em destaque (Estilo Kabelo Rock - Oval) */}
-              <button 
-                className="hover:scale-105 transition-all shadow-lg active:scale-95"
+              <motion.button
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
                 style={{ 
+                  x: mouseX, 
+                  y: mouseY,
                   backgroundColor: '#ed1e24', 
                   color: 'white', 
                   padding: '8px 24px', 
-                  borderRadius: '9999px', // Isso garante o formato OVAL/CÁPSULA
+                  borderRadius: '9999px',
                   border: 'none', 
                   fontWeight: '900', 
                   fontSize: '12px',
@@ -231,11 +261,14 @@ function App() {
                   alignItems: 'center',
                   justifyContent: 'center',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.5px'
+                  letterSpacing: '0.5px',
+                  boxShadow: '0 10px 15px -3px rgba(237, 30, 36, 0.3)'
                 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
               >
                 DOAR
-              </button>
+              </motion.button>
             
             </nav>
           </div>
@@ -468,8 +501,6 @@ function App() {
         </div>
       </a>
 
-    </div> // Fim do id="page"
-  );
-}
-
-export default App;
+    </div> // Fecha o id="page"
+    ); // Fecha o return (
+} // Fecha a function App() {
