@@ -133,7 +133,7 @@ export default function App() {
   return (
       <div id="page" className="min-h-screen bg-white">
         
-        {/* 🟦 SEÇÃO 1.0: TOP BAR - Barra de Contato Superior - Ajustado para inverter no Mobile */}
+        {/* 🟦 SEÇÃO 1.0: TOP BAR Azul - Barra de Contato Superior - Ajustado para inverter no Mobile */}
         <section className="relative z-[60] py-1" style={{ backgroundColor: '#1e428a' }}>
           <div className="max-w-4xl mx-auto px-0.5 flex flex-col-reverse md:flex-row items-center justify-between gap-1">
             
@@ -245,14 +245,32 @@ export default function App() {
         </header>
 
         {/* 🟦 SEÇÃO 3.0 FAIXA AZUL DO MENU (Navegação Isolada) */}
-        <section className="relative w-full py-1 shadow-inner sticky top-0 z-50" style={{ backgroundColor: '#1e428a' }}>
+        <section className="relative w-full py-1.5 shadow-inner sticky top-0 z-50" style={{ backgroundColor: '#1e428a' }}>
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
 
             {/* 3.1 Menu com Links e o Botão 'DOAR' */}
             <nav className="flex flex-wrap justify-center gap-4 md:gap-12 items-center font-bold uppercase text-[10px] md:text-xs">
-              <a href="#sobre-nos" className="text-white hover:text-white-400 transition-colors">Sobre nós</a>
-              <a href="#projetos" className="text-white hover:text-white-400 transition-colors">Projetos</a>
-              <a href="#contato" className="text-white hover:text-white-400 transition-colors">Contato</a>
+              <a 
+                href="#sobre-nos" 
+                className="text-white hover:brightness-125 transition-all"
+                style={{ color: 'white', textDecoration: 'none' }}
+                >
+                  Sobre nós
+                </a>
+              <a
+                href="#projetos" 
+                className="text-white hover:brightness-125 transition-all"
+                style={{ color: 'white', textDecoration: 'none' }}
+                >
+                  Projetos
+                </a>
+              <a 
+                href="#contato" 
+                className="text-white hover:brightness-125 transition-all"
+                style={{ color: 'white', textDecoration: 'none' }}
+                >
+                  Contato
+                </a>
 
               {/* 3.2 🔴 Call to Action: Botão de Doação em destaque (Estilo Kabelo Rock - Oval) */}
               <motion.button
@@ -483,13 +501,36 @@ export default function App() {
         </section>
       </main>
 
-      {/* 🏁 RODAPÉ */}
-      <footer className="py-12 px-4 bg-black text-white text-center md:text-left">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
-          <img width="120" src="https://moverhelipa.org.br/wp-content/uploads/2023/02/F60366C7-E702-45A7-A336-2ED7BDE66F68-2-300x300.png" alt="Logo Footer" className="brightness-0 invert mb-4 md:mb-0" />
-          <div className="text-sm">
-            <p className="font-bold text-gray-300">MOVER | Heliópolis</p>
-            <p className="text-gray-500 text-xs">Todos os direitos reservados @Mover - 2026</p>
+      {/* 🏁 6.0 RODAPÉ - Organização Desktop */}
+      <footer className="bg-black py-4 px-1 border-t border-gray-900">
+        <div className="max-w-6xl mx-auto flex flex-row items-center justify-between">
+          
+          {/* 📸 6.1 Logo (Lado Esquerdo) */}
+          <img 
+            width="100" 
+            src={logo_mover_catavento} 
+            alt="Logo Footer" 
+            className="opacity-90 hover:opacity-100 transition-opacity"
+          />
+
+          {/* 📦 6.2 Bloco de Texto (Lado Direito, mas centralizado internamente) */}
+          <div className="flex flex-col items-center md:items-center text-center">
+            
+            {/* Nome Principal */}
+            <p className="font-bold text-gray-200 text-lg leading-none">
+              MOVER
+            </p>
+            
+            {/* Nome por Extenso */}
+            <p className="font-bold text-gray-300 text-sm mt-1 whitespace-nowrap">
+              Movimento Organizacional Vencer, Educar e Realizar
+            </p>
+            
+            {/* Direitos Autorais */}
+            <p className="text-gray-500 text-xs mt-2">
+              © 2026 MOVER. Todos os direitos reservados.
+            </p>
+
           </div>
         </div>
       </footer>
