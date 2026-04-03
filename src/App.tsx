@@ -133,14 +133,15 @@ export default function App() {
   return (
       <div id="page" className="min-h-screen bg-white">
         
-        {/* 🟦 SEÇÃO 1.0: TOP BAR (Barra de Contato Superior) */}
+        {/* 🟦 SEÇÃO 1.0: TOP BAR - Barra de Contato Superior - Ajustado para inverter no Mobile */}
         <section className="relative z-[60] py-1" style={{ backgroundColor: '#1e428a' }}>
-          <div className="max-w-4xl mx-auto px-0.5 flex flex-col md:flex-row items-center justify-between gap-1">
+          <div className="max-w-4xl mx-auto px-0.5 flex flex-col-reverse md:flex-row items-center justify-between gap-1">
             
-            {/* 📞 Bloco de Contatos Diretos */}
-            <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
+            {/* 📞 1.1.1 Bloco de Contatos Diretos */}
+            <div className="flex md:flex-row items-center gap-4 md:gap-6">
+              {/* Seus links de e-mail e telefone aqui */}
               
-              {/* Item: E-MAIL com Expansão */}
+              {/* 1.1.2 Item: E-MAIL com Expansão */}
             <a 
               href="mailto:moverhelipa@gmail.com" 
               className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm transition-all duration-300 hover:scale-105 hover:text-white group"
@@ -155,10 +156,10 @@ export default function App() {
               </span>
             </a>
 
-              {/* Divisor Visual */}
+              {/* 1.1.3 Divisor Visual */}
               <span className="text-white opacity-50 hidden md:block">|</span>
 
-              {/* Item: TELEFONE com Expansão */}
+              {/* 1.1.4 Item: TELEFONE com Expansão */}
               <a 
                 href="tel:5511996744126" 
                 className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm transition-all duration-300 hover:scale-105 hover:text-white group"
@@ -173,7 +174,7 @@ export default function App() {
               </a>
             </div>
 
-            {/* 📱 Bloco de Redes Sociais */}
+            {/* 📱 1.2.1 Bloco de Redes Sociais */}
             <div className="flex items-center gap-3">
               <a style={{ background: 'linear-gradient(135deg, #1877F2 0%, #0A56B3 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://www.facebook.com/people/Mover-Helipa/100095108914003/" target="_blank" rel="noopener noreferrer">
                 <FaFacebookF size={14} />
@@ -191,16 +192,16 @@ export default function App() {
                 <FaYoutube size={14} />
               </a>
             </div>
-            {/* FIM DAS REDES SOCIAIS */}
+            {/* Final do bloco 1.2.1 - Redes Sociais */}
 
-          </div> {/* FECHA A DIV MAX-W-4XL */}
-        </section> {/* FECHA A SECTION 1.0 */}
+          </div> {/* 🏁 FECHA O ESCRAVO 1.2.1 */}
+        </section> {/* 🏁 FECHA O MESTRE 1.0 */}
 
         {/* ⚪ SEÇÃO 2.0: HEADER BRANCO (Assinatura de Marca) 
             Responsável por: Navegação estrutural e Logotipo principal.
             Nota: 'sticky top-0' mantém o menu fixo no topo ao rolar a página. */}
         <header className="bg-white py-0.5 border-b border-gray-100 w-full sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-0.5 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
+          <div className="max-w-7xl mx-auto px-0.5 flex flex-col md:flex-row items-center justify-center gap-0.5 md:gap-6">
             
             {/* 🖼️ Logo 2.1: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho - h-16 md:h-20 '*/}
             <div className="flex items-center justify-center gap-4 md:gap-6">
@@ -512,6 +513,6 @@ export default function App() {
         </div>
       </a>
 
-    </div> // Fecha o id="page"
+    </div> // 🏁 FECHA A SEÇÃO GERAL - Fecha o id="page"
     ); // Fecha o return (
 } // Fecha a function App() {
