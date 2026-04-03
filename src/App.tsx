@@ -134,8 +134,8 @@ export default function App() {
       <div id="page" className="min-h-screen bg-white">
         
         {/* 🟦 SEÇÃO 1.0: TOP BAR (Barra de Contato Superior) */}
-        <section className="relative z-[60] py-2" style={{ backgroundColor: '#1e428a' }}>
-          <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
+        <section className="relative z-[60] py-1" style={{ backgroundColor: '#1e428a' }}>
+          <div className="max-w-4xl mx-auto px-0.5 flex flex-col md:flex-row items-center justify-between gap-1">
             
             {/* 📞 Bloco de Contatos Diretos */}
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
@@ -199,17 +199,17 @@ export default function App() {
         {/* ⚪ SEÇÃO 2.0: HEADER BRANCO (Assinatura de Marca) 
             Responsável por: Navegação estrutural e Logotipo principal.
             Nota: 'sticky top-0' mantém o menu fixo no topo ao rolar a página. */}
-        <header className="bg-white py-2 border-b border-gray-100 w-full">
-          <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8">
+        <header className="bg-white py-0.5 border-b border-gray-100 w-full sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-0.5 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-6">
             
-            {/* 🖼️ Logo 1.0: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho - h-16 md:h-20 '*/}
+            {/* 🖼️ Logo 2.1: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho - h-16 md:h-20 '*/}
             <div className="flex items-center justify-center gap-4 md:gap-6">
               <a href="/" className="flex items-center gap-4">
               <LogoCatavento tamanho="h-10 md:h-14" comBrilho={false} /> 
 
-              {/* Nome Colorido 'MOVER' com BookmanSwash (.woff2)*/}
+              {/* 2.2 Nome Colorido 'MOVER' com BookmanSwash (.woff2)*/}
               <span 
-                className="text-2xl md:text-4xl font-bold italic tracking-tighter"
+                className="text-2xl md:text-4xl font-bold italic tracking-tighter leading-none"
                 style={{ 
                   fontFamily: "'BookmanSwash', serif", 
                   filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" 
@@ -224,15 +224,14 @@ export default function App() {
             </a>
           </div>  
 
-            {/* 🎯 Bloco 2: Texto Explicativo (Lado Direito do Centro) */}
-            <div className="flex flex-col items-center justify-center text-center text-[#1e428a] leading-tight md:border-l-2 md:border-gray-100 md:pl-8 md:ml-4">
+            {/* 🎯 Bloco 2.3: Texto Explicativo (Lado Direito do Centro) */}
+            <div className="flex flex-col items-center justify-center text-center text-[#1e428a] leading-none md:border-l-2 md:border-gray-100 md:pl-8 md:ml-4">
               <span 
-                className="block w-full md:max-w-none whitespace-nowrap md:whitespace-normal"
-                style={{ 
+                className="w-full md:max-w-none whitespace-normal md:whitespace-nowrap"
+                  style={{ 
                   fontFamily: "'Alice', serif", 
                   fontSize: '20px', 
-                  fontWeight: '400', // Sem negrito
-                  //fontStyle: 'italic', // Sem itálico
+                  fontWeight: '400',
                   color: '#1e428a',
                   letterSpacing: '1px',
                   textTransform: 'none',
@@ -244,7 +243,7 @@ export default function App() {
           </div>
         </header>
 
-        {/* 🟦 SEÇÃO 2.5: FAIXA AZUL DO MENU (Navegação Isolada) */}
+        {/* 🟦 SEÇÃO 3: FAIXA AZUL DO MENU (Navegação Isolada) */}
         <section className="relative w-full py-4 shadow-inner sticky top-0 z-50" style={{ backgroundColor: '#1e428a' }}>
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
 
