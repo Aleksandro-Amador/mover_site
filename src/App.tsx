@@ -244,17 +244,17 @@ export default function App() {
           </div>
         </header>
 
-        {/* 🟦 SEÇÃO 3: FAIXA AZUL DO MENU (Navegação Isolada) */}
-        <section className="relative w-full py-4 shadow-inner sticky top-0 z-50" style={{ backgroundColor: '#1e428a' }}>
+        {/* 🟦 SEÇÃO 3.0 FAIXA AZUL DO MENU (Navegação Isolada) */}
+        <section className="relative w-full py-1 shadow-inner sticky top-0 z-50" style={{ backgroundColor: '#1e428a' }}>
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
 
-            {/* Menu com Links e o Botão 'DOAR' */}
-            <nav className="flex flex-wrap justify-center gap-8 md:gap-12 items-center font-bold uppercase text-[9px] md:text-xs">
-              <a href="#sobre-nos" className="text-white hover:text-red-400 transition-colors">Sobre nós</a>
-              <a href="#projetos" className="text-white hover:text-red-400 transition-colors">Projetos</a>
-              <a href="#contato" className="text-white hover:text-red-400 transition-colors">Contato</a>
+            {/* 3.1 Menu com Links e o Botão 'DOAR' */}
+            <nav className="flex flex-wrap justify-center gap-4 md:gap-12 items-center font-bold uppercase text-[10px] md:text-xs">
+              <a href="#sobre-nos" className="text-white hover:text-white-400 transition-colors">Sobre nós</a>
+              <a href="#projetos" className="text-white hover:text-white-400 transition-colors">Projetos</a>
+              <a href="#contato" className="text-white hover:text-white-400 transition-colors">Contato</a>
 
-              {/* 🔴 Call to Action: Botão de Doação em destaque (Estilo Kabelo Rock - Oval) */}
+              {/* 3.2 🔴 Call to Action: Botão de Doação em destaque (Estilo Kabelo Rock - Oval) */}
               <motion.button
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
@@ -263,7 +263,7 @@ export default function App() {
                   y: mouseY,
                   backgroundColor: '#ed1e24', 
                   color: 'white', 
-                  padding: '8px 24px', 
+                  padding: '4px 16px', 
                   borderRadius: '9999px',
                   border: 'none', 
                   fontWeight: '900', 
@@ -279,7 +279,7 @@ export default function App() {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
               >
-                DOAR
+                DOE AGORA
               </motion.button>
             
             </nav>
