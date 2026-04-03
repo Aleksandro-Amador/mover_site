@@ -131,7 +131,7 @@ export default function App() {
   }, []);
 
   return (
-      <div id="page" className="min-h-screen bg-white">
+      <div id="page" className="min-h-screen bg-white relative">
         
         {/* 🟦 SEÇÃO 1.0: TOP BAR Azul - Barra de Contato Superior - Ajustado para inverter no Mobile */}
         <section className="relative z-[60] py-1" style={{ backgroundColor: '#1e428a' }}>
@@ -501,9 +501,30 @@ export default function App() {
         </section>
       </main>
 
-      {/* 🏁 6.0 RODAPÉ - Organização mobile empilha (col), no desktop separa (row) * */}
-      <footer className="bg-black py-4 px-1 border-t border-gray-900">
-        <div className="max-w-6xl mx-auto flex flex-col flex-row items-center justify-between gap-6 md:gap-0">
+      {/* 6.0 WHATSAPP FLUTUANTE (ESTILO JOINCHAT + ANIMAÇÕES CSS) - POSIÇÃO FIXA COM RECUO */}
+      <a 
+        href="https://wa.me/5511996744126" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="fixed right-5 flex items-center gap-3 z-[99999] group no-underline animate-[fadeInSlide_0.5s_ease]"
+        style={{ 
+          bottom: window.innerWidth < 768 ? '60px' : '20px' 
+        }}
+      >
+        {/* 6.1 Balão de Ajuda */}
+        <div className="bg-white text-[#333] py-2.5 px-4 rounded-[20px] shadow-lg text-sm font-medium transition-all duration-300 opacity-0 translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 whitespace-nowrap hidden md:block border border-gray-100">
+          Podemos te ajudar?
+        </div>
+
+        {/* 6.2 Ícone Circular */}
+        <div className="bg-[#25d366] text-white w-[60px] h-[60px] rounded-full flex justify-center items-center shadow-xl transition-all duration-300 group-hover:bg-[#128c7e] group-hover:scale-110">
+          <FaWhatsapp size={35} />
+        </div>
+      </a>
+
+      {/* 🏁 7.0 RODAPÉ - Organização mobile empilha (col), no desktop separa (row) * */}
+      <footer className="bg-black py-0.5 px-1 border-t border-gray-900">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0">
           
           {/* 📸 6.1 Logo (Lado Esquerdo) */}
           <img 
@@ -513,7 +534,7 @@ export default function App() {
             className="mx-auto md:mx-0"
           />
 
-          {/* 📦 6.2 Bloco de Texto (Lado Direito, mas centralizado internamente) */}
+          {/* 📦 7.2 Bloco de Texto (Lado Direito, mas centralizado internamente) */}
           <div className="flex flex-col items-center text-center leading-tight">
             
             {/* Nome Principal */}
@@ -535,24 +556,7 @@ export default function App() {
         </div>
       </footer>
 
-      {/*BLOCO: WHATSAPP FLUTUANTE (ESTILO JOINCHAT + ANIMAÇÕES CSS)*/}
-      <a 
-        href="https://wa.me/5511996744126" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="fixed bottom-5 right-5 flex items-center gap-3 z-[99999] group no-underline animate-[fadeInSlide_0.5s_ease]"
-      >
-        {/* Balão de Ajuda (Aparece no Hover) */}
-        <div className="bg-white text-[#333] py-2.5 px-4 rounded-[20px] shadow-lg text-sm font-medium transition-all duration-300 opacity-0 translate-x-5 group-hover:opacity-100 group-hover:translate-x-0 whitespace-nowrap hidden md:block border border-gray-100">
-          Podemos te ajudar?
-        </div>
-
-        {/* Ícone Circular Verde */}
-        <div className="bg-[#25d366] text-white w-[60px] h-[60px] rounded-full flex justify-center items-center shadow-xl transition-all duration-300 group-hover:bg-[#128c7e] group-hover:scale-110">
-          {/* SVG que você encontrou no View-Source (Mais bonito que o padrão) */}
-          <FaWhatsapp size={35} />
-        </div>
-      </a>
+      
 
     </div> // 🏁 FECHA A SEÇÃO GERAL - Fecha o id="page"
     ); // Fecha o return (
