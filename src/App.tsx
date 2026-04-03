@@ -228,13 +228,15 @@ export default function App() {
             <div className="flex flex-col items-center justify-center text-center text-[#1e428a] leading-tight md:border-l-2 md:border-gray-100 md:pl-6">
               <span 
                 style={{ 
-                  fontFamily: "'Satisfy', cursive", 
-                  fontSize: '18px', // Reduzi um pouco para ficar elegante
-                  fontWeight: '400',
+                  fontFamily: "'Alice', serif", 
+                  fontSize: '20px', 
+                  fontWeight: '400', // Sem negrito
+                  fontStyle: 'normal', // Sem itálico
                   color: '#1e428a',
-                  maxWidth: '280px',
-                  display: 'block',
-                  lineHeight: '1.4'
+                  letterSpacing: '1px',
+                  textTransform: 'none',
+                  maxWidth: '250px',
+                  display: 'block'
                 }}
               >
                 Movimento Organizacional Vencer, Educar e Realizar
