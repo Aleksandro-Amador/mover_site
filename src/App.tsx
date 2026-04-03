@@ -215,11 +215,11 @@ export default function App() {
                   filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" 
                 }}
               >
-                <span style={{ color: '#0459A7' }}>M</span>
+                <span style={{ color: '#1e428a' }}>M</span>
                 <span style={{ color: '#ed1e24' }}>O</span>
-                <span style={{ color: '#026745' }}>V</span>
-                <span style={{ color: '#fff100' }}>E</span>
-                <span style={{ color: '#666' }}>R</span>
+                <span style={{ color: '#008444' }}>V</span>
+                <span style={{ color: '#ffcc00' }}>E</span>
+                <span style={{ color: '#575756' }}>R</span>
               </span>
             </a>
           </div>  
