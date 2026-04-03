@@ -225,8 +225,9 @@ export default function App() {
           </div>  
 
             {/* 🎯 Bloco 2: Texto Explicativo (Lado Direito do Centro) */}
-            <div className="flex flex-col items-center justify-center text-center text-[#1e428a] leading-tight md:border-l-2 md:border-gray-100 md:pl-6">
+            <div className="flex flex-col items-center justify-center text-center text-[#1e428a] leading-tight md:border-l-2 md:border-gray-100 md:pl-8 md:ml-4">
               <span 
+                className="block w-full md:max-w-none whitespace-nowrap md:whitespace-normal"
                 style={{ 
                   fontFamily: "'Alice', serif", 
                   fontSize: '20px', 
@@ -235,8 +236,6 @@ export default function App() {
                   color: '#1e428a',
                   letterSpacing: '1px',
                   textTransform: 'none',
-                  maxWidth: '250px',
-                  display: 'block'
                 }}
               >
                 Movimento Organizacional Vencer, Educar e Realizar
