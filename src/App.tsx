@@ -105,33 +105,35 @@ function App() {
   return (
       <div id="page" className="min-h-screen bg-white">
         
-        {/* 🟦 SEÇÃO 1.0: TOP BAR (Barra de Contato Superior) 
-            Responsável por: Acesso rápido, Redes Sociais e Identidade Visual imediata. */}
+        {/* 🟦 SEÇÃO 1.0: TOP BAR (Barra de Contato Superior) Responsável por: Acesso rápido, Redes Sociais e Identidade Visual imediata. */}
         <section className="relative z-[60] py-2" style={{ backgroundColor: '#1e428a' }}>
           <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
             
             {/* 📞 Bloco de Contatos Diretos (E-mail e Telefone) */}
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
-              
-              {/* Item: E-mail com ícone Envelope */}
-              <span className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm">
-                <FaEnvelope size={14} />
-                <a href="mailto:moverhelipa@gmail.com" className="text-white hover:text-white no-underline">
-                  moverhelipa@gmail.com
-                </a>
-              </span>
 
-              {/* Divisor Visual (Barrinha vertical) */}
+            {/* Item: E-MAIL com Expansão */}
+            <a 
+              href="mailto:moverhelipa@gmail.com" 
+              className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm transition-all duration-300 hover:scale-105 hover:text-white group"
+              style={{ textDecoration: 'none' }}
+            >
+              <FaEnvelope size={14} className="group-hover:text-red-400 transition-colors" />
+              <span className="text-white">moverhelipa@gmail.com</span>
+            </a>
+
+            {/* Divisor Visual (Oculto no mobile) */}
               <span className="text-white opacity-50 hidden md:block">|</span>
 
-              {/* TELEFONE */}
-              <span className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm">
-                <FaPhoneAlt size={14} />
-                <a href="tel:5511996744126" className="text-white hover:text-white no-underline">
-                  (11) 99674-4126
-                </a>
-              </span>
-            </div>
+              {/* Item: TELEFONE com Expansão */}
+              <a 
+                href="tel:5511996744126" 
+                className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm transition-all duration-300 hover:scale-105 hover:text-white group"
+                style={{ textDecoration: 'none' }}
+              >
+                <FaPhoneAlt size={12} className="group-hover:text-green-400 transition-colors" />
+                <span className="text-white">(11) 99674-4126</span>
+              </a>
 
             {/* 📱 Bloco de Redes Sociais (Ícones com degradê oficial) */}
             <div className="flex items-center gap-3">
