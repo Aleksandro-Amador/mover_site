@@ -108,15 +108,17 @@ function App() {
         {/* 🟦 SEÇÃO 1.0: TOP BAR (Barra de Contato Superior) 
             Responsável por: Acesso rápido, Redes Sociais e Identidade Visual imediata. */}
         <section className="relative z-[60] py-2" style={{ backgroundColor: '#1e428a' }}>
-          <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">   
-
+          <div className="max-w-4xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-2">
+            
             {/* 📞 Bloco de Contatos Diretos (E-mail e Telefone) */}
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-6">
               
               {/* Item: E-mail com ícone Envelope */}
               <span className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm">
-                <FaEnvelope size={1} />
-                <a href="mailto:moverhelipa@gmail.com" className="text-white">moverhelipa@gmail.com</a>
+                <FaEnvelope size={14} />
+                <a href="mailto:moverhelipa@gmail.com" className="text-white hover:text-white no-underline">
+                  moverhelipa@gmail.com
+                </a>
               </span>
 
               {/* Divisor Visual (Barrinha vertical) */}
@@ -125,7 +127,9 @@ function App() {
               {/* TELEFONE */}
               <span className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm">
                 <FaPhoneAlt size={14} />
-                <a href="tel:5511996744126" className="text-white">(11) 99674-4126</a>
+                <a href="tel:5511996744126" className="text-white hover:text-white no-underline">
+                  (11) 99674-4126
+                </a>
               </span>
             </div>
 
