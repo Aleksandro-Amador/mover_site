@@ -40,8 +40,8 @@ export default function App() {
   const y = useMotionValue(0);
 
   // Aqui criamos o mouseX e mouseY que o botão vai ler
-  const mouseX = useSpring(x, { stiffness: 150, damping: 15 });
-  const mouseY = useSpring(y, { stiffness: 150, damping: 15 });
+  const mouseX = useSpring(x, { stiffness: 300, damping: 20 });
+  const mouseY = useSpring(y, { stiffness: 300, damping: 20 });
 
   // 3. A FUNÇÃO handleMouseMove (Também antes do return)
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -49,8 +49,9 @@ export default function App() {
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
     
-    x.set(e.clientX - centerX);
-    y.set(e.clientY - centerY);
+    // Aumentamos para o movimento ser mais visível no site
+    x.set(e.clientX - centerX); // Ex.: * 0.4); // O 0.4 dá uma amplitude maior
+    y.set(e.clientY - centerY); // Ex.: * 0.4);
   };
 
   const handleMouseLeave = () => {
