@@ -1,3 +1,4 @@
+// 1. AS IMPORTAÇÕES (Sempre no topo)
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'motion/react';
 import { FaPhoneAlt, FaTimes,  } from 'react-icons/fa';
@@ -10,7 +11,7 @@ import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.png
 // const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 // const model = "gemini-3-flash-preview";
 
-// 1. Defina as imagens do carrossel fora do componente ou no topo dele
+// 2. AS IMAGENS
 const carouselImages = [
   "https://moverhelipa.org.br/wp-content/uploads/2023/02/MagicEraser_230118_195138-1-768x543.png",
   "https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0008.jpg",
@@ -19,14 +20,17 @@ const carouselImages = [
   "https://moverhelipa.org.br/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-08-at-00.32.57.jpeg"
 ];
 
-// No início do seu App(), adicione o estado do carrossel se ainda não tiver:
-const [currentImage, setCurrentImage] = useState(0);
-useEffect(() => {
-  const timer = setInterval(() => {
-    setCurrentImage((prev) => (prev + 1) % carouselImages.length);
-  }, 6000);
-  return () => clearInterval(timer);
-}, []);
+// 3. ABERTURA DA FUNÇÃO
+export default function App() { 
+  // 🎯 AGORA SIM: Dentro do componente, no topo.
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % carouselImages.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
 
 interface Message {
   id: string;
