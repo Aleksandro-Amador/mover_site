@@ -354,18 +354,36 @@ export default function App() {
           </div>
         </section>
 
-        {/* Sobre Nós */}
+        {/* Sobre Nós - Versão Corrigida por Kabelo Rock */}
         <section id="sobre-nos" className="py-20 px-4 bg-white">
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-4xl font-bold mb-8 border-l-4 border-blue-600 pl-4">Sobre nós</h2>
-              <div className="space-y-4 text-gray-700">
-                <p>O <strong>Movimento Organizacional Vencer, Educar e Realizar – MOVER</strong> é uma organização sem fins lucrativos, sediada em Heliópolis.</p>
-                <p>Nossa missão é enfrentar os problemas da comunidade através da educação, cultura e esportes.</p>
-              </div>
+              
+              <div className="space-y-4 text-gray-700 text-justify">
+                <p>
+                  O <strong>Movimento Organizacional Vencer, Educar e Realizar – MOVER</strong> é uma organização da sociedade civil, sem fins lucrativos, fundada em 17 de outubro de 2008, com sede em São Paulo, nos entornos da maior favela da cidade: <strong>Heliópolis</strong>.
+                </p>
+                <p>
+                  Desde o início, nossa missão é <strong>enfrentar os problemas vividos pela comunidade</strong>, tendo como meta alcançar a democracia, solidariedade, respeito, educação, cultura, esporte, saúde, defesa dos direitos humanos e a criação de políticas públicas que enfrentem, de forma direta, a miséria e a desinformação.
+                </p>
+                <p>
+                  Nossa história é feita por <strong>lideranças nascidas e criadas dentro do Helipa</strong>, que conhecem de perto os desafios e, principalmente, as potências da favela de Heliópolis. Apesar de ter tido seu berço no desejo de incentivar o esporte, foi ao se deparar com a dor cruel da fome que o <strong>impulso visceral por fazer acontecer ultrapassou barreiras</strong>.
+                </p>
+                <p>
+                  Em 2019, com a chegada da pandemia de <strong>COVID-19</strong>, iniciamos em um espaço de <strong>1m x 2m</strong>, sob viadutos nos arredores da comunidade, uma produção voluntária de quase mil refeições por dia. Com muita luta, assim começamos nossa caminhada no <strong>combate à fome</strong>.
+                </p>
+              </div> {/* Fecha space-y-4 corretamente */}
+            </div> {/* Fecha a coluna do texto */}
+
+            <div className="relative">
+              <img 
+                src="https://moverhelipa.org.br/wp-content/uploads/2023/02/MagicEraser_230118_195138-1-768x543.png" 
+                alt="Sobre nós" 
+                className="rounded-lg shadow-xl w-full h-auto" 
+              />
             </div>
-            <img src="https://moverhelipa.org.br/wp-content/uploads/2023/02/MagicEraser_230118_195138-1-768x543.png" alt="Sobre nós" className="rounded-lg shadow-xl" />
-          </div>
+          </div> {/* Fecha a grid */}
         </section>
 
         {/* Impactos */}
@@ -555,8 +573,6 @@ export default function App() {
           </div>
         </div>
       </footer>
-
-      
 
     </div> // 🏁 FECHA A SEÇÃO GERAL - Fecha o id="page"
     ); // Fecha o return (
