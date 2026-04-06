@@ -28,6 +28,13 @@ const carouselImages = [
   "https://moverhelipa.org.br/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-08-at-00.32.57.jpeg"
 ];
 
+// 🆕 2.2 AS IMAGENS DO SEGUNDO CARROSSEL (ZIGUE-ZAGUE)
+const secondCarouselImages = [
+  // Certifique-se de usar o caminho correto da sua pasta assets, ex:
+  "./src/assets/images/image_20_site_WhatsApp-Image-2023-01-31-at-13.11.43-1.jpeg",
+  "./src/assets/images/image_19_site_WhatsApp-Image-2025-06-17-at-19.25.45.jpeg"
+];
+
 // 🏗️ COMPONENTE REUTILIZÁVEL: LogoCatavento
 // Centralizamos a lógica aqui. Se mudar o logo, muda em todo lugar.
 const LogoCatavento = ({ comBrilho = false, tamanho = "h-16" }) => (
@@ -52,6 +59,16 @@ export default function App() {
     const timer = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % carouselImages.length);
     }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // 🆕 🎯 ESTADO E EFEITO DO SEGUNDO CARROSSEL
+  const [currentSecondImage, setCurrentSecondImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSecondImage((prev) => (prev + 1) % secondCarouselImages.length);
+    }, 6000); // Exatamente os mesmos 6 segundos
     return () => clearInterval(timer);
   }, []);
 
@@ -328,17 +345,57 @@ export default function App() {
       <main id="content" className="site-main">
         
         {/* Hero Section */}
+        {/* 🚀 Hero Section com Carrossel de Fundo (Ajustado Kabelo Rock) */}
         <section id="inicio" className="relative h-[600px] flex items-center justify-center overflow-hidden text-white">
-          <div className="absolute inset-0 bg-black/40 z-10"></div>
-          <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: 'url(https://moverhelipa.org.br/wp-content/uploads/2023/02/MagicEraser_230118_195138-1.png)' }}></div>
+          
+          {/* 🖼️ Camada do Carrossel de Fundo */}
+          <div className="absolute inset-0 z-0">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentSecondImage} // Usando o estado do segundo carrossel (das 2 imagens)
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 2, ease: "easeInOut" }}
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ 
+                  backgroundImage: `url(${secondCarouselImages[currentSecondImage]})` 
+                }}
+              />
+            </AnimatePresence>
+            {/* Overlay Escuro para dar leitura ao texto */}
+            <div className="absolute inset-0 bg-black/50 z-10"></div>
+          </div>
+
+          {/* ✍️ Conteúdo Fixo (Por cima do carrossel) */}
           <div className="relative z-20 text-center px-4">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">
-              <span style={{ color: '#0459A7' }}>M</span><span style={{ color: '#ed1e24' }}>o</span><span style={{ color: '#026745' }}>v</span><span style={{ color: '#fff100' }}>e</span><span style={{ color: '#666' }}>r</span> <span style={{ color: '#0459A7' }}>H</span><span style={{ color: '#ed1e24' }}>e</span><span style={{ color: '#026745' }}>l</span><span style={{ color: '#fff100' }}>i</span><span style={{ color: '#666' }}>p</span><span style={{ color: '#0459A7' }}>a</span>
+              {/* Trazendo o estilo da linha 248-263 para cá */}
+              <span 
+                className="italic tracking-tighter leading-none"
+                style={{ 
+                  fontFamily: "'BookmanSwash', serif", 
+                  filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.3))" 
+                }}
+              >
+                <span style={{ color: '#0159A1' }}>M</span>
+                <span style={{ color: '#8B3035' }}>O</span>
+                <span style={{ color: '#0C5F43' }}>V</span>
+                <span style={{ color: '#CFA922' }}>E</span>
+                <span style={{ color: '#575756' }}>R</span>
+              </span>
             </h1>
+            
             <p className="text-xl md:text-3xl max-w-4xl mx-auto mb-10 font-medium leading-tight drop-shadow-lg">
               Juntos podemos tornar sonhos em realidade, movendo e transformando vidas nós construímos o futuro.
             </p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScHZSjy2ZPUAeHFOlJxGLX9bFGo0Rj1UBTN8QPfSGvYJNpwzg/viewform" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-gray-900 px-12 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition shadow-2xl border-2 border-white">
+            
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLScHZSjy2ZPUAeHFOlJxGLX9bFGo0Rj1UBTN8QPfSGvYJNpwzg/viewform" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-block bg-white text-gray-900 px-12 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition shadow-2xl border-2 border-white"
+            >
               Inscreva-se
             </a>
           </div>
