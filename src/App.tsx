@@ -10,6 +10,24 @@ import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.png
 // const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 // const model = "gemini-3-flash-preview";
 
+// 1. Defina as imagens do carrossel fora do componente ou no topo dele
+const carouselImages = [
+  "https://moverhelipa.org.br/wp-content/uploads/2023/02/MagicEraser_230118_195138-1-768x543.png",
+  "https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0008.jpg",
+  "https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0011-scaled.jpg",
+  "https://moverhelipa.org.br/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-17-at-19.25.45.webp",
+  "https://moverhelipa.org.br/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-08-at-00.32.57.jpeg"
+];
+
+// No início do seu App(), adicione o estado do carrossel se ainda não tiver:
+const [currentImage, setCurrentImage] = useState(0);
+useEffect(() => {
+  const timer = setInterval(() => {
+    setCurrentImage((prev) => (prev + 1) % carouselImages.length);
+  }, 6000);
+  return () => clearInterval(timer);
+}, []);
+
 interface Message {
   id: string;
   text: string;
@@ -355,35 +373,56 @@ export default function App() {
         </section>
 
         {/* Sobre Nós - Versão Corrigida por Kabelo Rock */}
-        <section id="sobre-nos" className="py-20 px-4 bg-white">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold mb-8 border-l-4 border-blue-600 pl-4">Sobre nós</h2>
-              
-              <div className="space-y-4 text-gray-700 text-justify">
-                <p>
-                  O <strong>Movimento Organizacional Vencer, Educar e Realizar – MOVER</strong> é uma organização da sociedade civil, sem fins lucrativos, fundada em 17 de outubro de 2008, com sede em São Paulo, nos entornos da maior favela da cidade: <strong>Heliópolis</strong>.
-                </p>
-                <p>
-                  Desde o início, nossa missão é <strong>enfrentar os problemas vividos pela comunidade</strong>, tendo como meta alcançar a democracia, solidariedade, respeito, educação, cultura, esporte, saúde, defesa dos direitos humanos e a criação de políticas públicas que enfrentem, de forma direta, a miséria e a desinformação.
-                </p>
-                <p>
-                  Nossa história é feita por <strong>lideranças nascidas e criadas dentro do Helipa</strong>, que conhecem de perto os desafios e, principalmente, as potências da favela de Heliópolis. Apesar de ter tido seu berço no desejo de incentivar o esporte, foi ao se deparar com a dor cruel da fome que o <strong>impulso visceral por fazer acontecer ultrapassou barreiras</strong>.
-                </p>
-                <p>
-                  Em 2019, com a chegada da pandemia de <strong>COVID-19</strong>, iniciamos em um espaço de <strong>1m x 2m</strong>, sob viadutos nos arredores da comunidade, uma produção voluntária de quase mil refeições por dia. Com muita luta, assim começamos nossa caminhada no <strong>combate à fome</strong>.
-                </p>
-              </div> {/* Fecha space-y-4 corretamente */}
-            </div> {/* Fecha a coluna do texto */}
+        <section id="sobre-nos" className="py-20 px-4 bg-white overflow-hidden">
+          <div className="max-w-6xl mx-auto space-y-24">
+            
+            <h2 className="text-4xl font-bold mb-12 border-l-4 border-blue-600 pl-4 uppercase">Sobre nós</h2>
 
-            <div className="relative">
-              <img 
-                src="https://moverhelipa.org.br/wp-content/uploads/2023/02/MagicEraser_230118_195138-1-768x543.png" 
-                alt="Sobre nós" 
-                className="rounded-lg shadow-xl w-full h-auto" 
-              />
+            {/* ⬅️ GRID 1: Texto à Esquerda | Carrossel à Direita */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-4 text-justify" style={{ fontFamily: '"Roboto", sans-serif', fontSize: '17px', fontWeight: 300, lineHeight: '1.8', color: '#54595f' }}>
+                <p>O <strong>Movimento Organizacional Vencer, Educar e Realizar – MOVER</strong> é uma organização da sociedade civil... entorno da maior favela da cidade: <strong>Heliópolis</strong>.</p>
+                <p>Desde o início, nossa missão é <strong>enfrentar os problemas vividos pela comunidade</strong>... criação de <strong>políticas públicas que enfrentem, de forma direta, a miséria e a desinformação.</strong></p>
+                <p>Nossa história é feita por <strong>lideranças nascidas e criadas dentro de Heliópolis</strong>... dor enfadonha e cruel da fome que o <strong>impulso visceral por fazer acontecer ultrapassou barreiras.</strong></p>
+                <p>Em 2019... equipe voluntária iniciou a produção de <strong>quase mil refeições por dia</strong>. Com muita luta, assim começamos nossa caminhada no <strong>combate à fome.</strong></p>
+              </div>
+
+              {/* CARROSSEL COM EFEITO FADE */}
+              <div className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentImage}
+                    src={carouselImages[currentImage]}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 2, ease: "easeInOut" }} // 2 segundos de transição suave
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </AnimatePresence>
+              </div>
             </div>
-          </div> {/* Fecha a grid */}
+
+            {/* ➡️ GRID 2: Imagem à Esquerda | Texto à Direita */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              {/* Imagem de Destaque da Atuação */}
+              <div className="order-2 md:order-1 rounded-2xl overflow-hidden shadow-2xl h-[480px]">
+                <img 
+                  src="https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0011-scaled.jpg" 
+                  alt="Atuação MOVER" 
+                  className="w-full h-full object-cover" 
+                />
+              </div>
+
+              <div className="order-1 md:order-2 space-y-4 text-justify" style={{ fontFamily: '"Roboto", sans-serif', fontSize: '17px', fontWeight: 300, lineHeight: '1.8', color: '#54595f' }}>
+                <p>Hoje, seguimos atuando diretamente no <strong>enfrentamento da insegurança alimentar</strong>, por meio do programa <strong>Rede Cozinha Escola</strong>... são servidas, em média, <strong>400 refeições por dia</strong>.</p>
+                <p>Também atuamos na <strong>geração de renda</strong>... destaque para o nosso <strong>Curso de Alta Gastronomia</strong>... <strong>restaurantes de alto padrão gastronômico.</strong></p>
+                <p>Atuamos como <strong>entidade gestora do Programa Cozinha Solidária</strong>... acompanhando <strong>mais de 30 cozinhas</strong>... ajudando a <strong>engajar e impulsionar outros espaços de solidariedade e combate à fome.</strong></p>
+                <p className="italic font-medium text-blue-800 pt-4 border-t border-gray-100 mt-6">Nossa essência é essa: transformar realidades, criando oportunidades e garantindo direitos.</p>
+              </div>
+            </div>
+
+          </div>
         </section>
 
         {/* Impactos */}
