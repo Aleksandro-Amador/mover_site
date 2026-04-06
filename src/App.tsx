@@ -11,7 +11,15 @@ import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.png
 // const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 // const model = "gemini-3-flash-preview";
 
-// 2. AS IMAGENS
+// 2.0 DEFINIÇÕES GLOBAIS (FORA DA FUNÇÃO APP)
+interface Message {
+  id: string;
+  text: string;
+  sender: 'user' | 'bot';
+  timestamp: Date;
+}
+
+// 2.1 AS IMAGENS
 const carouselImages = [
   "https://moverhelipa.org.br/wp-content/uploads/2023/02/MagicEraser_230118_195138-1-768x543.png",
   "https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0008.jpg",
@@ -19,25 +27,6 @@ const carouselImages = [
   "https://moverhelipa.org.br/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-17-at-19.25.45.webp",
   "https://moverhelipa.org.br/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-08-at-00.32.57.jpeg"
 ];
-
-// 3. ABERTURA DA FUNÇÃO
-export default function App() { 
-  // 🎯 AGORA SIM: Dentro do componente, no topo.
-  const [currentImage, setCurrentImage] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % carouselImages.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
-
-interface Message {
-  id: string;
-  text: string;
-  sender: 'user' | 'bot';
-  timestamp: Date;
-}
 
 // 🏗️ COMPONENTE REUTILIZÁVEL: LogoCatavento
 // Centralizamos a lógica aqui. Se mudar o logo, muda em todo lugar.
@@ -54,10 +43,37 @@ const LogoCatavento = ({ comBrilho = false, tamanho = "h-16" }) => (
   </div>
 );
 
-// 1. Lógica do Ímã (mouseX, mouseY...)
-export default function App() {
-  
-  // 2. DEFINIÇÃO DAS VARIÁVEIS (Onde o vermelho deve sumir)
+// 3. ABERTURA DA FUNÇÃO
+export default function App() { 
+  // 🎯 AGORA SIM: Dentro do componente, no topo.
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % carouselImages.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
+  // 2. States do Chat (isOpen, messages...)
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState<Message[]>([
+    {
+      id: '1',
+      text: 'Olá! Sou o assistente virtual da MOVER Helipa. Como posso te ajudar hoje?',
+      sender: 'bot',
+      timestamp: new Date()
+    }
+  ]);
+  const [inputValue, setInputValue] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  // 1. Lógica do Ímã (mouseX, mouseY...)  e DEFINIÇÃO DAS VARIÁVEIS (Onde o vermelho deve sumir)
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -79,24 +95,6 @@ export default function App() {
   const handleMouseLeave = () => {
     x.set(0);
     y.set(0);
-  };
-
-  // 2. States do Chat (isOpen, messages...)
-  const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      id: '1',
-      text: 'Olá! Sou o assistente virtual da MOVER Helipa. Como posso te ajudar hoje?',
-      sender: 'bot',
-      timestamp: new Date()
-    }
-  ]);
-  const [inputValue, setInputValue] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
-
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   // 3. Funções de Apoio (scrollToBottom...)
@@ -133,7 +131,7 @@ export default function App() {
     } finally {
       setIsTyping(false);
     }
-  }; // Verifique se esta chave fecha a função corretamente
+  };
 
   useEffect(() => {
     // Simulação básica do comportamento do Elementor/jQuery se necessário
