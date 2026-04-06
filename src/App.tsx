@@ -5,6 +5,11 @@ import { FaPhoneAlt, FaTimes,  } from 'react-icons/fa';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
 import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.png';
 
+// 🚀 NOVOS IMPORTS
+import { TbTargetArrow } from "react-icons/tb"; // Missão
+import { FaEye } from "react-icons/fa";          // Visão
+import { GiScales } from "react-icons/gi";       // Valores
+
 // import { GoogleGenAI } from "@google/genai";
 
 // Inicialização do Gemini - Próximo project - criar chat IA
@@ -282,18 +287,30 @@ export default function App() {
         </header>
 
         {/* 🟦 SEÇÃO 3.0 FAIXA AZUL DO MENU (Navegação Isolada) */}
-        <section className="relative w-full py-1.5 shadow-inner sticky top-0 z-50" style={{ backgroundColor: '#1e428a' }}>
+        <section 
+          className="relative w-full py-1.5 shadow2x1 sticky top-0 z-50" 
+          style={{ 
+            backgroundColor: '#1e428a',
+            borderBottom: '1px solid rgba(255,255,255,0.1)'
+          }}>
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
 
             {/* 3.1 Menu com Links e o Botão 'DOAR' */}
             <nav className="flex flex-wrap justify-center gap-4 md:gap-12 items-center font-bold uppercase text-[10px] md:text-xs">
+              <a 
+                href="#início" 
+                className="text-white hover:brightness-125 transition-all"
+                style={{ color: 'white', textDecoration: 'none' }}
+                >
+                  Incío
+                </a>
               <a 
                 href="#sobre-nos" 
                 className="text-white hover:brightness-125 transition-all"
                 style={{ color: 'white', textDecoration: 'none' }}
                 >
                   Sobre nós
-                </a>
+                </a>  
               <a
                 href="#projetos" 
                 className="text-white hover:brightness-125 transition-all"
@@ -301,6 +318,13 @@ export default function App() {
                 >
                   Projetos
                 </a>
+              <a 
+                href="#impactos" 
+                className="text-white hover:brightness-125 transition-all"
+                style={{ color: 'white', textDecoration: 'none' }}
+                >
+                  Impactos
+                </a>  
               <a 
                 href="#contato" 
                 className="text-white hover:brightness-125 transition-all"
@@ -341,7 +365,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 🏁 CONTEÚDO PRINCIPAL DO SITE */}
+      {/* 🏁 CONTEÚDO PRINCIPAL DO SITE */}
       <main id="content" className="site-main">
         
         {/* Hero Section */}
@@ -401,36 +425,6 @@ export default function App() {
           </div>
         </section>
 
-        {/* Seção Estilo Imagem 3 (Cata-vento Animado) */}
-        <section className="relative py-24 bg-gray-50 overflow-hidden">
-          <div className="absolute inset-0 opacity-5 pointer-events-none flex items-center justify-center select-none">
-            <span className="text-[20vw] font-black rotate-[-15deg] whitespace-nowrap text-gray-900">MOVER HELIPA</span>
-          </div>
-          <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
-            <div className="mb-8 flex justify-center">
-            
-              {/* Logo 1.1 giratório da Mover */}
-              <div className="relative w-32 h-32 animate-spin-slow">
-                {/* O Brilho (Aura) */}
-                <div className="absolute inset-0 bg-[#0459A7] rounded-full opacity-20 blur-xl"></div>
-                
-                {/* O Logo Local (que você baixou) */}
-                <img
-                  src={logo_mover_catavento} // Usando a variável que você importou lá no topo
-                  alt="Cata-vento" 
-                  className="w-full h-full object-contain" 
-                />
-              </div>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6 leading-tight">
-              Juntos podemos tornar sonhos em realidade, movendo e transformando vidas nós construímos o futuro.
-            </h2>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScHZSjy2ZPUAeHFOlJxGLX9bFGo0Rj1UBTN8QPfSGvYJNpwzg/viewform" target="_blank" rel="noopener noreferrer" className="text-[#ed1e24] font-black text-2xl hover:underline decoration-4 underline-offset-8">
-              Inscreva-se
-            </a>
-          </div>
-        </section>
-
         {/* Sobre Nós - Versão Corrigida por Kabelo Rock */}
         <section id="sobre-nos" className="py-20 px-4 bg-white overflow-hidden">
           <div className="max-w-6xl mx-auto space-y-24">
@@ -484,12 +478,69 @@ export default function App() {
           </div>
         </section>
 
-        {/* Impactos */}
-        <section id="galeria" className="py-20 px-4 bg-gray-50 text-center">
-          <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8">
-            <div><div className="text-4xl font-bold text-blue-600">400.000+</div><p>Marmitas entregues</p></div>
-            <div><div className="text-4xl font-bold text-blue-600">25.000+</div><p>Cestas básicas</p></div>
-            <div><div className="text-4xl font-bold text-blue-600">30+</div><p>Cozinhas acompanhadas</p></div>
+        {/* 📦 SEÇÃO: MISSÃO, VISÃO E VALORES */}
+        <section className="py-20 bg-gray-50">
+          <div className="max-w-6xl mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              
+              {/* 🎯 CARD: MISSÃO */}
+              <div 
+                className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden"
+                style={{
+                  border: '1px solid #e2e8f0',
+                  boxShadow: 'inset 0 0 25px 2px rgba(1, 89, 161, 0.15)'
+                }}
+              >
+                <div className="mb-6 p-4 bg-blue-50 rounded-full text-[#0159A1]">
+                  <TbTargetArrow size={48} />
+                </div>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: '#0159A1' }}>Missão</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Atuar com ações alternativas para efetivar a garantia de direitos na área de política pública, direitos humanos, justiça social, igualdade de gêneros e na melhoria da qualidade de vida das comunidades carentes e sua população de onde estiver atuando.
+                  </p>
+              </div>
+
+              {/* 👁️ CARD: VISÃO */}
+              <div 
+                className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden"
+                style={{
+                  border: '1px solid #e2e8f0',
+                  boxShadow: 'inset 0 0 25px 2px rgba(1, 89, 161, 0.15)'
+                }}
+              >
+                <div className="mb-6 p-4 bg-blue-50 rounded-full text-[#0159A1]">
+                  <FaEye size={48} />
+                </div>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: '#0159A1' }}>Visão</h3>
+                <p className="text-gray-600 leading-relaxed text-sm">
+                  Transformar as comunidades que atua por meio de parcerias que visem a construção de uma sociedade sólida e pacífica.
+                  </p>
+              </div>
+
+              {/* ⚖️ CARD: VALORES */}
+              <div 
+                className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden"
+                style={{
+                  border: '1px solid #e2e8f0',
+                  boxShadow: 'inset 0 0 25px 2px rgba(1, 89, 161, 0.15)'
+                }}
+              >
+                <div className="mb-6 p-4 bg-blue-50 rounded-full text-[#0159A1]">
+                  <GiScales size={48} />
+                </div>
+                <h3 className="text-2xl font-bold mb-4" style={{ color: '#0159A1' }}>Valores</h3>
+                
+                {/* Lista de Tópicos Centralizada */}
+                <ul className="text-gray-600 space-y-2 text-sm font-medium">
+                  <li className="flex items-left justify-left gap-2">🔹 Respeito</li>
+                  <li className="flex items-left justify-left gap-2">🔹 Humildade</li>
+                  <li className="flex items-left justify-left gap-2">🔹 Igualdade</li>
+                  <li className="flex items-left justify-left gap-2">🔹 Ética</li>
+                  <li className="flex items-left justify-left gap-2">🔹 Transparência</li>
+                </ul>
+              </div>
+
+            </div>
           </div>
         </section>
 
@@ -638,9 +689,99 @@ export default function App() {
         </div>
       </a>
 
+      {/* 📦 SEÇÃO: MISSÃO + MAPA COM BORDAS DEGRADÊ (ESTILO KABELO ROCK) */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-items-center">
+            
+            {/* 🟦 --- CAIXA 1: MISSÃO --- 🟦 */}
+            {/* 1. Div Pai (Envelope com Degradê e Shadow) */}
+            <div 
+              className="bg-white rounded-3xl p-8 flex flex-col justify-between w-full max-w-xl relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(to right, #ffffff, #ffffff)', // Fundo branco puro
+                border: '1px solid #e2e8f0', // Borda fininha de acabamento
+                boxShadow: 'inset 0 0 25px 5px #0159A1' // ⚡ O segredo: sombra azul PARA DENTRO 
+              }}
+            >
+              {/* 2. Div Branca Interna (Conteúdo) */}
+              <div className="bg-white rounded-[22px] p-8 flex flex-col justify-between w-full h-full">
+                <div>
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#0159A1' }}>
+                    Nossa Missão continua com você.
+                  </h3>
+                  <p className="text-gray-600 text-lg leading-relaxed mb-6">
+                    O Movimento Mover Helipa transforma realidades através da educação e do esporte. 
+                    Seja parte dessa mudança e ajude a construir o futuro da nossa comunidade.
+                  </p>    
+                </div>
+                <div className="flex justify-center lg:justify-start">
+                  <LogoCatavento tamanho="h-20" />
+                </div>
+
+              </div>
+            </div>
+
+            {/* --- COLUNA DA DIREITA: MAPA + NOVA CAIXINHA --- */}
+            <div className="flex flex-col gap-0 w-full max-w-xl">
+              
+              {/* 🟦 CAIXA DO MAPA (Sua caixa atual) */}
+              <div 
+              className="bg-white rounded-t-3xl rounded-b-none p-8 flex flex-col justify-between w-full max-w-xl relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(to right, #ffffff, #ffffff)', // Fundo branco puro
+                border: '1px solid #e2e8f0', // Borda fininha de acabamento
+                boxShadow: 'inset 0 0 25px 5px #0159A1' // ⚡ O segredo: sombra azul PARA DENTRO 
+              }}
+            >
+                {/* MAPA */}
+                <div className="h-[300px] grayscale-[15%] hover:grayscale-0 transition-all duration-700">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.8235610816823!2d-46.5912444!3d-23.610667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b4080ba8739%3A0x62ad0e4b0f9d732a!2sEstr.%20das%20L%C3%A1grimas%2C%20337%20-%20Vila%20Heliopolis%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004232-000!5e0!3m2!1spt-BR!2sbr!4v1711987000000!5m2!1spt-BR!2sbr" 
+                    width="100%" 
+                    height="100%" 
+                    style={{ border: 0 }} 
+                    allowFullScreen 
+                    loading="lazy" 
+                    title="Localização MOVER Heliópolis"
+                  ></iframe>
+
+                </div>
+              </div>
+
+              {/* 🟦 CAIXA INFO (Sua caixa atual) */}
+              <div 
+              className="bg-white rounded-b-3xl rounded-t-none p-4 flex flex-col justify-between w-full max-w-xl relative overflow-hidden -mt-[1px]"
+              style={{
+                background: 'linear-gradient(to right, #ffffff, #ffffff)', // Fundo branco puro
+                border: '1px solid #e2e8f0', // Borda fininha de acabamento
+                boxShadow: 'inset 0 0 25px 5px #0159A1' // ⚡ O segredo: sombra azul PARA DENTRO 
+              }}
+            >
+                <div className="flex items-baseline ml-4 -mt-2">
+                  <h3 className="text-xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+                    Nossa Sede
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
+                    📍 Estrada das Lágrimas, 337 - São Paulo - SP, 04232-000
+                  </p>
+                  <p className="text-sm text-gray-700 m-0 p-0 leading-none">
+                    📞 (11) 99674-4126
+                  </p>
+                </div>
+              </div>
+
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
       {/* 🏁 7.0 RODAPÉ - Organização mobile empilha (col), no desktop separa (row) * */}
       <footer className="bg-black py-0.5 px-1 border-t border-gray-900">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 md:gap-0">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
           
           {/* 📸 6.1 Logo (Lado Esquerdo) */}
           <img 
