@@ -5,21 +5,24 @@ import { FaPhoneAlt, FaTimes,  } from 'react-icons/fa';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
 
 // 1. Imagens para o Primeiro Carrossel (Sobre Nós)
-import img_21_site from './assets/images/image_21_site_MagicEraser_230118_195138-1-768x543.jpeg';
-import img_11_site from './assets/images/image_11_site_IMG-20241029-WA0008.jpg';
-import img_7_site from './assets/images/image_7_site_IMG-20241023-WA0011-scaled.jpg';
+import img_20_site from './assets/images/image_20_site_WhatsApp-Image-2023-01-31-at-13.11.43-1.jpeg';
 import img_19_site from './assets/images/image_19_site_WhatsApp-Image-2025-06-17-at-19.25.45.jpeg';
-import img_2_site from './assets/images/image_2_site_WhatsApp-Image-2023-03-08-at-00.32.57.jpeg';
 
 // 2. Imagens para o Segundo Carrossel (Hero/Início)
-import img_20_site from './assets/images/image_20_site_WhatsApp-Image-2023-01-31-at-13.11.43-1.jpeg';
+import img_10_site from './assets/images/image_10_site_IMG-20241029-WA0006.jpg';
+import img_11_site from './assets/images/image_11_site_IMG-20241029-WA0008.jpg';
+import img_7_site from './assets/images/image_7_site_IMG-20241023-WA0011-scaled.jpg';
 
-// 3. Logos (Pasta logos)
+// 3. Imagens para o Terceiro Carrossel (Hero/Início)
+import img_18_site from './assets/images/image_18_site_IMG-20241029-WA0010.jpg';
+import img_2_site from './assets/images/image_2_site_WhatsApp-Image-2023-03-08-at-00.32.57.jpeg';
+
+// 4. Logos (Pasta logos)
 import logo_1_site from './assets/logos/logo_1_site_mover_helipa.png';
 import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.png';
 
 
-// 🚀 NOVOS IMPORTS
+// 5. 🚀 NOVOS IMPORTS
 import { TbTargetArrow } from "react-icons/tb"; // Missão
 import { FaEye } from "react-icons/fa";          // Visão
 import { GiScales } from "react-icons/gi";       // Valores
@@ -40,17 +43,21 @@ interface Message {
 
 // 2.1 AS IMAGENS DO PRIMEIRO CARROSSEL (FADE)
 const primarycarouselImages = [
-  img_21_site,
-  img_11_site,
-  img_7_site,
-  img_19_site,
-  img_2_site
+  img_20_site,
+  img_19_site
 ];
 
 // 🆕 2.2 AS IMAGENS DO SEGUNDO CARROSSEL (ZIGUE-ZAGUE)
 const secondCarouselImages = [
-  img_20_site,
-  img_19_site 
+  img_10_site,
+  img_11_site,
+  img_7_site  
+];
+
+// 🆕 2.3 AS IMAGENS DO SEGUNDO CARROSSEL (ZIGUE-ZAGUE)
+const thirdCarouselImages = [
+  img_18_site,
+  img_2_site 
 ];
 
 // 🏗️ COMPONENTE REUTILIZÁVEL: LogoCatavento
@@ -70,25 +77,32 @@ const LogoCatavento = ({ comBrilho = false, tamanho = "h-16" }) => (
 
 // 3. ABERTURA DA FUNÇÃO
 export default function App() { 
-  // 🎯 AGORA SIM: Dentro do componente, no topo.
-  const [currentImage, setCurrentImage] = useState(0);
+  // 🎯 1. CONTADOR DO CARROSSEL PRINCIPAL (PRIMARY)
+const [currentImage1, setCurrentImage1] = useState(0);
+useEffect(() => {
+  const timer = setInterval(() => {
+    setCurrentImage1((prev) => (prev + 1) % primarycarouselImages.length);
+  }, 6000);
+  return () => clearInterval(timer);
+}, []);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % primarycarouselImages.length);
-    }, 6000);
-    return () => clearInterval(timer);
-  }, []);
+// 🎯 2. CONTADOR DO SEGUNDO CARROSSEL (SECOND)
+const [currentImage2, setCurrentImage2] = useState(0);
+useEffect(() => {
+  const timer = setInterval(() => {
+    setCurrentImage2((prev) => (prev + 1) % secondCarouselImages.length);
+  }, 6000);
+  return () => clearInterval(timer);
+}, []);
 
-  // 🆕 🎯 ESTADO E EFEITO DO SEGUNDO CARROSSEL
-  const [currentSecondImage, setCurrentSecondImage] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSecondImage((prev) => (prev + 1) % secondCarouselImages.length);
-    }, 6000); // Exatamente os mesmos 6 segundos
-    return () => clearInterval(timer);
-  }, []);
+// 🎯 3. CONTADOR DO TERCEIRO CARROSSEL (THIRD)
+const [currentImage3, setCurrentImage3] = useState(0);
+useEffect(() => {
+  const timer = setInterval(() => {
+    setCurrentImage3((prev) => (prev + 1) % thirdCarouselImages.length);
+  }, 6000);
+  return () => clearInterval(timer);
+}, []);
 
   // 2. States do Chat (isOpen, messages...)
   const [isOpen, setIsOpen] = useState(false);
@@ -389,14 +403,14 @@ export default function App() {
           <div className="absolute inset-0 z-0">
             <AnimatePresence mode="wait">
               <motion.div
-                key={currentSecondImage} // Usando o estado do segundo carrossel (das 2 imagens)
+                key={currentImage1} // Usando o estado do segundo carrossel (das 2 imagens)
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 2, ease: "easeInOut" }}
                 className="absolute inset-0 bg-cover bg-center"
                 style={{ 
-                  backgroundImage: `url(${secondCarouselImages[currentSecondImage]})` 
+                  backgroundImage: `url(${primarycarouselImages[currentImage1]})` 
                 }}
               />
             </AnimatePresence>
@@ -457,8 +471,8 @@ export default function App() {
               <div className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
                 <AnimatePresence mode="wait">
                   <motion.img
-                    key={currentImage}
-                    src={primarycarouselImages[currentImage]}
+                    key={currentImage2}
+                    src={secondCarouselImages[currentImage2]}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -469,15 +483,22 @@ export default function App() {
               </div>
             </div>
 
-            {/* ➡️ GRID 2: Imagem à Esquerda | Texto à Direita */}
+            {/* ➡️ GRID 2: Carrossel à Esquerda | Texto à Direita */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              {/* Imagem de Destaque da Atuação */}
-              <div className="order-2 md:order-1 rounded-2xl overflow-hidden shadow-2xl h-[480px]">
-                <img 
-                  src="https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0011-scaled.jpg" 
-                  alt="Atuação MOVER" 
-                  className="w-full h-full object-cover" 
-                />
+              
+              {/* CARROSSEL DA SEGUNDA PARTE */}
+              <div className="order-2 md:order-1 relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
+                <AnimatePresence mode="wait">
+                  <motion.img
+                    key={currentImage3} // Ele vai girar sincronizado com o de cima
+                    src={thirdCarouselImages[currentImage3]} 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 2, ease: "easeInOut" }}
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </AnimatePresence>
               </div>
 
               <div className="order-1 md:order-2 space-y-4 text-justify" style={{ fontFamily: '"Roboto", sans-serif', fontSize: '17px', fontWeight: 300, lineHeight: '1.8', color: '#54595f' }}>
