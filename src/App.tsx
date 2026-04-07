@@ -3,7 +3,18 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'motion/react';
 import { FaPhoneAlt, FaTimes,  } from 'react-icons/fa';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
+
+// 🚀 Importação de Imagens
+import img_21_site from './assets/images/image_21_site_MagicEraser_230118_195138-1-768x543.jpeg';
+import img_11_site from './assets/images/image_11_site_IMG-20241029-WA0008.jpg';
+import img_7_site from './assets/images/image_7_site_IMG-20241023-WA0011-scaled.jpg';
+import img_19_site from './assets/images/image_19_site_WhatsApp-Image-2025-06-17-at-19.25.45.jpeg';
+import img_2_site from './assets/images/image_2_site_WhatsApp-Image-2023-03-08-at-00.32.57.jpeg';
+import img_20_site from './assets/images/image_20_site_WhatsApp-Image-2023-01-31-at-13.11.43-1.jpeg';
+
+// Logos
 import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.png';
+
 
 // 🚀 NOVOS IMPORTS
 import { TbTargetArrow } from "react-icons/tb"; // Missão
@@ -24,20 +35,19 @@ interface Message {
   timestamp: Date;
 }
 
-// 2.1 AS IMAGENS
-const carouselImages = [
-  "https://moverhelipa.org.br/wp-content/uploads/2023/02/MagicEraser_230118_195138-1-768x543.png",
-  "https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0008.jpg",
-  "https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0011-scaled.jpg",
-  "https://moverhelipa.org.br/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-17-at-19.25.45.webp",
-  "https://moverhelipa.org.br/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-08-at-00.32.57.jpeg"
+// 2.1 AS IMAGENS DO PRIMEIRO CARROSSEL (FADE)
+const primarycarouselImages = [
+  img_21_site,
+  img_11_site,
+  img_7_site,
+  img_19_site,
+  img_2_site
 ];
 
 // 🆕 2.2 AS IMAGENS DO SEGUNDO CARROSSEL (ZIGUE-ZAGUE)
 const secondCarouselImages = [
-  // Certifique-se de usar o caminho correto da sua pasta assets, ex:
-  "./src/assets/images/image_20_site_WhatsApp-Image-2023-01-31-at-13.11.43-1.jpeg",
-  "./src/assets/images/image_19_site_WhatsApp-Image-2025-06-17-at-19.25.45.jpeg"
+  img_20_site,
+  img_19_site 
 ];
 
 // 🏗️ COMPONENTE REUTILIZÁVEL: LogoCatavento
@@ -62,7 +72,7 @@ export default function App() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % carouselImages.length);
+      setCurrentImage((prev) => (prev + 1) % primarycarouselImages.length);
     }, 6000);
     return () => clearInterval(timer);
   }, []);
@@ -288,7 +298,7 @@ export default function App() {
 
         {/* 🟦 SEÇÃO 3.0 FAIXA AZUL DO MENU (Navegação Isolada) */}
         <section 
-          className="relative w-full py-4 shadow2x1 sticky top-0 z-50" 
+          className="relative w-full py-1.5 shadow2x1 sticky top-0 z-50" 
           style={{ 
             backgroundColor: '#1e428a',
             borderBottom: '1px solid rgba(255,255,255,0.1)'
@@ -296,7 +306,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
 
             {/* 3.1 Menu com Links e o Botão 'DOAR' */}
-            <nav className="flex flex-wrap justify-center gap-4 md:gap-16 items-center font-bold uppercase text-[10px] md:text-xs">
+            <nav className="flex flex-wrap justify-center gap-4 md:gap-12 items-center font-bold uppercase text-[10px] md:text-xs">
               <a 
                 href="#início" 
                 className="text-white hover:brightness-125 transition-all"
