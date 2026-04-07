@@ -201,196 +201,197 @@ useEffect(() => {
 
   return (
       <div id="page" className="min-h-screen bg-white relative">
+
+        {/* 🧊 BLOCO CONGELADO (O que você quer fixar no topo) */}
+        <div className="sticky top-0 z-[100] w-full shadow-xl">
         
-        {/* 🟦 SEÇÃO 1.0: TOP BAR Azul - Barra de Contato Superior - Ajustado para inverter no Mobile */}
-        <section className="relative z-[60] py-1" style={{ backgroundColor: '#1e428a' }}>
-          <div className="max-w-4xl mx-auto px-0.5 flex flex-col-reverse md:flex-row items-center justify-between gap-1">
-            
-            {/* 📞 1.1.1 Bloco de Contatos Diretos */}
-            <div className="flex md:flex-row items-center gap-4 md:gap-6">
-              {/* Seus links de e-mail e telefone aqui */}
+            {/* 🟦 SEÇÃO 1.0: TOP BAR Azul - Barra de Contato Superior - Ajustado para inverter no Mobile */}
+            <section className="relative z-[60] py-1" style={{ backgroundColor: '#1e428a' }}>
+              <div className="max-w-4xl mx-auto px-0.5 flex flex-col-reverse md:flex-row items-center justify-between gap-1">
+                
+                {/* 📞 1.1.1 Bloco de Contatos Diretos */}
+                <div className="flex md:flex-row items-center gap-4 md:gap-6">
+                  {/* Seus links de e-mail e telefone aqui */}
+                  
+                  {/* 1.1.2 Item: E-MAIL com Expansão */}
+                <a 
+                  href="mailto:moverhelipa@gmail.com" 
+                  className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm transition-all duration-300 hover:scale-105 hover:text-white group"
+                  style={{ textDecoration: 'none', color: 'white' }}
+                >
+                  <FaEnvelope 
+                    size={14} 
+                    className="text-white transition-colors" 
+                  />
+                  <span className="text-white">
+                    moverhelipa@gmail.com
+                  </span>
+                </a>
+
+                  {/* 1.1.3 Divisor Visual */}
+                  <span className="text-white opacity-50 hidden md:block">|</span>
+
+                  {/* 1.1.4 Item: TELEFONE com Expansão */}
+                  <a 
+                    href="tel:5511996744126" 
+                    className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm transition-all duration-300 hover:scale-105 hover:text-white group"
+                    style={{ textDecoration: 'none', color: 'white' }}
+                  >
+                    <FaPhoneAlt size={12}
+                    className="text-white transition-colors"
+                  />
+                  <span className="text-white">
+                      (11) 99674-4126
+                    </span>
+                  </a>
+                </div>
+
+                {/* 📱 1.2.1 Bloco de Redes Sociais */}
+                <div className="flex items-center gap-3">
+                  <a style={{ background: 'linear-gradient(135deg, #1877F2 0%, #0A56B3 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://www.facebook.com/people/Mover-Helipa/100095108914003/" target="_blank" rel="noopener noreferrer">
+                    <FaFacebookF size={14} />
+                  </a>
+                  <a style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://www.instagram.com/mover_helipa/" target="_blank" rel="noopener noreferrer">
+                    <FaInstagram size={16} />
+                  </a>
+                  <a style={{ background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://wa.me/5511996744126" target="_blank" rel="noopener noreferrer">
+                    <FaWhatsapp size={16} />
+                  </a>
+                  <a style={{ background: 'linear-gradient(135deg, #0077B5 0%, #005983 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="#" target="_blank" rel="noopener noreferrer">
+                    <FaLinkedinIn size={14} />
+                  </a>
+                  <a style={{ background: 'linear-gradient(135deg, #FF0000 0%, #C4302B 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="#" target="_blank" rel="noopener noreferrer">
+                    <FaYoutube size={14} />
+                  </a>
+                </div>
+                {/* Final do bloco 1.2.1 - Redes Sociais */}
+
+              </div> {/* 🏁 FECHA O ESCRAVO 1.2.1 */}
+            </section> {/* 🏁 FECHA O MESTRE 1.0 */}
+
+            {/* ⚪ SEÇÃO 2.0: HEADER BRANCO (Assinatura de Marca)*/}
+            <header className="bg-white py-0.5 border-b border-gray-100 w-full sticky top-0 z-50">
               
-              {/* 1.1.2 Item: E-MAIL com Expansão */}
-            <a 
-              href="mailto:moverhelipa@gmail.com" 
-              className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm transition-all duration-300 hover:scale-105 hover:text-white group"
-              style={{ textDecoration: 'none', color: 'white' }}
-            >
-              <FaEnvelope 
-                size={14} 
-                className="text-white transition-colors" 
-              />
-              <span className="text-white">
-                moverhelipa@gmail.com
-              </span>
-            </a>
+              {/* 🖼️ Logo 2.1: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho - h-16 md:h-20 '*/}
+              <div className="flex items-center justify-center gap-4 md:gap-6">
+                <a href="/" className="flex items-center gap-4">
+                <LogoCatavento tamanho="h-10 md:h-14" comBrilho={false} /> 
 
-              {/* 1.1.3 Divisor Visual */}
-              <span className="text-white opacity-50 hidden md:block">|</span>
+                  {/* 2.2 Nome Colorido 'MOVER' com BookmanSwash (.woff2)*/}
+                  <span 
+                    className="text-2xl md:text-4xl font-bold italic tracking-tighter leading-none"
+                    style={{ 
+                      fontFamily: "'BookmanSwash', serif", 
+                      filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" 
+                    }}
+                  >
+                    <span style={{ color: '#0159A1' }}>M</span>
+                    <span style={{ color: '#8B3035' }}>O</span>
+                    <span style={{ color: '#0C5F43' }}>V</span>
+                    <span style={{ color: '#CFA922' }}>E</span>
+                    <span style={{ color: '#575756' }}>R</span>
+                  </span>
+                </a>
+              </div>
 
-              {/* 1.1.4 Item: TELEFONE com Expansão */}
-              <a 
-                href="tel:5511996744126" 
-                className="flex items-center gap-2 text-white font-bold text-[11px] md:text-sm transition-all duration-300 hover:scale-105 hover:text-white group"
-                style={{ textDecoration: 'none', color: 'white' }}
-              >
-                <FaPhoneAlt size={12}
-                className="text-white transition-colors"
-              />
-              <span className="text-white">
-                  (11) 99674-4126
+              {/* 🎯 Bloco 2.3: Texto Explicativo (Lado Direito do Centro) */}
+              <div className="flex flex-col items-center justify-center text-center text-[#1e428a] leading-none md:border-l-2 md:border-gray-100 md:pl-8 md:ml-4">
+                <span 
+                  className="w-full md:max-w-none whitespace-normal md:whitespace-nowrap"
+                    style={{ 
+                    fontFamily: "'Alice', serif", 
+                    fontSize: '20px', 
+                    fontWeight: '400',
+                    color: '#1e428a',
+                    letterSpacing: '1px',
+                    textTransform: 'none',
+                  }}
+                >
+                  Movimento Organizacional Vencer, Educar e Realizar
                 </span>
-              </a>
-            </div>
+              </div>
+            </header>
 
-            {/* 📱 1.2.1 Bloco de Redes Sociais */}
-            <div className="flex items-center gap-3">
-              <a style={{ background: 'linear-gradient(135deg, #1877F2 0%, #0A56B3 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://www.facebook.com/people/Mover-Helipa/100095108914003/" target="_blank" rel="noopener noreferrer">
-                <FaFacebookF size={14} />
-              </a>
-              <a style={{ background: 'linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://www.instagram.com/mover_helipa/" target="_blank" rel="noopener noreferrer">
-                <FaInstagram size={16} />
-              </a>
-              <a style={{ background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://wa.me/5511996744126" target="_blank" rel="noopener noreferrer">
-                <FaWhatsapp size={16} />
-              </a>
-              <a style={{ background: 'linear-gradient(135deg, #0077B5 0%, #005983 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="#" target="_blank" rel="noopener noreferrer">
-                <FaLinkedinIn size={14} />
-              </a>
-              <a style={{ background: 'linear-gradient(135deg, #FF0000 0%, #C4302B 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="#" target="_blank" rel="noopener noreferrer">
-                <FaYoutube size={14} />
-              </a>
-            </div>
-            {/* Final do bloco 1.2.1 - Redes Sociais */}
+            {/* 🟦 SEÇÃO 3.0 FAIXA AZUL DO MENU (Navegação Isolada) */}
+            <section 
+              className="relative w-full py-1.5" 
+              style={{ 
+                backgroundColor: '#1e428a',
+                borderBottom: '1px solid rgba(255,255,255,0.1)'
+              }}>
+              <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
 
-          </div> {/* 🏁 FECHA O ESCRAVO 1.2.1 */}
-        </section> {/* 🏁 FECHA O MESTRE 1.0 */}
+                {/* 3.1 Menu com Links e o Botão 'DOAR' */}
+                <nav className="flex flex-wrap justify-center gap-4 md:gap-12 items-center font-bold uppercase text-[10px] md:text-xs">
+                  <a 
+                    href="#início" 
+                    className="text-white hover:brightness-125 transition-all"
+                    style={{ color: 'white', textDecoration: 'none' }}
+                    >
+                      Incío
+                    </a>
+                  <a 
+                    href="#sobre-nos" 
+                    className="text-white hover:brightness-125 transition-all"
+                    style={{ color: 'white', textDecoration: 'none' }}
+                    >
+                      Sobre nós
+                    </a>  
+                  <a
+                    href="#projetos" 
+                    className="text-white hover:brightness-125 transition-all"
+                    style={{ color: 'white', textDecoration: 'none' }}
+                    >
+                      Projetos
+                    </a>
+                  <a 
+                    href="#impactos" 
+                    className="text-white hover:brightness-125 transition-all"
+                    style={{ color: 'white', textDecoration: 'none' }}
+                    >
+                      Impactos
+                    </a>  
+                  <a 
+                    href="#contato" 
+                    className="text-white hover:brightness-125 transition-all"
+                    style={{ color: 'white', textDecoration: 'none' }}
+                    >
+                      Contato
+                    </a>
 
-        {/* ⚪ SEÇÃO 2.0: HEADER BRANCO (Assinatura de Marca) 
-            Responsável por: Navegação estrutural e Logotipo principal.
-            Nota: 'sticky top-0' mantém o menu fixo no topo ao rolar a página. */}
-        <header className="bg-white py-0.5 border-b border-gray-100 w-full sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-0.5 flex flex-col md:flex-row items-center justify-center gap-0.5 md:gap-6">
-            
-            {/* 🖼️ Logo 2.1: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho - h-16 md:h-20 '*/}
-            <div className="flex items-center justify-center gap-4 md:gap-6">
-              <a href="/" className="flex items-center gap-4">
-              <LogoCatavento tamanho="h-10 md:h-14" comBrilho={false} /> 
+                  {/* 3.2 🔴 Call to Action: Botão de Doação em destaque (Estilo Kabelo Rock - Oval) */}
+                  <motion.button
+                    onMouseMove={handleMouseMove}
+                    onMouseLeave={handleMouseLeave}
+                    style={{ 
+                      x: mouseX, 
+                      y: mouseY,
+                      backgroundColor: '#ed1e24', 
+                      color: 'white', 
+                      padding: '4px 16px', 
+                      borderRadius: '9999px',
+                      border: 'none', 
+                      fontWeight: '900', 
+                      fontSize: '12px',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      textTransform: 'uppercase',
+                      letterSpacing: '0.5px',
+                      boxShadow: '0 10px 15px -3px rgba(237, 30, 36, 0.3)'
+                    }}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    DOE AGORA
+                  </motion.button>
+                
+                </nav>
+              </div>
+            </section>
 
-              {/* 2.2 Nome Colorido 'MOVER' com BookmanSwash (.woff2)*/}
-              <span 
-                className="text-2xl md:text-4xl font-bold italic tracking-tighter leading-none"
-                style={{ 
-                  fontFamily: "'BookmanSwash', serif", 
-                  filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" 
-                }}
-              >
-                <span style={{ color: '#0159A1' }}>M</span>
-                <span style={{ color: '#8B3035' }}>O</span>
-                <span style={{ color: '#0C5F43' }}>V</span>
-                <span style={{ color: '#CFA922' }}>E</span>
-                <span style={{ color: '#575756' }}>R</span>
-              </span>
-            </a>
-          </div>  
-
-            {/* 🎯 Bloco 2.3: Texto Explicativo (Lado Direito do Centro) */}
-            <div className="flex flex-col items-center justify-center text-center text-[#1e428a] leading-none md:border-l-2 md:border-gray-100 md:pl-8 md:ml-4">
-              <span 
-                className="w-full md:max-w-none whitespace-normal md:whitespace-nowrap"
-                  style={{ 
-                  fontFamily: "'Alice', serif", 
-                  fontSize: '20px', 
-                  fontWeight: '400',
-                  color: '#1e428a',
-                  letterSpacing: '1px',
-                  textTransform: 'none',
-                }}
-              >
-                Movimento Organizacional Vencer, Educar e Realizar
-              </span>
-            </div>
-          </div>
-        </header>
-
-        {/* 🟦 SEÇÃO 3.0 FAIXA AZUL DO MENU (Navegação Isolada) */}
-        <section 
-          className="relative w-full py-1.5 shadow2x1 sticky top-0 z-50" 
-          style={{ 
-            backgroundColor: '#1e428a',
-            borderBottom: '1px solid rgba(255,255,255,0.1)'
-          }}>
-          <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
-
-            {/* 3.1 Menu com Links e o Botão 'DOAR' */}
-            <nav className="flex flex-wrap justify-center gap-4 md:gap-12 items-center font-bold uppercase text-[10px] md:text-xs">
-              <a 
-                href="#início" 
-                className="text-white hover:brightness-125 transition-all"
-                style={{ color: 'white', textDecoration: 'none' }}
-                >
-                  Incío
-                </a>
-              <a 
-                href="#sobre-nos" 
-                className="text-white hover:brightness-125 transition-all"
-                style={{ color: 'white', textDecoration: 'none' }}
-                >
-                  Sobre nós
-                </a>  
-              <a
-                href="#projetos" 
-                className="text-white hover:brightness-125 transition-all"
-                style={{ color: 'white', textDecoration: 'none' }}
-                >
-                  Projetos
-                </a>
-              <a 
-                href="#impactos" 
-                className="text-white hover:brightness-125 transition-all"
-                style={{ color: 'white', textDecoration: 'none' }}
-                >
-                  Impactos
-                </a>  
-              <a 
-                href="#contato" 
-                className="text-white hover:brightness-125 transition-all"
-                style={{ color: 'white', textDecoration: 'none' }}
-                >
-                  Contato
-                </a>
-
-              {/* 3.2 🔴 Call to Action: Botão de Doação em destaque (Estilo Kabelo Rock - Oval) */}
-              <motion.button
-                onMouseMove={handleMouseMove}
-                onMouseLeave={handleMouseLeave}
-                style={{ 
-                  x: mouseX, 
-                  y: mouseY,
-                  backgroundColor: '#ed1e24', 
-                  color: 'white', 
-                  padding: '4px 16px', 
-                  borderRadius: '9999px',
-                  border: 'none', 
-                  fontWeight: '900', 
-                  fontSize: '12px',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px',
-                  boxShadow: '0 10px 15px -3px rgba(237, 30, 36, 0.3)'
-                }}
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                DOE AGORA
-              </motion.button>
-            
-            </nav>
-          </div>
-        </section>
+        </div> {/* 🏁 FIM DO BLOCO CONGELADO */}
 
       {/* 🏁 CONTEÚDO PRINCIPAL DO SITE */}
       <main id="content" className="site-main">
