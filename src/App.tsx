@@ -288,7 +288,7 @@ export default function App() {
 
         {/* 🟦 SEÇÃO 3.0 FAIXA AZUL DO MENU (Navegação Isolada) */}
         <section 
-          className="relative w-full py-1.5 shadow2x1 sticky top-0 z-50" 
+          className="relative w-full py-4 shadow2x1 sticky top-0 z-50" 
           style={{ 
             backgroundColor: '#1e428a',
             borderBottom: '1px solid rgba(255,255,255,0.1)'
@@ -296,7 +296,7 @@ export default function App() {
           <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
 
             {/* 3.1 Menu com Links e o Botão 'DOAR' */}
-            <nav className="flex flex-wrap justify-center gap-4 md:gap-12 items-center font-bold uppercase text-[10px] md:text-xs">
+            <nav className="flex flex-wrap justify-center gap-4 md:gap-16 items-center font-bold uppercase text-[10px] md:text-xs">
               <a 
                 href="#início" 
                 className="text-white hover:brightness-125 transition-all"
