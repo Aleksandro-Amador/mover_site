@@ -1,19 +1,22 @@
 // 1. AS IMPORTAÇÕES (Sempre no topo)
 import React, { useEffect, useState, useRef } from 'react';
-import { motion, AnimatePresence, useMotionValue, useSpring } from 'motion/react';
+import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { FaPhoneAlt, FaTimes,  } from 'react-icons/fa';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
 
-// 🚀 Importação de Imagens
+// 1. Imagens para o Primeiro Carrossel (Sobre Nós)
 import img_21_site from './assets/images/image_21_site_MagicEraser_230118_195138-1-768x543.jpeg';
 import img_11_site from './assets/images/image_11_site_IMG-20241029-WA0008.jpg';
 import img_7_site from './assets/images/image_7_site_IMG-20241023-WA0011-scaled.jpg';
 import img_19_site from './assets/images/image_19_site_WhatsApp-Image-2025-06-17-at-19.25.45.jpeg';
 import img_2_site from './assets/images/image_2_site_WhatsApp-Image-2023-03-08-at-00.32.57.jpeg';
+
+// 2. Imagens para o Segundo Carrossel (Hero/Início)
 import img_20_site from './assets/images/image_20_site_WhatsApp-Image-2023-01-31-at-13.11.43-1.jpeg';
 
-// Logos
-import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.png';
+// 3. Logos (Pasta logos)
+import logo_1_site from './assets/logos/logo_1_site_mover_helipa.png';
+import logo_2_site from './assets/logos/logo_2_site_mover_catavento.png';
 
 
 // 🚀 NOVOS IMPORTS
@@ -455,7 +458,7 @@ export default function App() {
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentImage}
-                    src={carouselImages[currentImage]}
+                    src={primarycarouselImages[currentImage]}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
