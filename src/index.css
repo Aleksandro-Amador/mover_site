@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Great_Vibe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');  /* Fonte Montserrat Alternates */
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap'); /* Fonte Satisfy */
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap'); /* Fonte Alice */
 @import "tailwindcss";
 
 /* 📂 IDENTIDADE VISUAL MOVER - FONTE OFICIAL */
@@ -18,7 +20,7 @@
     src: url('/fonts/bookman_swash_bold_italic.woff2') format('woff2');
     font-weight: 700;
     font-style: italic;
-    font-display: swap;
+    font-display: swap; /* Garante que o texto aparece logo enquanto carrega */
 }
 
 /* Estilos adicionais para garantir que o conteúdo do WordPress se comporte bem em React */

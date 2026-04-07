@@ -16,7 +16,7 @@ import img_20_site from './assets/images/image_20_site_WhatsApp-Image-2023-01-31
 
 // 3. Logos (Pasta logos)
 import logo_1_site from './assets/logos/logo_1_site_mover_helipa.png';
-import logo_2_site from './assets/logos/logo_2_site_mover_catavento.png';
+import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.png';
 
 
 // 🚀 NOVOS IMPORTS
