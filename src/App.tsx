@@ -1,7 +1,7 @@
 // 1. AS IMPORTAÇÕES (Sempre no topo)
 import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
-import { FaPhoneAlt, FaTimes,  } from 'react-icons/fa';
+import { FaPhoneAlt, FaTimes } from 'react-icons/fa';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
 
 // 1. Imagens para o Primeiro Carrossel (Sobre Nós)
@@ -270,7 +270,7 @@ useEffect(() => {
             </section> {/* 🏁 FECHA O MESTRE 1.0 */}
 
             {/* ⚪ SEÇÃO 2.0: HEADER BRANCO (Assinatura de Marca)*/}
-            <header className="bg-white py-0.5 border-b border-gray-100 w-full sticky top-0 z-50">
+            <header className="bg-white py-0.5 border-b border-gray-100 w-full">
               
               {/* 🖼️ Logo 2.1: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho - h-16 md:h-20 '*/}
               <div className="flex items-center justify-center gap-4 md:gap-6">
@@ -314,7 +314,7 @@ useEffect(() => {
 
             {/* 🟦 SEÇÃO 3.0 FAIXA AZUL DO MENU (Navegação Isolada) */}
             <section 
-              className="relative w-full py-1.5" 
+              className="relative w-full py-1.5 shadow-2xl" 
               style={{ 
                 backgroundColor: '#1e428a',
                 borderBottom: '1px solid rgba(255,255,255,0.1)'
@@ -398,7 +398,7 @@ useEffect(() => {
         
         {/* Hero Section */}
         {/* 🚀 Hero Section com Carrossel de Fundo (Ajustado Kabelo Rock) */}
-        <section id="inicio" className="relative h-[600px] flex items-center justify-center overflow-hidden text-white">
+        <section id="inicio" className="relative h-[600px] flex items-center justify-center text-white">
           
           {/* 🖼️ Camada do Carrossel de Fundo */}
           <div className="absolute inset-0 z-0">
@@ -454,7 +454,7 @@ useEffect(() => {
         </section>
 
         {/* Sobre Nós - Versão Corrigida por Kabelo Rock */}
-        <section id="sobre-nos" className="py-20 px-4 bg-white overflow-hidden">
+        <section id="sobre-nos" className="py-20 px-4 bg-white">
           <div className="max-w-6xl mx-auto space-y-24">
             
             <h2 className="text-4xl font-bold mb-12 border-l-4 border-blue-600 pl-4 uppercase">Sobre nós</h2>
@@ -469,7 +469,7 @@ useEffect(() => {
               </div>
 
               {/* CARROSSEL COM EFEITO FADE */}
-              <div className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
+              <div className="relative h-[480px] w-full rounded-2xl shadow-2xl bg-gray-100">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentImage2}
@@ -488,7 +488,7 @@ useEffect(() => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
               
               {/* CARROSSEL DA SEGUNDA PARTE */}
-              <div className="order-2 md:order-1 relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
+              <div className="order-2 md:order-1 relative h-[480px] w-full rounded-2xl shadow-2xl bg-gray-100">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentImage3} // Ele vai girar sincronizado com o de cima
@@ -520,7 +520,7 @@ useEffect(() => {
               
               {/* 🎯 CARD: MISSÃO */}
               <div 
-                className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden"
+                className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative"
                 style={{
                   border: '1px solid #e2e8f0',
                   boxShadow: 'inset 0 0 25px 2px rgba(1, 89, 161, 0.15)'
@@ -537,7 +537,7 @@ useEffect(() => {
 
               {/* 👁️ CARD: VISÃO */}
               <div 
-                className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden"
+                className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative"
                 style={{
                   border: '1px solid #e2e8f0',
                   boxShadow: 'inset 0 0 25px 2px rgba(1, 89, 161, 0.15)'
@@ -554,7 +554,7 @@ useEffect(() => {
 
               {/* ⚖️ CARD: VALORES */}
               <div 
-                className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden"
+                className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative"
                 style={{
                   border: '1px solid #e2e8f0',
                   boxShadow: 'inset 0 0 25px 2px rgba(1, 89, 161, 0.15)'
@@ -585,8 +585,8 @@ useEffect(() => {
             <h2 className="text-4xl font-bold mb-4">Nossos Projetos</h2>
           </div>
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
-              <div className="h-64 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-lg">
+              <div className="h-64">
                 <img src="https://moverhelipa.org.br/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-17-at-19.25.45.webp" alt="Cozinha Mover" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
               </div>
               <div className="p-6">
@@ -594,8 +594,8 @@ useEffect(() => {
                 <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia.</p>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
-              <div className="h-64 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-lg">
+              <div className="h-64">
                 <img src="https://moverhelipa.org.br/wp-content/uploads/2024/10/escola-1024x1024.jpg" alt="Cozinha Escola" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
               </div>
               <div className="p-6">
@@ -603,8 +603,8 @@ useEffect(() => {
                 <p className="text-gray-600 text-sm">Parceria com a Prefeitura de SP servindo 400 refeições/dia.</p>
               </div>
             </div>
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
-              <div className="h-64 overflow-hidden">
+            <div className="bg-white rounded-xl shadow-lg">
+              <div className="h-64">
                 <img src="https://moverhelipa.org.br/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-08-at-00.32.57.jpeg" alt="Cozinha Solidária" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
               </div>
               <div className="p-6">
@@ -623,10 +623,10 @@ useEffect(() => {
             <p className="text-gray-600">Registros do nosso trabalho diário na comunidade.</p>
           </div>
           <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-2xl shadow-xl">
               <img src="https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0008.jpg" alt="Colagem Cozinha Escola" className="w-full h-auto" />
             </div>
-            <div className="rounded-2xl overflow-hidden shadow-xl">
+            <div className="rounded-2xl shadow-xl">
               <img src="https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0011-scaled.jpg" alt="Colagem Governo Federal" className="w-full h-auto" />
             </div>
           </div>
@@ -732,7 +732,7 @@ useEffect(() => {
             {/* 🟦 --- CAIXA 1: MISSÃO --- 🟦 */}
             {/* 1. Div Pai (Envelope com Degradê e Shadow) */}
             <div 
-              className="bg-white rounded-3xl p-8 flex flex-col justify-between w-full max-w-xl relative overflow-hidden"
+              className="bg-white rounded-3xl p-8 flex flex-col justify-between w-full max-w-xl relative"
               style={{
                 background: 'linear-gradient(to right, #ffffff, #ffffff)', // Fundo branco puro
                 border: '1px solid #e2e8f0', // Borda fininha de acabamento
@@ -762,7 +762,7 @@ useEffect(() => {
               
               {/* 🟦 CAIXA DO MAPA (Sua caixa atual) */}
               <div 
-              className="bg-white rounded-t-3xl rounded-b-none p-8 flex flex-col justify-between w-full max-w-xl relative overflow-hidden"
+              className="bg-white rounded-t-3xl rounded-b-none p-8 flex flex-col justify-between w-full max-w-xl relative"
               style={{
                 background: 'linear-gradient(to right, #ffffff, #ffffff)', // Fundo branco puro
                 border: '1px solid #e2e8f0', // Borda fininha de acabamento
@@ -786,7 +786,7 @@ useEffect(() => {
 
               {/* 🟦 CAIXA INFO (Sua caixa atual) */}
               <div 
-              className="bg-white rounded-b-3xl rounded-t-none p-4 flex flex-col justify-between w-full max-w-xl relative overflow-hidden -mt-[1px]"
+              className="bg-white rounded-b-3xl rounded-t-none p-4 flex flex-col justify-between w-full max-w-xl relative -mt-[1px]"
               style={{
                 background: 'linear-gradient(to right, #ffffff, #ffffff)', // Fundo branco puro
                 border: '1px solid #e2e8f0', // Borda fininha de acabamento
