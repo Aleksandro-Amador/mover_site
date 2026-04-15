@@ -5,17 +5,17 @@ import { FaPhoneAlt, FaTimes } from 'react-icons/fa';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
 
 // 1. Imagens para o Primeiro Carrossel (Sobre Nós)
-import img_20_site from './assets/images/image_20_site_WhatsApp-Image-2023-01-31-at-13.11.43-1.jpeg';
-import img_19_site from './assets/images/image_19_site_WhatsApp-Image-2025-06-17-at-19.25.45.jpeg';
+import img_20_site from './assets/images/image_20_site_WhatsApp-Image-2023-01-31-at-13.11.43-1.webp';
+import img_19_site from './assets/images/image_19_site_WhatsApp-Image-2025-06-17-at-19.25.45.webp';
 
 // 2. Imagens para o Segundo Carrossel (Hero/Início)
-import img_10_site from './assets/images/image_10_site_IMG-20241029-WA0006.jpg';
-import img_11_site from './assets/images/image_11_site_IMG-20241029-WA0008.jpg';
-import img_7_site from './assets/images/image_7_site_IMG-20241023-WA0011-scaled.jpg';
+import img_10_site from './assets/images/image_10_site_IMG-20241029-WA0006.webp';
+import img_11_site from './assets/images/image_11_site_IMG-20241029-WA0008.webp';
+import img_7_site from './assets/images/image_7_site_IMG-20241023-WA0011-scaled.webp';
 
 // 3. Imagens para o Terceiro Carrossel (Hero/Início)
-import img_18_site from './assets/images/image_18_site_IMG-20241029-WA0010.jpg';
-import img_2_site from './assets/images/image_2_site_WhatsApp-Image-2023-03-08-at-00.32.57.jpeg';
+import img_18_site from './assets/images/image_18_site_IMG-20241029-WA0010.webp';
+import img_2_site from './assets/images/image_2_site_WhatsApp-Image-2023-03-08-at-00.32.57.webp';
 
 // 4. Logos (Pasta logos)
 import logo_1_site from './assets/logos/logo_1_site_mover_helipa.png';
@@ -74,6 +74,40 @@ const LogoCatavento = ({ comBrilho = false, tamanho = "h-16" }) => (
     />
   </div>
 );
+
+// Mova para fora da função App e remova o export default
+const ContadorMarmitas = () => {
+  const VALOR_BASE = 400000;
+  const DATA_INICIAL = new Date('2026-04-14'); 
+  const INCREMENTO_DIARIO = 450;
+
+  const [total, setTotal] = useState(VALOR_BASE);
+
+  useEffect(() => {
+    const calcularTotal = () => {
+      const hoje = new Date();
+      const diferencaTempo = hoje.getTime() - DATA_INICIAL.getTime();
+      const diferencaDias = Math.floor(diferencaTempo / (1000 * 60 * 60 * 24));
+      
+      if (diferencaDias > 0) {
+        setTotal(VALOR_BASE + (diferencaDias * INCREMENTO_DIARIO));
+      }
+    };
+    calcularTotal();
+  }, []);
+
+  return (
+    <div>
+      <div className="text-4xl font-bold text-blue-600 mb-2">
+        {total.toLocaleString('pt-BR')}+
+      </div>
+      <p className="text-gray-600">Cestas básicas entregues</p>
+    </div>
+  );
+};
+
+// APAGUE A LINHA ABAIXO se ela estiver no mesmo arquivo do App:
+// export default ContadorCestas;
 
 // 3. ABERTURA DA FUNÇÃO
 export default function App() { 
@@ -182,7 +216,7 @@ useEffect(() => {
     }
   };
 
-  useEffect(() => {
+    useEffect(() => {
     // Simulação básica do comportamento do Elementor/jQuery se necessário
     const handleScroll = () => {
       const scrollWrap = document.querySelector('.hfe-scroll-to-top-wrap');
@@ -326,7 +360,7 @@ useEffect(() => {
               <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
 
                 {/* 3.1 Menu com Links e o Botão 'DOAR' */}
-                <nav className="flex flex-wrap justify-center gap-4 md:gap-12 items-center font-bold uppercase text-[10px] md:text-xs">
+                <nav className="flex flex-wrap justify-center gap-4 md:gap-12 items-center font-bold uppercase text-base md:text-base">
                   <a 
                     href="#início" 
                     className="text-white hover:brightness-125 transition-all"
@@ -376,7 +410,7 @@ useEffect(() => {
                       borderRadius: '9999px',
                       border: 'none', 
                       fontWeight: '900', 
-                      fontSize: '12px',
+                      fontSize: '16px',
                       cursor: 'pointer',
                       display: 'flex',
                       alignItems: 'center',
@@ -641,10 +675,7 @@ useEffect(() => {
             <h2 className="text-4xl font-bold mb-4">Nossos Impactos</h2>
           </div>
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">25.000+</div>
-              <p className="text-gray-600">Cestas básicas entregues</p>
-            </div>
+            <ContadorMarmitas />
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-2">1.000+</div>
               <p className="text-gray-600">Vales gás distribuídos</p>
@@ -658,8 +689,8 @@ useEffect(() => {
               <p className="text-gray-600">Famílias na pandemia</p>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">400.000+</div>
-              <p className="text-gray-600">Marmitas entregues</p>
+              <div className="text-4xl font-bold text-blue-600 mb-2">25.000+</div>
+              <p className="text-gray-600">Cestas básicas entregues</p>
             </div>
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
