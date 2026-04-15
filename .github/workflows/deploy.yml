@@ -1,4 +1,4 @@
-name: Deploy para Hostinger
+name: Deploy Mover Oficia
 
 on:
   push:
