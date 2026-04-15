@@ -12,6 +12,11 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v4
 
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
       - name: Instalar Node.js e Gerar Build
         run: |
           npm install --legacy-peer-deps
