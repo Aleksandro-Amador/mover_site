@@ -14,7 +14,7 @@ jobs:
 
       - name: Instalar Node.js e Gerar Build
         run: |
-          npm install
+          npm install --legacy-peer-deps
           npm run build
 
       - name: Enviar para Hostinger via FTP
