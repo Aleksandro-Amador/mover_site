@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
       - name: Checkout do código
         uses: actions/checkout@v4
@@ -30,3 +32,6 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: public_html/
+
+          protocol: ftp
+          timeout: 60000 # Aumenta o tempo de espera para 60 segundos
