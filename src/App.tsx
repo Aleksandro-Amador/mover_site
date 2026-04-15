@@ -559,15 +559,16 @@ useEffect(() => {
               <div 
                 className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden"
                 style={{
+                  background: 'linear-gradient(to right, #ffffff, #ffffff)',
                   border: '1px solid #e2e8f0',
-                  boxShadow: 'inset 0 0 25px 2px rgba(1, 89, 161, 0.15)'
+                  boxShadow: 'inset 0 0 25px 2px #0159A1'
                 }}
               >
                 <div className="mb-6 p-4 bg-blue-50 rounded-full text-[#0159A1]">
                   <TbTargetArrow size={48} />
                 </div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: '#0159A1' }}>Missão</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                <h3 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>Missão</h3>
+                <p className="text-gray-600 leading-relaxed text-base">
                   Atuar com ações alternativas para efetivar a garantia de direitos na área de política pública, direitos humanos, justiça social, igualdade de gêneros e na melhoria da qualidade de vida das comunidades carentes e sua população de onde estiver atuando.
                   </p>
               </div>
@@ -576,15 +577,16 @@ useEffect(() => {
               <div 
                 className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden"
                 style={{
+                  background: 'linear-gradient(to right, #ffffff, #ffffff)',
                   border: '1px solid #e2e8f0',
-                  boxShadow: 'inset 0 0 25px 2px rgba(1, 89, 161, 0.15)'
+                  boxShadow: 'inset 0 0 25px 2px #0159A1'
                 }}
               >
                 <div className="mb-6 p-4 bg-blue-50 rounded-full text-[#0159A1]">
                   <FaEye size={48} />
                 </div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: '#0159A1' }}>Visão</h3>
-                <p className="text-gray-600 leading-relaxed text-sm">
+                <h3 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>Visão</h3>
+                <p className="text-gray-600 leading-relaxed text-base">
                   Transformar as comunidades que atua por meio de parcerias que visem a construção de uma sociedade sólida e pacífica.
                   </p>
               </div>
@@ -593,17 +595,18 @@ useEffect(() => {
               <div 
                 className="bg-white rounded-3xl p-8 flex flex-col items-center text-center relative overflow-hidden"
                 style={{
+                  background: 'linear-gradient(to right, #ffffff, #ffffff)',
                   border: '1px solid #e2e8f0',
-                  boxShadow: 'inset 0 0 25px 2px rgba(1, 89, 161, 0.15)'
+                  boxShadow: 'inset 0 0 25px 2px #0159A1'
                 }}
               >
                 <div className="mb-6 p-4 bg-blue-50 rounded-full text-[#0159A1]">
                   <GiScales size={48} />
                 </div>
-                <h3 className="text-2xl font-bold mb-4" style={{ color: '#0159A1' }}>Valores</h3>
+                <h3 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>Valores</h3>
                 
                 {/* Lista de Tópicos Centralizada */}
-                <ul className="text-gray-600 space-y-2 text-sm font-medium">
+                <ul className="text-gray-600 space-y-2 text-sm font-base">
                   <li className="flex items-left justify-left gap-2">🔹 Respeito</li>
                   <li className="flex items-left justify-left gap-2">🔹 Humildade</li>
                   <li className="flex items-left justify-left gap-2">🔹 Igualdade</li>
@@ -699,38 +702,113 @@ useEffect(() => {
           </div>
         </section>
 
-        {/* Contato */}
-        <section id="contato" className="py-20 px-4 bg-gray-900 text-white">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12">
-            <div>
-              <h2 className="text-4xl font-bold mb-8">Contato</h2>
-              <p className="mb-8 text-gray-400">Entre em contato com a gente para saber mais como ajudar ou participar de nossos projetos.</p>
-              <ul className="space-y-4">
-                <li className="flex items-center space-x-3">
-                  <span className="text-blue-500">📧</span>
-                  <span>moverhelipa@gmail.com</span>
+        {/* Contato 🎨 Seção CONTATO*/}
+        <section id="contato" className="py-20 px-4 bg-white relative overflow-hidden">
+          {/* Container Principal com o Estilo Padronizado */}
+          <div 
+            className="max-w-6xl mx-auto rounded-3xl p-12 grid md:grid-cols-2 gap-12 relative z-10"
+            style={{
+              background: 'linear-gradient(to right, #ffffff, #ffffff)', // Fundo branco puro
+              border: '1px solid #e2e8f0', // Borda fininha
+              boxShadow: 'inset 0 0 35px 5px #0159A1' // ✨ A sombra azul interna marcante
+            }}
+          >
+            {/* Coluna da Esquerda: Textos de Contato */}
+            <div className="flex flex-col justify-center">
+              <h2 className="text-4xl font-bold mb-6" style={{ color: '#0159A1' }}>
+                Contato
+              </h2>
+              <p className="mb-10 text-gray-600 leading-relaxed text-base font-medium">
+                Entre em contato com a gente para saber mais como ajudar ou participar de nossos projetos.
+              </p>
+              
+              <ul className="space-y-6">
+                {/* Link de E-mail */}
+                <li className="flex items-center space-x-4 bg-blue-50 p-4 rounded-xl border border-blue-100 group">
+                  <a 
+                    href="mailto:moverhelipa@gmail.com" 
+                    className="flex items-center gap-4 transition-all duration-300 hover:scale-105"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <div className="bg-[#0159A1] p-3 rounded-full flex items-center justify-center shadow-md">
+                      <FaEnvelope size={18} color="white" />
+                    </div>
+                    <span className="text-gray-800 font-semibold text-lg">moverhelipa@gmail.com</span>
+                  </a>
                 </li>
-                <li className="flex items-center space-x-3">
-                  <span className="text-green-500">📱</span>
-                  <span>(11) 9 9674-4126</span>
+                
+                {/* WhatsApp */}
+                {/* Link de WhatsApp */}
+                <li className="flex items-center space-x-4 bg-green-50 p-4 rounded-xl border border-green-100 group">
+                  <a 
+                    href="https://wa.me/5511996744126" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 transition-all duration-300 hover:scale-105"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <div 
+                      style={{ 
+                        background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)', 
+                        width: '42px', 
+                        height: '42px', 
+                        borderRadius: '50%', 
+                        display: 'flex', 
+                        alignItems: 'center', 
+                        justifyContent: 'center' 
+                      }} 
+                      className="shadow-md"
+                    >
+                      <FaWhatsapp size={24} color="white" />
+                    </div>
+                    <span className="text-gray-800 font-semibold text-lg">(11) 9 9674-4126</span>
+                  </a>
                 </li>
               </ul>
             </div>
-            <div className="bg-white p-8 rounded-xl text-gray-900">
-              <form className="space-y-4">
+
+            {/* Coluna da Direita: Formulário */}
+            <div 
+              className="bg-white p-10 rounded-2xl shadow-xl"
+              style={{ border: '1px solid #e2e8f0' }}
+            >
+              <form className="space-y-5">
                 <div>
-                  <label className="block text-sm font-medium mb-1">Nome</label>
-                  <input type="text" className="w-full p-2 border rounded" placeholder="Seu nome" />
+                  <label className="block text-sm font-semibold mb-1.5 text-gray-700">Nome Completo</label>
+                  <input 
+                    type="text" 
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-[#0159A1] transition" 
+                    placeholder="Seu nome" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Email</label>
-                  <input type="email" className="w-full p-2 border rounded" placeholder="seu@email.com" />
+                  <label className="block text-sm font-semibold mb-1.5 text-gray-700">E-mail Ativo</label>
+                  <input 
+                    type="email" 
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-200 focus:border-[#0159A1] transition" 
+                    placeholder="seu@email.com" 
+                  />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-1">Mensagem</label>
-                  <textarea className="w-full p-2 border rounded h-32" placeholder="Como podemos ajudar?"></textarea>
+                  <label className="block text-sm font-semibold mb-1.5 text-gray-700">Mensagem</label>
+                  <textarea 
+                    className="w-full p-3 border border-gray-300 rounded-lg h-36 focus:ring-2 focus:ring-blue-200 focus:border-[#0159A1] transition resize-none" 
+                    placeholder="Como podemos ajudar?"
+                  ></textarea>
                 </div>
-                <button type="submit" className="w-full bg-blue-600 text-white py-3 rounded font-bold hover:bg-blue-700 transition">Enviar</button>
+                <button 
+                  type="submit" 
+                  className="w-full py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-md hover:shadow-2xl hover:-translate-y-1 active:scale-95 border-2 border-transparent hover:border-blue-300"
+                  style={{ 
+                    backgroundColor: '#0159A1', 
+                    color: '#FFFFFF', // ⚪ Força o texto para Branco Puro
+                    border: 'none',       // 🚫 Remove qualquer borda manual
+                    outline: 'none',      // 🚫 Remove o contorno de foco do navegador
+                    boxShadow: 'none'     // 💡 Se a "faixa" for uma sombra estranha, isso remove
+                  }}
+                >
+                  Enviar Mensagem
+                </button>
               </form>
             </div>
           </div>
@@ -763,34 +841,6 @@ useEffect(() => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-items-center">
             
-            {/* 🟦 --- CAIXA 1: MISSÃO --- 🟦 */}
-            {/* 1. Div Pai (Envelope com Degradê e Shadow) */}
-            <div 
-              className="bg-white rounded-3xl p-8 flex flex-col justify-between w-full max-w-xl relative overflow-hidden"
-              style={{
-                background: 'linear-gradient(to right, #ffffff, #ffffff)', // Fundo branco puro
-                border: '1px solid #e2e8f0', // Borda fininha de acabamento
-                boxShadow: 'inset 0 0 25px 5px #0159A1' // ⚡ O segredo: sombra azul PARA DENTRO 
-              }}
-            >
-              {/* 2. Div Branca Interna (Conteúdo) */}
-              <div className="bg-white rounded-[22px] p-8 flex flex-col justify-between w-full h-full">
-                <div>
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#0159A1' }}>
-                    Nossa Missão continua com você.
-                  </h3>
-                  <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                    O Movimento Mover Helipa transforma realidades através da educação e do esporte. 
-                    Seja parte dessa mudança e ajude a construir o futuro da nossa comunidade.
-                  </p>    
-                </div>
-                <div className="flex justify-center lg:justify-start">
-                  <LogoCatavento tamanho="h-20" />
-                </div>
-
-              </div>
-            </div>
-
             {/* --- COLUNA DA DIREITA: MAPA + NOVA CAIXINHA --- */}
             <div className="flex flex-col gap-0 w-full max-w-xl">
               
@@ -827,10 +877,18 @@ useEffect(() => {
                 boxShadow: 'inset 0 0 25px 5px #0159A1' // ⚡ O segredo: sombra azul PARA DENTRO 
               }}
             >
-                <div className="flex items-baseline ml-4 -mt-2">
-                  <h3 className="text-xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
-                    Nossa Sede
-                  </h3>
+                {/* 📍 Container do Título e Logotipo - Alinhamento Flex horizontal e centralizado verticalmente */}
+                <div className="flex items-center gap-4 mb-4 mt-2 justify-center lg:justify-start">
+                  
+                  {/* 1. O Logo Catavento (Tamanho reduzido para alinhar com o texto) */}
+                  <div className="flex-shrink-0">
+                    <LogoCatavento tamanho="h-10 md:h-12" /> {/* Ajustei de h-20 para h-10/12 */}
+                  </div>
+
+                  {/* 3. O Texto "MOVER" (Fiz em outro span, com a mesma formatação) */}
+                  <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+                    MOVER - Sede
+                  </span>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
@@ -843,6 +901,65 @@ useEffect(() => {
               </div>
 
             </div>
+
+            {/* --- COLUNA DA DIREITA: NOVA CAIXINHA --- */}
+            <div className="flex flex-col gap-0 w-full max-w-xl">
+              {/* 🟦 CAIXA INFO (Tudo deve ficar dentro desta div) */}
+              <div 
+                className="bg-white rounded-3xl p-6 flex flex-col gap-6 w-full max-w-xl relative overflow-hidden"
+                style={{
+                  background: 'linear-gradient(to right, #ffffff, #ffffff)',
+                  border: '1px solid #e2e8f0',
+                  boxShadow: 'inset 0 0 25px 5px #0159A1'
+                }}
+              >
+                {/* Unidade 1 */}
+                <div className="flex flex-col gap-2">
+                  <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+                    Projeto 1
+                  </span>
+                  <div className="flex flex-wrap gap-3">
+                    <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
+                      📍 Estrada das Lágrimas, 337 - São Paulo - SP, 04232-000
+                    </p>
+                    <p className="text-sm text-gray-700 m-0 p-0 leading-none">
+                      📞 (11) 99674-4126
+                    </p>
+                  </div>
+                </div>
+
+                {/* Unidade 2 */}
+                <div className="flex flex-col gap-2">
+                  <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+                    Programa 1
+                  </span>
+                  <div className="flex flex-wrap gap-3">
+                    <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
+                      📍 Estrada das Lágrimas, 337 - São Paulo - SP, 04232-000
+                    </p>
+                    <p className="text-sm text-gray-700 m-0 p-0 leading-none">
+                      📞 (11) 99674-4126
+                    </p>
+                  </div>
+                </div>
+
+                {/* Unidade 3 */}
+                <div className="flex flex-col gap-2">
+                  <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+                    Programa 2
+                  </span>
+                  <div className="flex flex-wrap gap-3">
+                    <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
+                      📍 Estrada das Lágrimas, 337 - São Paulo - SP, 04232-000
+                    </p>
+                    <p className="text-sm text-gray-700 m-0 p-0 leading-none">
+                      📞 (11) 99674-4126
+                    </p>
+                  </div>
+                </div>
+
+              </div> {/* FECHAMENTO DA CAIXA INFO */}
+            </div> {/* FECHAMENTO DA COLUNA DA DIREITA */}
             
           </div>
         </div>
