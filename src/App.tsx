@@ -946,9 +946,9 @@ useEffect(() => {
                 {/* Unidade 3 */}
                 <div className="flex flex-col gap-2">
                   <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
-                    Programa 2
+                    Programa 3
                   </span>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="flex flex-col gap-1 ml-4">
                     <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
                       📍 Estrada das Lágrimas, 337 - São Paulo - SP, 04232-000
                     </p>
