@@ -953,7 +953,7 @@ useEffect(() => {
                       📍 Estrada das Lágrimas, 337 - São Paulo - SP, 04232-000
                     </p>
                     <p className="text-sm text-gray-700 m-0 p-0 leading-none">
-                      📞 (11) 99674-4126 📞 (11) 99674-4126
+                      📞 (11) 99674-4126
                     </p>
                   </div>
                 </div>
