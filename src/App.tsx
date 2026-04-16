@@ -101,7 +101,7 @@ const ContadorMarmitas = () => {
       <div className="text-4xl font-bold text-blue-600 mb-2">
         {total.toLocaleString('pt-BR')}+
       </div>
-      <p className="text-gray-600">Cestas básicas entregues</p>
+      <p className="text-gray-600">Marmitas entregues</p>
     </div>
   );
 };
