@@ -680,21 +680,21 @@ useEffect(() => {
           <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             <ContadorMarmitas />
             <div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">25.000+</div>
+              <p className="text-gray-600">Cestas básicas entregues</p>
+            </div>
+            <div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">12.000+</div>
+              <p className="text-gray-600">Famílias atendidas na pandemia</p>
+            </div>
+            <div>
               <div className="text-4xl font-bold text-blue-600 mb-2">1.000+</div>
               <p className="text-gray-600">Vales gás distribuídos</p>
             </div>
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-2">300+</div>
               <p className="text-gray-600">Crianças atendidas</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">12.000+</div>
-              <p className="text-gray-600">Famílias na pandemia</p>
-            </div>
-            <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">25.000+</div>
-              <p className="text-gray-600">Cestas básicas entregues</p>
-            </div>
+            </div>          
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
               <p className="text-gray-600">Cozinhas acompanhadas</p>
@@ -974,7 +974,7 @@ useEffect(() => {
             width="100" 
             src={logo_mover_catavento} 
             alt="Logo Footer" 
-            className="mx-auto md:mx-0"
+            className="mx-auto md:mx-0 border-none shadow-none ring-0 outline-none" 
           />
 
           {/* 📦 7.2 Bloco de Texto (Lado Direito, mas centralizado internamente) */}
