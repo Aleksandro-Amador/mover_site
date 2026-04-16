@@ -1,4 +1,4 @@
-name: Deploy Mover Oficia
+name: Deploy Mover Oficial
 
 on:
   push:
