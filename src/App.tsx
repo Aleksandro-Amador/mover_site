@@ -533,18 +533,21 @@ useEffect(() => {
 
                 {/* CARROSSEL 2 COM EFEITO FADE */}
                 <div className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-black"> {/* Fundo preto é melhor que cinza se algo falhar */}
-                <AnimatePresence initial={false}> {/* Removemos o mode="wait" */}
-                  <motion.img
+                  <AnimatePresence initial={false}>
+                    <motion.div
                       key={currentImage2}
-                      src={secondCarouselImages[currentImage2]}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 1.5, ease: "easeInOut" }} // 1.5s é um tempo excelente para cross-fade
-                      className="absolute inset-0 w-full h-ful"
+                      transition={{ duration: 1.5, ease: "easeInOut" }}
+                      className="absolute inset-0"
                       style={{ 
-                      objectFit: 'fill'
-                    }}
+                        backgroundImage: `url(${secondCarouselImages[currentImage2]})`,
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        // 🚀 AQUI O COMANDO QUE MATA AS FAIXAS PRETAS:
+                        backgroundSize: '100% 100%' 
+                      }}
                     />
                   </AnimatePresence>
                 </div>
@@ -555,18 +558,21 @@ useEffect(() => {
                 
                 {/* CARROSSEL 3 DA SEGUNDA PARTE */}
                 <div className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-black"> {/* Fundo preto é melhor que cinza se algo falhar */}
-                <AnimatePresence initial={false}> {/* Removemos o mode="wait" */}
-                  <motion.img
-                      key={currentImage3} // Ele vai girar sincronizado com o de cima
-                      src={thirdCarouselImages[currentImage3]} 
+                  <AnimatePresence initial={false}>
+                    <motion.div
+                      key={currentImage3}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 1.5, ease: "easeInOut" }} // 1.5s é um tempo excelente para cross-fade
-                      className="absolute inset-0 w-full h-full"
+                      transition={{ duration: 1.5, ease: "easeInOut" }}
+                      className="absolute inset-0"
                       style={{ 
-                      objectFit: 'fill'
-                    }}
+                        backgroundImage: `url(${thirdCarouselImages[currentImage3]})`,
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat',
+                        // 🚀 O COMANDO FATAL: 100% na largura e 100% na altura
+                        backgroundSize: '100% 100%' 
+                      }}
                     />
                   </AnimatePresence>
                 </div>
