@@ -22,13 +22,13 @@ const DoeAgora: React.FC = () => {
       {/* 🌑 Overlay para garantir contraste (Opcional) */}
       <div className="absolute inset-0 bg-black/30 z-1"></div>
 
-      {/* 💳 4. O seu Card de Doação (Agora com z-10 para ficar na frente) */}
+      {/* 💳 4. O seu Card de Doação (Agora 100% integrado ao fundo) */}
       <div 
-        className="relative z-10 bg-white rounded-3xl p-8 md:p-12 flex flex-col items-center text-center max-w-2xl w-full shadow-2xl"
+        className="relative z-10 rounded-3xl p-8 md:p-12 flex flex-col items-center text-center max-w-2xl w-full"
         style={{ 
           background: 'linear-gradient(to right, #ffffff, #ffffff)',
-          border: '1px solid #e2e8f0',
-          boxShadow: 'inset 0 0 25px 2px #0159A1'
+          // border: '1px solid #e2e8f0', // 👈 REMOVIDO PARA ANULAR A BORDA FINA
+          boxShadow: 'inset 0 0 35px 5px #0159A1' // Aumentei um pelinho o blur pra ficar animal
         }}
       >
         <h2 className="text-orange-600 font-black text-3xl md:text-4xl mb-6 uppercase">
