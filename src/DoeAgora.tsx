@@ -26,15 +26,17 @@ const DoeAgora: React.FC = () => {
       <div 
         className="relative z-10 bg-white rounded-3xl p-8 md:p-12 flex flex-col items-center text-center max-w-2xl w-full shadow-2xl"
         style={{ 
-          boxShadow: 'inset 0 0 25px 2px #0159A1' 
+          background: 'linear-gradient(to right, #ffffff, #ffffff)',
+          border: '1px solid #e2e8f0',
+          boxShadow: 'inset 0 0 25px 2px #0159A1'
         }}
       >
         <h2 className="text-orange-600 font-black text-3xl md:text-4xl mb-6 uppercase">
-          O AUXÍLIO CONTINUA!
+          DOE AGORA!
         </h2>
         
         <p className="text-gray-600 mb-8 font-medium">
-          Sua contribuição transforma vidas em Heliópolis.
+          Sua contribuição transforma vidas.
         </p>
 
         {/* Dados Bancários */}
