@@ -1,7 +1,7 @@
 import React from 'react';
 
 // 1. Importe a imagem aqui dentro também
-import img_25_site from './assets/images/image_25_site_Heliopolis_A4.webp';
+import img_20_site from './assets/images/image_20_site_WhatsApp-Image-2023-01-31-at-13.11.43-1.webp';
 
 const DoeAgora: React.FC = () => {
   return (
@@ -12,10 +12,10 @@ const DoeAgora: React.FC = () => {
       <div 
         className="absolute inset-0 z-0 opacity-40 pointer-events-none"
         style={{ 
-          backgroundImage: `url(${img_25_site})`, 
+          backgroundImage: `url(${img_20_site})`, 
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover' 
+          backgroundSize: '100% 100%', // 100% da largura e 100% da altura do container
         }}
       />
 
