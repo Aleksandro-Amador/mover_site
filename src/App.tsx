@@ -5,22 +5,26 @@ import { FaPhoneAlt, FaTimes } from 'react-icons/fa';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
 
 // 2. Imagens para o Primeiro Carrossel (Sobre Nós)
-import img_20_site from './assets/images/image_20_site_WhatsApp-Image-2023-01-31-at-13.11.43-1.webp';
-import img_19_site from './assets/images/image_19_site_WhatsApp-Image-2025-06-17-at-19.25.45.webp';
+import img_20_site from './assets/images/image_20_site_espaco_mover_origem.webp';
+import img_28_site from './assets/images/image_28_site_Centro_qualificacao.webp';
+// img_1_3_site é a mesma da Capa dos Projetos e Programas, então não precisa importar de novo
 
 // 3. Imagens para o Segundo Carrossel (Hero/Início)
-import img_10_site from './assets/images/image_10_site_IMG-20241029-WA0006.webp';
-import img_11_site from './assets/images/image_11_site_IMG-20241029-WA0008.webp';
-import img_7_site from './assets/images/image_7_site_IMG-20241023-WA0011-scaled.webp';
+import img_24_site from './assets/images/image_24_site_Cozinha gestora_parceiros.webp';
+import img_25_site from './assets/images/image_25_site_3_unidades.webp';
+import img_23_site from './assets/images/image_23_site_Cozinha gestora_cozinha_solidaria.webp';
+import img_22_site from './assets/images/image_22_site_Cozinha gestora_cozinha_solidaria_unidades.webp';
 
 // 4. Imagens para o Terceiro Carrossel (Hero/Início)
-import img_18_site from './assets/images/image_18_site_IMG-20241029-WA0010.webp';
-import img_2_site from './assets/images/image_2_site_WhatsApp-Image-2023-03-08-at-00.32.57.webp';
+import img_13_site from './assets/images/image_13_site_centro_qualificacao.webp';
+import img_18_site from './assets/images/image_18_site_rede_cozinha.webp';
+import img_5_site from './assets/images/image_5_site_centro_qualificacao.webp';
+import img_10_site from './assets/images/image_10_site_rede_cozinha.webp';
 
 // 5. Logos (Pasta logos)
-import logo_1_site from './assets/logos/logo_1_site_mover_helipa.png';
-import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.png';
-
+import logo_1_site from './assets/logos/logo_1_site_mover_helipa.webp';
+import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.webp';
+import logo_mover_novo from './assets/logos/Logo Mover Novo.webp';
 
 // 6. 🚀 NOVOS IMPORTS
 import { TbTargetArrow } from "react-icons/tb"; // Missão
@@ -30,6 +34,10 @@ import { GiScales } from "react-icons/gi";       // Valores
 // 7. Página do button DoeAgora
 import { useNavigate, Routes, Route } from 'react-router-dom'; // Adicione Routes e Route aqui
 import DoeAgora from './DoeAgora'; // 👈 Chamando o seu arquivo
+
+// 8. Capa dos Projetos e Programas (1 e 3 no carrossel 1)
+import img_1_site from './assets/images/image_1_site_capa_centro_qualificacao.webp';
+import img_3_site from './assets/images/image_3_site_capa_cozinha_escola.webp';
 
 
 // import { GoogleGenAI } from "@google/genai";
@@ -49,20 +57,25 @@ interface Message {
 // 2.1 AS IMAGENS DO PRIMEIRO CARROSSEL (FADE)
 const primarycarouselImages = [
   img_20_site,
-  img_19_site
+  img_28_site,
+  img_1_site,
+  img_3_site
 ];
 
 // 🆕 2.2 AS IMAGENS DO SEGUNDO CARROSSEL (ZIGUE-ZAGUE)
 const secondCarouselImages = [
-  img_10_site,
-  img_11_site,
-  img_7_site  
+  img_24_site,
+  img_25_site,
+  img_23_site,
+  img_22_site
 ];
 
 // 🆕 2.3 AS IMAGENS DO SEGUNDO CARROSSEL (ZIGUE-ZAGUE)
 const thirdCarouselImages = [
+  img_13_site,
   img_18_site,
-  img_2_site 
+  img_5_site,
+  img_10_site
 ];
 
 // 🏗️ COMPONENTE REUTILIZÁVEL: LogoCatavento
@@ -446,21 +459,22 @@ useEffect(() => {
         <main id="content" className="site-main pt-[180px] md:pt-[160px]">
           
           {/* Hero Section */}
-          {/* 🚀 Hero Section com Carrossel de Fundo (Ajustado Kabelo Rock) */}
+          {/* 🚀 Hero Section com Carrossel 1 de Fundo (Ajustado Kabelo Rock) */}
           <section id="inicio" className="relative h-[600px] flex items-center justify-center overflow-hidden text-white">
             
-            {/* 🖼️ Camada do Carrossel de Fundo */}
-            <div className="absolute inset-0 z-0">
-              <AnimatePresence mode="wait">
+            {/* 🖼️ Camada do Carrossel 1 de Fundo */}
+            <div className="absolute inset-0 z-0 bg-black">
+              <AnimatePresence initial={false}>
                 <motion.div
                   key={currentImage1} // Usando o estado do segundo carrossel (das 2 imagens)
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 2, ease: "easeInOut" }}
-                  className="absolute inset-0 bg-cover bg-center"
+                  className="absolute inset-0 bg-cover bg-center bg-cover"
                   style={{ 
-                    backgroundImage: `url(${primarycarouselImages[currentImage1]})` 
+                    backgroundImage: `url(${primarycarouselImages[currentImage1]})`,
+                    backgroundSize: '100% 100%' 
                   }}
                 />
               </AnimatePresence>
@@ -508,7 +522,7 @@ useEffect(() => {
               
               <h2 className="text-4xl font-bold mb-12 border-l-4 border-blue-600 pl-4 uppercase">Sobre nós</h2>
 
-              {/* ⬅️ GRID 1: Texto à Esquerda | Carrossel à Direita */}
+              {/* ⬅️ GRID 1: Texto à Esquerda | Carrossel 2 à Direita */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div className="space-y-4 text-justify" style={{ fontFamily: '"Roboto", sans-serif', fontSize: '17px', fontWeight: 300, lineHeight: '1.8', color: '#54595f' }}>
                   <p>O <strong>Movimento Organizacional Vencer, Educar e Realizar – MOVER</strong> é uma organização da sociedade civil... entorno da maior favela da cidade: <strong>Heliópolis</strong>.</p>
@@ -517,36 +531,42 @@ useEffect(() => {
                   <p>Em 2019... equipe voluntária iniciou a produção de <strong>quase mil refeições por dia</strong>. Com muita luta, assim começamos nossa caminhada no <strong>combate à fome.</strong></p>
                 </div>
 
-                {/* CARROSSEL COM EFEITO FADE */}
-                <div className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
-                  <AnimatePresence mode="wait">
-                    <motion.img
+                {/* CARROSSEL 2 COM EFEITO FADE */}
+                <div className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-black"> {/* Fundo preto é melhor que cinza se algo falhar */}
+                <AnimatePresence initial={false}> {/* Removemos o mode="wait" */}
+                  <motion.img
                       key={currentImage2}
                       src={secondCarouselImages[currentImage2]}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 2, ease: "easeInOut" }} // 2 segundos de transição suave
-                      className="absolute inset-0 w-full h-full object-cover"
+                      transition={{ duration: 1.5, ease: "easeInOut" }} // 1.5s é um tempo excelente para cross-fade
+                      className="absolute inset-0 w-full h-ful"
+                      style={{ 
+                      objectFit: 'fill'
+                    }}
                     />
                   </AnimatePresence>
                 </div>
               </div>
 
-              {/* ➡️ GRID 2: Carrossel à Esquerda | Texto à Direita */}
+              {/* ➡️ GRID 2: Carrossel 3 à Esquerda | Texto à Direita */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 
-                {/* CARROSSEL DA SEGUNDA PARTE */}
-                <div className="order-2 md:order-1 relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-gray-100">
-                  <AnimatePresence mode="wait">
-                    <motion.img
+                {/* CARROSSEL 3 DA SEGUNDA PARTE */}
+                <div className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-black"> {/* Fundo preto é melhor que cinza se algo falhar */}
+                <AnimatePresence initial={false}> {/* Removemos o mode="wait" */}
+                  <motion.img
                       key={currentImage3} // Ele vai girar sincronizado com o de cima
                       src={thirdCarouselImages[currentImage3]} 
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 2, ease: "easeInOut" }}
-                      className="absolute inset-0 w-full h-full object-cover"
+                      transition={{ duration: 1.5, ease: "easeInOut" }} // 1.5s é um tempo excelente para cross-fade
+                      className="absolute inset-0 w-full h-full"
+                      style={{ 
+                      objectFit: 'fill'
+                    }}
                     />
                   </AnimatePresence>
                 </div>
@@ -636,7 +656,7 @@ useEffect(() => {
             <div className="max-w-6xl mx-auto text-center mb-16">
               <h2 className="text-4xl font-bold mb-4">Nossos Projetos</h2>
             </div>
-            <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+            <div className="max-w-2xl mx-auto grid md:grid-cols-1 gap-8 justify-center">
               <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
                 <div className="h-64 overflow-hidden">
                   <img src="https://moverhelipa.org.br/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-17-at-19.25.45.webp" alt="Cozinha Mover" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
@@ -646,13 +666,22 @@ useEffect(() => {
                   <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia.</p>
                 </div>
               </div>
+            </div>
+          </section>
+
+          {/* Programas */}
+          <section id="projetos" className="py-20 px-4 bg-gray-50">
+            <div className="max-w-6xl mx-auto text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4">Nossos Programas</h2>
+            </div>
+            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 justify-center">
               <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
                 <div className="h-64 overflow-hidden">
                   <img src="https://moverhelipa.org.br/wp-content/uploads/2024/10/escola-1024x1024.jpg" alt="Cozinha Escola" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold mb-2">Rede Cozinha Escola</h3>
-                  <p className="text-gray-600 text-sm">Parceria com a Prefeitura de SP servindo 400 refeições/dia.</p>
+                  <p className="text-gray-600 text-sm">Parceria com a Prefeitura de SP servindo 450 refeições/dia.</p>
                 </div>
               </div>
               <div className="bg-white rounded-xl shadow-lg overflow-hidden group">

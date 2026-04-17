@@ -1,7 +1,7 @@
 import React from 'react';
 
 // 1. Importe a imagem aqui dentro também
-import img_20_site from './assets/images/image_20_site_WhatsApp-Image-2023-01-31-at-13.11.43-1.webp';
+import img_20_site from './assets/images/image_20_site_espaco_mover_origem.webp';
 
 const DoeAgora: React.FC = () => {
   return (
