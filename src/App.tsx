@@ -384,13 +384,18 @@ useEffect(() => {
                 <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
 
                   {/* 3.1 Menu com Links e o Botão 'DOAR' */}
-                  <nav className="flex flex-wrap justify-center gap-4 md:gap-12 items-center font-bold uppercase text-base md:text-base">
+                  <nav className={`
+                    flex flex-wrap justify-center items-center 
+                    gap-x-4 gap-y-2 md:gap-12 
+                    font-bold uppercase text-base 
+                    leading-tight
+                  `}>
                     <a 
                       href="#início" 
                       className="text-white hover:brightness-125 transition-all"
                       style={{ color: 'white', textDecoration: 'none' }}
                       >
-                        Incío
+                        Início
                       </a>
                     <a 
                       href="#sobre-nos" 
@@ -492,7 +497,7 @@ useEffect(() => {
                   className="italic tracking-tighter leading-none"
                   style={{ 
                     fontFamily: "'BookmanSwash', serif", 
-                    filter: "drop-shadow(2px 2px 4px rgba(0,0,0,0.3))" 
+                    filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6))"
                   }}
                 >
                   <span style={{ color: '#0159A1' }}>M</span>
@@ -503,15 +508,28 @@ useEffect(() => {
                 </span>
               </h1>
               
-              <p className="text-xl md:text-3xl max-w-4xl mx-auto mb-10 font-medium leading-tight drop-shadow-lg">
+              <p className={`
+                max-w-4xl mx-auto mb-10 font-medium leading-tight drop-shadow-lg
+                text-base md:text-2xl text-white/80
+              `}>
                 Juntos podemos tornar sonhos em realidade, movendo e transformando vidas nós construímos o futuro.
               </p>
               
+              {/* BOTÃO: Inscreva-se */}
               <a 
-                href="https://docs.google.com/forms/d/e/1FAIpQLScHZSjy2ZPUAeHFOlJxGLX9bFGo0Rj1UBTN8QPfSGvYJNpwzg/viewform" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="inline-block bg-white text-gray-900 px-12 py-4 rounded-xl font-bold text-xl hover:bg-gray-100 transition shadow-2xl border-2 border-white"
+                href="#" 
+                className={`
+                  inline-block rounded-xl font-bold text-xl shadow-2xl transition-all duration-300
+                  !text-white px-12 py-4 mt-10 md:mt-16
+                  border-3 border-white/60
+                  hover:border-white/40 hover:!scale-110
+                `}style={{ 
+                  backgroundColor: '#27272a99', 
+                  color: '#ffffff', 
+                  textDecoration: 'none',
+                  display: 'inline-block',
+                  backdropFilter: 'blur(4px)'
+                }} 
               >
                 Inscreva-se
               </a>
