@@ -463,7 +463,7 @@ useEffect(() => {
           <section id="inicio" className="relative h-[600px] flex items-center justify-center overflow-hidden text-white">
             
             {/* 🖼️ Camada do Carrossel 1 de Fundo */}
-            <div className="absolute inset-0 z-0 bg-black">
+            <div className="absolute inset-0 z-0">
               <AnimatePresence initial={false}>
                 <motion.div
                   key={currentImage1} // Usando o estado do segundo carrossel (das 2 imagens)
@@ -471,10 +471,12 @@ useEffect(() => {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                   transition={{ duration: 2, ease: "easeInOut" }}
-                  className="absolute inset-0 bg-cover bg-center bg-cover"
+                  className="absolute inset-0 flex items-center justify-center overflow-hidden"
                   style={{ 
                     backgroundImage: `url(${primarycarouselImages[currentImage1]})`,
-                    backgroundSize: '100% 100%' 
+                    backgroundSize: 'contain',    // Faz a foto caber inteira sem ultrapassar
+                    backgroundRepeat: 'no-repeat', // Impede que a foto se repita se for pequena
+                    backgroundPosition: 'center',  // Mantém no meio
                   }}
                 />
               </AnimatePresence>
@@ -532,22 +534,22 @@ useEffect(() => {
                 </div>
 
                 {/* CARROSSEL 2 COM EFEITO FADE */}
-                <div className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-black"> {/* Fundo preto é melhor que cinza se algo falhar */}
-                  <AnimatePresence initial={false}>
-                    <motion.div
+                <div 
+                  className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
+                  style={{ 
+                    // Usando o mesmo padrão de azul que você tem nos outros cards
+                    background: 'radial-gradient(circle, #ffffff 0%, #e2e8f0 60%, #0159A1 120%)',
+                    boxShadow: 'inset 0 0 50px rgba(1, 89, 161, 0.3)' 
+                  }}
+                ><AnimatePresence initial={false}>
+                    <motion.img
                       key={currentImage2}
+                      src={secondCarouselImages[currentImage2]}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 1.5, ease: "easeInOut" }}
-                      className="absolute inset-0"
-                      style={{ 
-                        backgroundImage: `url(${secondCarouselImages[currentImage2]})`,
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat',
-                        // 🚀 AQUI O COMANDO QUE MATA AS FAIXAS PRETAS:
-                        backgroundSize: '100% 100%' 
-                      }}
+                      className="absolute w-auto h-auto max-w-full max-h-full m-auto object-contain"
                     />
                   </AnimatePresence>
                 </div>
@@ -557,22 +559,23 @@ useEffect(() => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 
                 {/* CARROSSEL 3 DA SEGUNDA PARTE */}
-                <div className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl bg-black"> {/* Fundo preto é melhor que cinza se algo falhar */}
+                <div 
+                  className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
+                  style={{ 
+                    // Usando o mesmo padrão de azul que você tem nos outros cards
+                    background: 'radial-gradient(circle, #ffffff 0%, #e2e8f0 60%, #0159A1 120%)',
+                    boxShadow: 'inset 0 0 50px rgba(1, 89, 161, 0.3)' 
+                  }}
+                >
                   <AnimatePresence initial={false}>
-                    <motion.div
+                    <motion.img
                       key={currentImage3}
+                      src={thirdCarouselImages[currentImage3]}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
                       transition={{ duration: 1.5, ease: "easeInOut" }}
-                      className="absolute inset-0"
-                      style={{ 
-                        backgroundImage: `url(${thirdCarouselImages[currentImage3]})`,
-                        backgroundPosition: 'center',
-                        backgroundRepeat: 'no-repeat',
-                        // 🚀 O COMANDO FATAL: 100% na largura e 100% na altura
-                        backgroundSize: '100% 100%' 
-                      }}
+                      className="absolute w-auto h-auto max-w-full max-h-full m-auto object-contain"
                     />
                   </AnimatePresence>
                 </div>
