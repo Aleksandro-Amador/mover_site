@@ -471,7 +471,7 @@ useEffect(() => {
             <div className="absolute inset-0 z-0">
               <AnimatePresence initial={false}>
                 <motion.div
-                  key={currentImage1} // Usando o estado do segundo carrossel (das 2 imagens)
+                  key={currentImage1} 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -486,7 +486,7 @@ useEffect(() => {
                 />
               </AnimatePresence>
               {/* Overlay Escuro para dar leitura ao texto */}
-              <div className="absolute inset-0 bg-black/50 z-10"></div>
+              <div className="absolute inset-0 bg-black/30 z-10"></div>
             </div>
 
             {/* ✍️ Conteúdo Fixo (Por cima do carrossel) */}
@@ -510,7 +510,7 @@ useEffect(() => {
               
               <p className={`
                 max-w-4xl mx-auto mb-10 font-medium leading-tight drop-shadow-lg
-                text-base md:text-2xl text-white/80
+                text-base md:text-2xl text-white
               `}>
                 Juntos podemos tornar sonhos em realidade, movendo e transformando vidas nós construímos o futuro.
               </p>
