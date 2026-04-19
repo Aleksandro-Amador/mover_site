@@ -474,7 +474,7 @@ useEffect(() => {
                   className="absolute inset-0 flex items-center justify-center overflow-hidden"
                   style={{ 
                     backgroundImage: `url(${primarycarouselImages[currentImage1]})`,
-                    backgroundSize: 'contain',    // Faz a foto caber inteira sem ultrapassar
+                    backgroundSize: 'cover',    // Faz a foto caber inteira sem ultrapassar
                     backgroundRepeat: 'no-repeat', // Impede que a foto se repita se for pequena
                     backgroundPosition: 'center',  // Mantém no meio
                   }}
