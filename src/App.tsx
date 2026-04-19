@@ -907,14 +907,14 @@ useEffect(() => {
         {/* 📦 SEÇÃO: MISSÃO + MAPA COM BORDAS DEGRADÊ (ESTILO KABELO ROCK) */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch justify-items-center">
               
               {/* --- COLUNA DA DIREITA: MAPA + NOVA CAIXINHA --- */}
-              <div className="flex flex-col gap-0 w-full max-w-xl">
+              <div className="flex flex-col gap-0 w-full h-full max-w-xl">
                 
                 {/* 🟦 CAIXA DO MAPA (Sua caixa atual) */}
                 <div 
-                className="bg-white rounded-t-3xl rounded-b-none p-8 flex flex-col justify-between w-full max-w-xl relative overflow-hidden"
+                className="bg-white rounded-t-3xl rounded-b-none p-8 flex flex-col flex-grow justify-between w-full max-w-xl relative overflow-hidden"
                 style={{
                   background: 'linear-gradient(to right, #ffffff, #ffffff)', // Fundo branco puro
                   border: '1px solid #e2e8f0', // Borda fininha de acabamento
@@ -922,7 +922,7 @@ useEffect(() => {
                 }}
               >
                   {/* MAPA */}
-                  <div className="h-[300px] grayscale-[15%] hover:grayscale-0 transition-all duration-700">
+                  <div className="flex-grow grayscale-[15%] hover:grayscale-0 transition-all duration-700">
                     <iframe 
                       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.8235610816823!2d-46.5912444!3d-23.610667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5b4080ba8739%3A0x62ad0e4b0f9d732a!2sEstr.%20das%20L%C3%A1grimas%2C%20337%20-%20Vila%20Heliopolis%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004232-000!5e0!3m2!1spt-BR!2sbr!4v1711987000000!5m2!1spt-BR!2sbr" 
                       width="100%" 
@@ -958,13 +958,25 @@ useEffect(() => {
                       MOVER - Sede
                     </span>
                   </div>
-                  <div className="flex flex-wrap gap-3">
-                    <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
-                      📍 Estrada das Lágrimas, 337 - São Paulo - SP, 04232-000
-                    </p>
-                    <p className="text-sm text-gray-700 m-0 p-0 leading-none">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 w-full px-4">
+  
+                    {/* 📍 Bloco do Endereço */}
+                    <div className="flex items-start gap-0">
+                      {/* Ícone fixo na esquerda */}
+                      <span className="text-sm">📍</span>
+                      
+                      {/* Texto quebrado em duas linhas alinhadas */}
+                      <div className="flex flex-col text-sm text-gray-600 leading-tight">
+                        <span>Estrada das Lágrimas, 337 - Heliópolis</span>
+                        <span>São Paulo - SP, 04232-000</span>
+                      </div>
+                    </div>
+
+                    {/* 📞 Bloco do Contato (Alinhado à direita no desktop) */}
+                    <div className="text-sm text-gray-700 md:text-right">
                       📞 (11) 99674-4126
-                    </p>
+                    </div>
+
                   </div>
                 </div>
 
@@ -974,7 +986,7 @@ useEffect(() => {
               <div className="flex flex-col gap-0 w-full max-w-xl">
                 {/* 🟦 CAIXA INFO (Tudo deve ficar dentro desta div) */}
                 <div 
-                  className="bg-white rounded-3xl p-6 flex flex-col gap-6 w-full max-w-xl relative overflow-hidden"
+                  className="bg-white rounded-3xl p-6 flex flex-col gap-6 w-full max-w-xl relative overflow-hidden h-full"
                   style={{
                     background: 'linear-gradient(to right, #ffffff, #ffffff)',
                     border: '1px solid #e2e8f0',
@@ -984,11 +996,11 @@ useEffect(() => {
                   {/* Unidade 1 */}
                   <div className="flex flex-col gap-2">
                     <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
-                      Projeto 1
+                      Centro Popular de Qualificação
                     </span>
                     <div className="flex flex-wrap gap-3">
                       <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
-                        📍 Estrada das Lágrimas, 337 - São Paulo - SP, 04232-000
+                        📍 Estrada das Lágrimas, 337 - Heliópolis - São Paulo - SP, 04232-000
                       </p>
                       <p className="text-sm text-gray-700 m-0 p-0 leading-none">
                         📞 (11) 99674-4126
@@ -999,11 +1011,11 @@ useEffect(() => {
                   {/* Unidade 2 */}
                   <div className="flex flex-col gap-2">
                     <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
-                      Programa 1
+                      Parque Santa Madalena
                     </span>
                     <div className="flex flex-wrap gap-3">
                       <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
-                        📍 Estrada das Lágrimas, 337 - São Paulo - SP, 04232-000
+                        📍 Rua Iacape, 266 - Parque Santa Madalena - São Paulo - SP, 04232-000
                       </p>
                       <p className="text-sm text-gray-700 m-0 p-0 leading-none">
                         📞 (11) 99674-4126
@@ -1014,11 +1026,26 @@ useEffect(() => {
                   {/* Unidade 3 */}
                   <div className="flex flex-col gap-2">
                     <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
-                      Programa 3
+                      Rede Cozinha Escola
+                    </span>
+                    <div className="flex flex-wrap gap-3">
+                      <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
+                        📍 Rua Comandante Taylor, 612 - Ipiranga - São Paulo - SP, 04218-000
+                      </p>
+                      <p className="text-sm text-gray-700 m-0 p-0 leading-none">
+                        📞 (11) 99674-4126
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Unidade 3 */}
+                  <div className="flex flex-col gap-2">
+                    <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+                      Cozinha Solidária
                     </span>
                     <div className="flex flex-col gap-1 ml-4">
                       <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
-                        📍 Estrada das Lágrimas, 337 - São Paulo - SP, 04232-000
+                        📍 Estrada das Lágrimas, 337 - Heliópolis - São Paulo - SP, 04232-000
                       </p>
                       <p className="text-sm text-gray-700 m-0 p-0 leading-none">
                         📞 (11) 99674-4126
@@ -1042,7 +1069,7 @@ useEffect(() => {
               width="100" 
               src={logo_mover_catavento} 
               alt="Logo Footer" 
-              className="mx-auto md:mx-0 border-none shadow-none ring-0 outline-none" 
+              className="w-12 md:w-22 mx-auto md:mx-0 border-none shadow-none ring-0 outline-none" 
             />
 
             {/* 📦 7.2 Bloco de Texto (Lado Direito, mas centralizado internamente) */}
@@ -1054,7 +1081,7 @@ useEffect(() => {
               </p>
               
               {/* Nome por Extenso */}
-              <p className="font-bold text-gray-300 text-[12px] md:text-sm mt-1 whitespace-normal md:whitespace-nowrap max-w-[280px] md:max-w-none">
+              <p className="font-bold text-gray-300 text-[12px] md:text-sm mt-0.5 whitespace-normal md:whitespace-nowrap max-w-[280px] md:max-w-none">
                 Movimento Organizacional Vencer, Educar e Realizar
               </p>
               
