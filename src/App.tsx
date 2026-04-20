@@ -953,7 +953,7 @@ useEffect(() => {
                       <LogoCatavento tamanho="h-10 md:h-12" /> {/* Ajustei de h-20 para h-10/12 */}
                     </div>
 
-                    {/* 3. O Texto "MOVER" (Fiz em outro span, com a mesma formatação) */}
+                    {/* 2. Matriz "MOVER"  */}
                     <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
                       MOVER - Sede
                     </span>
@@ -972,10 +972,25 @@ useEffect(() => {
                       </div>
                     </div>
 
-                    {/* 📞 Bloco do Contato (Alinhado à direita no desktop) */}
-                    <div className="text-sm text-gray-700 md:text-right">
-                      📞 (11) 99674-4126
-                    </div>
+                    {/* 📞 Bloco do Contato */}
+                      <a 
+                        href="https://wa.me/5511996744126" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 transition-all duration-300 hover:scale-105 group"
+                        style={{ textDecoration: 'none' }}
+                      >
+                        {/* Troquei FaPhoneAlt por FaWhatsapp para o usuário saber que vai pro Whats */}
+                        <FaWhatsapp 
+                          size={20} 
+                          style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
+                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                        />
+                        
+                        <span className="text-sm text-gray-700">
+                          (11) 99674-4126
+                        </span>
+                      </a>
 
                   </div>
                 </div>
@@ -998,13 +1013,42 @@ useEffect(() => {
                     <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
                       Centro Popular de Qualificação
                     </span>
-                    <div className="flex flex-wrap gap-3">
-                      <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
-                        📍 Estrada das Lágrimas, 337 - Heliópolis - São Paulo - SP, 04232-000
-                      </p>
-                      <p className="text-sm text-gray-700 m-0 p-0 leading-none">
-                        📞 (11) 99674-4126
-                      </p>
+                    
+                    {/* Container Flex que separa Endereço de Telefone */}
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 w-full px-4">
+                      
+                      {/* 📍 Bloco do Endereço */}
+                      <div className="flex items-start gap-0">
+                        {/* Ícone fixo na esquerda */}
+                        <span className="text-sm">📍</span>
+                        
+                        {/* Texto quebrado em duas linhas alinhadas */}
+                        <div className="flex flex-col text-sm text-gray-600 leading-tight">
+                          <span>Estrada das Lágrimas, 337 - Heliópolis</span>
+                          <span>São Paulo - SP, 04232-000</span>
+                        </div>
+                      </div>
+
+                      {/* 📞 Bloco do Contato */}
+                      <a 
+                        href="https://wa.me/5511996744126" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 transition-all duration-300 hover:scale-105 group"
+                        style={{ textDecoration: 'none' }}
+                      >
+                        {/* Troquei FaPhoneAlt por FaWhatsapp para o usuário saber que vai pro Whats */}
+                        <FaWhatsapp 
+                          size={20} 
+                          style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
+                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                        />
+                        
+                        <span className="text-sm text-gray-700">
+                          (11) 99674-4126
+                        </span>
+                      </a>
+
                     </div>
                   </div>
 
@@ -1013,13 +1057,42 @@ useEffect(() => {
                     <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
                       Parque Santa Madalena
                     </span>
-                    <div className="flex flex-wrap gap-3">
-                      <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
-                        📍 Rua Iacape, 266 - Parque Santa Madalena - São Paulo - SP, 04232-000
-                      </p>
-                      <p className="text-sm text-gray-700 m-0 p-0 leading-none">
-                        📞 (11) 99674-4126
-                      </p>
+
+                    {/* Container Flex que separa Endereço de Telefone */}
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 w-full px-4">
+                      
+                      {/* 📍 Bloco do Endereço */}
+                      <div className="flex items-start gap-0">
+                        {/* Ícone fixo na esquerda */}
+                        <span className="text-sm">📍</span>
+                        
+                        {/* Texto quebrado em duas linhas alinhadas */}
+                        <div className="flex flex-col text-sm text-gray-600 leading-tight">
+                          <span>Rua Iacape, 266 - Parque Santa Madalena</span>
+                          <span>São Paulo - SP, 03983-090</span>
+                        </div>
+                      </div>
+
+                      {/* 📞 Bloco do Contato */}
+                      <a 
+                        href="https://wa.me/5511996744126" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 transition-all duration-300 hover:scale-105 group"
+                        style={{ textDecoration: 'none' }}
+                      >
+                        {/* Troquei FaPhoneAlt por FaWhatsapp para o usuário saber que vai pro Whats */}
+                        <FaWhatsapp 
+                          size={20} 
+                          style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
+                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                        />
+                        
+                        <span className="text-sm text-gray-700">
+                          (11) 99674-4126
+                        </span>
+                      </a>
+
                     </div>
                   </div>
 
@@ -1028,28 +1101,130 @@ useEffect(() => {
                     <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
                       Rede Cozinha Escola
                     </span>
-                    <div className="flex flex-wrap gap-3">
-                      <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
-                        📍 Rua Comandante Taylor, 612 - Ipiranga - São Paulo - SP, 04218-000
-                      </p>
-                      <p className="text-sm text-gray-700 m-0 p-0 leading-none">
-                        📞 (11) 99674-4126
-                      </p>
+
+                    {/* Container Flex que separa Endereço de Telefone */}
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 w-full px-4">
+                      
+                      {/* 📍 Bloco do Endereço */}
+                      <div className="flex items-start gap-0">
+                        {/* Ícone fixo na esquerda */}
+                        <span className="text-sm">📍</span>
+                        
+                        {/* Texto quebrado em duas linhas alinhadas */}
+                        <div className="flex flex-col text-sm text-gray-600 leading-tight">
+                          <span>Rua Comandante Taylor, 612 - Ipiranga</span>
+                          <span>São Paulo - SP, 04218-000</span>
+                        </div>
+                      </div>
+
+                      {/* 📞 Bloco do Contato */}
+                      <a 
+                        href="https://wa.me/5511996744126" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 transition-all duration-300 hover:scale-105 group"
+                        style={{ textDecoration: 'none' }}
+                      >
+                        {/* Troquei FaPhoneAlt por FaWhatsapp para o usuário saber que vai pro Whats */}
+                        <FaWhatsapp 
+                          size={20} 
+                          style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
+                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                        />
+                        
+                        <span className="text-sm text-gray-700">
+                          (11) 99674-4126
+                        </span>
+                      </a>
+
                     </div>
                   </div>
 
-                  {/* Unidade 3 */}
+                  {/* Unidade 4 */}
                   <div className="flex flex-col gap-2">
                     <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
                       Cozinha Solidária
                     </span>
-                    <div className="flex flex-col gap-1 ml-4">
-                      <p className="text-sm text-gray-600 m-0 p-0 leading-none ml-4">
-                        📍 Estrada das Lágrimas, 337 - Heliópolis - São Paulo - SP, 04232-000
-                      </p>
-                      <p className="text-sm text-gray-700 m-0 p-0 leading-none">
-                        📞 (11) 99674-4126
-                      </p>
+
+                    {/* Container Flex que separa Endereço de Telefone */}
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 w-full px-4">
+                      
+                      {/* 📍 Bloco do Endereço */}
+                      <div className="flex items-start gap-0">
+                        {/* Ícone fixo na esquerda */}
+                        <span className="text-sm">📍</span>
+                        
+                        {/* Texto quebrado em duas linhas alinhadas */}
+                        <div className="flex flex-col text-sm text-gray-600 leading-tight">
+                          <span>Estrada das Lágrimas, 337 - Heliópolis</span>
+                          <span>São Paulo - SP, 04232-000</span>
+                        </div>
+                      </div>
+
+                      {/* 📞 Bloco do Contato */}
+                      <a 
+                        href="https://wa.me/5511996744126" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 transition-all duration-300 hover:scale-105 group"
+                        style={{ textDecoration: 'none' }}
+                      >
+                        {/* Troquei FaPhoneAlt por FaWhatsapp para o usuário saber que vai pro Whats */}
+                        <FaWhatsapp 
+                          size={20} 
+                          style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
+                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                        />
+                        
+                        <span className="text-sm text-gray-700">
+                          (11) 99674-4126
+                        </span>
+                      </a>
+
+                    </div>
+                  </div>
+
+                  {/* Unidade 5: Mosaico Sociocultural */}
+                  <div className="flex flex-col gap-2">
+                    <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+                      Mosaico Sociocultural
+                    </span>
+
+                    {/* Container Flex que separa Endereço de Telefone */}
+                    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 w-full px-4">
+                      
+                      {/* 📍 Bloco do Endereço */}
+                      <div className="flex items-start gap-0">
+                        {/* Ícone fixo na esquerda */}
+                        <span className="text-sm">📍</span>
+                        
+                        {/* Texto quebrado em duas linhas alinhadas */}
+                        <div className="flex flex-col text-sm text-gray-600 leading-tight">
+                          <span>Av. Ragueb Chohfi, 3027 - Jardim Três Marias</span>
+                          <span>São Paulo - SP, 08341-410</span>
+                        </div>
+                      </div>
+
+                      {/* 📞 Bloco do Contato */}
+                      <a 
+                        href="https://wa.me/5511996744126" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 transition-all duration-300 hover:scale-105 group"
+                        style={{ textDecoration: 'none' }}
+                      >
+                        {/* Troquei FaPhoneAlt por FaWhatsapp para o usuário saber que vai pro Whats */}
+                        <FaWhatsapp 
+                          size={20} 
+                          style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
+                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                        />
+                        
+                        <span className="text-sm text-gray-700">
+                          (11) 91964-0582 
+                        </span>
+                      </a>
+
                     </div>
                   </div>
 
