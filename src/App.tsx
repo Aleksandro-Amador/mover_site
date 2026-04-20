@@ -93,7 +93,7 @@ const LogoCatavento = ({ comBrilho = false, tamanho = "h-16" }) => (
   </div>
 );
 
-// Mova para fora da função App e remova o export default
+// 🚀 ADICIONE O COMPONENTE AQUI (Fora do App)
 const ContadorMarmitas = () => {
   const VALOR_BASE = 400000;
   const DATA_INICIAL = new Date('2026-04-14'); 
@@ -116,10 +116,13 @@ const ContadorMarmitas = () => {
 
   return (
     <div>
-      <div className="text-4xl font-bold text-blue-600 mb-2">
+      <div 
+        className="text-4xl md:text-5xl font-bold mb-2" 
+        style={{ color: '#0159A1' }}
+      >
         {total.toLocaleString('pt-BR')}+
       </div>
-      <p className="text-gray-600">Marmitas entregues</p>
+      <p className="text-gray-600 font-medium italic">Refeições servidas</p>
     </div>
   );
 };
@@ -610,7 +613,7 @@ useEffect(() => {
           </section>
 
           {/* 📦 SEÇÃO: MISSÃO, VISÃO E VALORES */}
-          <section className="py-20 bg-gray-50">
+          <section className="py-20 bg-transparent">
             <div className="max-w-6xl mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
@@ -678,96 +681,184 @@ useEffect(() => {
             </div>
           </section>
 
-          {/* Projetos */}
-          <section id="projetos" className="py-20 px-4 bg-gray-50">
-            <div className="max-w-6xl mx-auto text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">Nossos Projetos</h2>
-            </div>
-            <div className="max-w-2xl mx-auto grid md:grid-cols-1 gap-8 justify-center">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
-                <div className="h-64 overflow-hidden">
-                  <img src="https://moverhelipa.org.br/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-17-at-19.25.45.webp" alt="Cozinha Mover" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Centro Popular de Qualificação</h3>
-                  <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia.</p>
-                </div>
+          {/* 📦 SEÇÃO: PROJETOS */}
+          <section id="projetos" className="py-20 px-4 bg-transparent">
+            
+            {/* 🟦 1. CAIXA GRADIENTE MESTRE (Moldura com a largura do site) */}
+            <div 
+              className="max-w-6xl mx-auto rounded-3xl pt-4 pb-8 md:pt-6 md:pb-16 px-8 md:px-16 relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(to right, #ffffff, #ffffff)',
+                border: '1px solid #e2e8f0',
+                boxShadow: 'inset 0 0 25px 2px #0159A1'
+              }}
+            >
+              {/* Título interno à moldura */}
+              <div className="text-center mt-0 md:mt-[-10px] mb-6">
+                <h2 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>
+                  Nossos Projetos
+                  <span className="block mt-6 text-2xl md:text-3xl opacity-90 font-semibold">
+                    Centro Popular de Qualificação
+                  </span>
+                </h2>
               </div>
-            </div>
+
+              {/* 📦 2. GRID DOS CARDS (Duas colunas para os programas) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                {/* Projeto 1: Heliópolis */}
+                <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
+                  <div className="h-64 overflow-hidden">
+                    <img 
+                      src="https://moverhelipa.org.br/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-17-at-19.25.45.webp" 
+                      alt="CPQ Heliópolis" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Unidade: Heliópolis</h3>
+                    <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia para a comunidade de Heliópolis.</p>
+                  </div>
+                </div>
+
+                {/* Projeto 2: Parque Santa Madalena */}
+                <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
+                  <div className="h-64 overflow-hidden">
+                    <img 
+                      src="https://moverhelipa.org.br/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-17-at-19.25.45.webp" 
+                      alt="CPQ Parque Santa Madalena" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Unidade: Parque Santa Madalena</h3>
+                    <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia para a comunidade do Parque Santa Madalena.</p>
+                  </div>
+                </div>
+
+              </div> {/* Fim da Grid */}
+            </div> {/* Fim da Caixa Gradiente Mestre */}
           </section>
 
-          {/* Programas */}
-          <section id="projetos" className="py-20 px-4 bg-gray-50">
-            <div className="max-w-6xl mx-auto text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">Nossos Programas</h2>
-            </div>
-            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 justify-center">
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
-                <div className="h-64 overflow-hidden">
-                  <img src="https://moverhelipa.org.br/wp-content/uploads/2024/10/escola-1024x1024.jpg" alt="Cozinha Escola" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Rede Cozinha Escola</h3>
-                  <p className="text-gray-600 text-sm">Parceria com a Prefeitura de SP servindo 450 refeições/dia.</p>
-                </div>
+          {/* 📦 SEÇÃO: PROGRAMAS */}
+          <section id="programas" className="py-20 px-4 bg-transparent">
+
+            {/* 🟦 1. CAIXA GRADIENTE MESTRE (Moldura com a largura do site) */}
+            <div 
+              className="max-w-6xl mx-auto rounded-3xl pt-4 pb-8 md:pt-6 md:pb-16 px-8 md:px-16 relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(to right, #ffffff, #ffffff)',
+                border: '1px solid #e2e8f0',
+                boxShadow: 'inset 0 0 25px 2px #0159A1'
+              }}
+            >
+              {/* Título interno à moldura */}
+              <div className="text-center mt-0 md:mt-[-0px] mb-12">
+                <h2 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>
+                  Nossos Programas
+                </h2>
               </div>
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden group">
-                <div className="h-64 overflow-hidden">
-                  <img src="https://moverhelipa.org.br/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-08-at-00.32.57.jpeg" alt="Cozinha Solidária" className="w-full h-full object-cover group-hover:scale-110 transition duration-500" />
+
+              {/* 📦 2. GRID DOS CARDS (Dentro da moldura) */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                {/* Card 1: Rede Cozinha Escola */}
+                <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
+                  <div className="h-64 overflow-hidden">
+                    <img 
+                      src="https://moverhelipa.org.br/wp-content/uploads/2024/10/escola-1024x1024.jpg" 
+                      alt="Cozinha Escola" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Rede Cozinha Escola</h3>
+                    <p className="text-gray-600 text-sm">Parceria com a Prefeitura de SP servindo 450 refeições/dia.</p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-bold mb-2">Cozinha Solidária</h3>
-                  <p className="text-gray-600 text-sm">Combate à fome com dignidade e nutrição.</p>
+
+                {/* Card 2: Cozinha Solidária */}
+                <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
+                  <div className="h-64 overflow-hidden">
+                    <img 
+                      src="https://moverhelipa.org.br/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-08-at-00.32.57.jpeg" 
+                      alt="Cozinha Solidária" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Cozinha Solidária</h3>
+                    <p className="text-gray-600 text-sm">Combate à fome com dignidade e nutrição.</p>
+                  </div>
                 </div>
-              </div>
-            </div>
+
+              </div> {/* Fim da Grid */}
+            </div> {/* Fim da Caixa Gradiente Mestre */}
           </section>
 
+          {/* 📊 SEÇÃO: NOSSO TRABALHO (Estatísticas) */}
+          <section id="galeria" className="py-20 px-4 bg-transparent">
+            
+            {/* 🟦 1. CAIXA GRADIENTE MESTRE */}
+            <div 
+              className="max-w-6xl mx-auto rounded-3xl p-8 md:p-16 relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(to right, #ffffff, #ffffff)',
+                border: '1px solid #e2e8f0',
+                boxShadow: 'inset 0 0 25px 2px #0159A1'
+              }}
+            >
+              {/* Título interno à moldura */}
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>
+                  Nosso Trabalho
+                </h2>
+              </div>
 
-          {/* Galeria de Impacto (Novas Imagens) */}
-          <section className="py-20 px-4 bg-white">
-            <div className="max-w-6xl mx-auto text-center mb-12">
-              <h2 className="text-4xl font-bold mb-4">Nossa Atuação</h2>
-              <p className="text-gray-600">Registros do nosso trabalho diário na comunidade.</p>
-            </div>
-            <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
-              <div className="rounded-2xl overflow-hidden shadow-xl">
-                <img src="https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0008.jpg" alt="Colagem Cozinha Escola" className="w-full h-auto" />
-              </div>
-              <div className="rounded-2xl overflow-hidden shadow-xl">
-                <img src="https://moverhelipa.org.br/wp-content/uploads/2024/10/IMG-20241023-WA0011-scaled.jpg" alt="Colagem Governo Federal" className="w-full h-auto" />
-              </div>
-            </div>
-          </section>
+              {/* 📦 2. GRID DE ESTATÍSTICAS */}
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-12 text-center">
+                
+                {/* 🚀 Basta chamar assim. O estilo já está lá dentro do componente! */}
+                <ContadorMarmitas />
 
-          {/* Impactos */}
-          <section id="galeria" className="py-20 px-4 bg-white">
-            <div className="max-w-6xl mx-auto text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4">Nossos Impactos</h2>
-            </div>
-            <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
-              <ContadorMarmitas />
-              <div>
-                <div className="text-4xl font-bold text-blue-600 mb-2">25.000+</div>
-                <p className="text-gray-600">Cestas básicas entregues</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-blue-600 mb-2">12.000+</div>
-                <p className="text-gray-600">Famílias atendidas na pandemia</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-blue-600 mb-2">1.000+</div>
-                <p className="text-gray-600">Vales gás distribuídos</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-blue-600 mb-2">300+</div>
-                <p className="text-gray-600">Crianças atendidas</p>
-              </div>          
-              <div>
-                <div className="text-4xl font-bold text-blue-600 mb-2">30+</div>
-                <p className="text-gray-600">Cozinhas acompanhadas</p>
-              </div>
-            </div>
+                {/* Cestas Básicas (O próximo item...) */}
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#0159A1' }}>25.000+</div>
+                  <p className="text-gray-600 font-medium italic">Cestas básicas entregues</p>
+                </div>
+
+                {/* Cestas Básicas */}
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#0159A1' }}>25.000+</div>
+                  <p className="text-gray-600 font-medium italic">Cestas básicas entregues</p>
+                </div>
+
+                {/* Famílias Atendidas */}
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#0159A1' }}>12.000+</div>
+                  <p className="text-gray-600 font-medium italic">Famílias atendidas na pandemia</p>
+                </div>
+
+                {/* Vales Gás */}
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#0159A1' }}>1.000+</div>
+                  <p className="text-gray-600 font-medium italic">Vales gás distribuídos</p>
+                </div>
+
+                {/* Crianças */}
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#0159A1' }}>300+</div>
+                  <p className="text-gray-600 font-medium italic">Crianças atendidas</p>
+                </div>          
+
+                {/* Cozinhas */}
+                <div>
+                  <div className="text-4xl md:text-5xl font-bold mb-2" style={{ color: '#0159A1' }}>30+</div>
+                  <p className="text-gray-600 font-medium italic">Cozinhas acompanhadas</p>
+                </div>
+
+              </div> {/* Fim da Grid */}
+            </div> {/* Fim da Caixa Gradiente Mestre */}
           </section>
 
           {/* Contato 🎨 Seção CONTATO*/}
