@@ -23,6 +23,11 @@
     font-display: swap; /* Garante que o texto aparece logo enquanto carrega */
 }
 
+/* 🚀 NAVEGAÇÃO SUAVE: Faz a página deslizar ao clicar nos links do menu */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Estilos adicionais para garantir que o conteúdo do WordPress se comporte bem em React */
 body {
     margin: 0;

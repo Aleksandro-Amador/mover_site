@@ -21,6 +21,9 @@ import img_18_site from './assets/images/image_18_site_rede_cozinha.webp';
 import img_5_site from './assets/images/image_5_site_centro_qualificacao.webp';
 import img_10_site from './assets/images/image_10_site_rede_cozinha.webp';
 
+// 5. Imagens para Programas
+import img_34_site from './assets/images/image_34_site_logo_cozinha_solidaria_nacional.webp';
+
 // 5. Logos (Pasta logos)
 import logo_1_site from './assets/logos/logo_1_site_mover_helipa.webp';
 import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.webp';
@@ -34,10 +37,12 @@ import { GiScales } from "react-icons/gi";       // Valores
 // 7. Página do button DoeAgora
 import { useNavigate, Routes, Route } from 'react-router-dom'; // Adicione Routes e Route aqui
 import DoeAgora from './DoeAgora'; // 👈 Chamando o seu arquivo
+import CozinhaSolidariaNacional from './CozinhaSolidariaNacional';
 
 // 8. Capa dos Projetos e Programas (1 e 3 no carrossel 1)
 import img_1_site from './assets/images/image_1_site_capa_centro_qualificacao.webp';
 import img_3_site from './assets/images/image_3_site_capa_cozinha_escola.webp';
+
 
 
 // import { GoogleGenAI } from "@google/genai";
@@ -261,7 +266,7 @@ useEffect(() => {
     <Routes>
       {/* 🏠 ROTA 1: O SITE COMPLETO (HOME) */}
       <Route path="/" element={
-        <div id="page" className="min-h-screen bg-white relative">
+        <div id="início" className="min-h-screen bg-white relative">
 
           {/* 🧊 BLOCO TRAVADO*/}
           <div className="fixed top-0 left-0 z-[100] w-full shadow-xl">
@@ -406,7 +411,14 @@ useEffect(() => {
                       style={{ color: 'white', textDecoration: 'none' }}
                       >
                         Sobre nós
-                      </a>  
+                      </a>
+                    <a 
+                      href="#quem somos" 
+                      className="text-white hover:brightness-125 transition-all"
+                      style={{ color: 'white', textDecoration: 'none' }}
+                      >
+                        Quem Somos
+                      </a>     
                     <a
                       href="#projetos" 
                       className="text-white hover:brightness-125 transition-all"
@@ -414,12 +426,19 @@ useEffect(() => {
                       >
                         Projetos
                       </a>
-                    <a 
-                      href="#impactos" 
+                      <a
+                      href="#programas" 
                       className="text-white hover:brightness-125 transition-all"
                       style={{ color: 'white', textDecoration: 'none' }}
                       >
-                        Impactos
+                        Programas
+                      </a>
+                    <a 
+                      href="#nosso trabalho" 
+                      className="text-white hover:brightness-125 transition-all"
+                      style={{ color: 'white', textDecoration: 'none' }}
+                      >
+                        Nosso Trabalho
                       </a>  
                     <a 
                       href="#contato" 
@@ -539,81 +558,94 @@ useEffect(() => {
             </div>
           </section>
 
-          {/* Sobre Nós - Versão Corrigida por Kabelo Rock */}
-          <section id="sobre-nos" className="py-20 px-4 bg-white overflow-hidden">
-            <div className="max-w-6xl mx-auto space-y-24">
-              
-              <h2 className="text-4xl font-bold mb-12 border-l-4 border-blue-600 pl-4 uppercase">Sobre nós</h2>
+          {/* Sobre Nós - Versão Premium Kabelo Rock */}
+          <section id="sobre-nos" className="py-20 px-4 bg-transparent scroll-mt-26">
+            
+            {/* 🟦 1. CAIXA GRADIENTE MESTRE (Moldura que abraça toda a história) */}
+            <div 
+              className="max-w-6xl mx-auto rounded-3xl p-8 md:p-16 relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(to right, #ffffff, #ffffff)',
+                border: '1px solid #e2e8f0',
+                boxShadow: 'inset 0 0 25px 2px #0159A1'
+              }}
+            >
+              {/* Título Principal Interno à Moldura */}
+              <h2 className="text-4xl font-bold mb-16 uppercase" style={{ color: '#0159A1' }}>
+                Sobre nós
+              </h2>
 
-              {/* ⬅️ GRID 1: Texto à Esquerda | Carrossel 2 à Direita */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-4 text-justify" style={{ fontFamily: '"Roboto", sans-serif', fontSize: '17px', fontWeight: 300, lineHeight: '1.8', color: '#54595f' }}>
-                  <p>O <strong>Movimento Organizacional Vencer, Educar e Realizar – MOVER</strong> é uma organização da sociedade civil... entorno da maior favela da cidade: <strong>Heliópolis</strong>.</p>
-                  <p>Desde o início, nossa missão é <strong>enfrentar os problemas vividos pela comunidade</strong>... criação de <strong>políticas públicas que enfrentem, de forma direta, a miséria e a desinformação.</strong></p>
-                  <p>Nossa história é feita por <strong>lideranças nascidas e criadas dentro de Heliópolis</strong>... dor enfadonha e cruel da fome que o <strong>impulso visceral por fazer acontecer ultrapassou barreiras.</strong></p>
-                  <p>Em 2019... equipe voluntária iniciou a produção de <strong>quase mil refeições por dia</strong>. Com muita luta, assim começamos nossa caminhada no <strong>combate à fome.</strong></p>
+              <div className="space-y-24">
+
+                {/* ⬅️ GRID 1: Texto à Esquerda | Carrossel 2 à Direita */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                  <div className="space-y-4 text-justify" style={{ fontFamily: '"Roboto", sans-serif', fontSize: '17px', fontWeight: 300, lineHeight: '1.8', color: '#54595f' }}>
+                    <p>O <strong>Movimento Organizacional Vencer, Educar e Realizar – MOVER</strong> é uma organização da sociedade civil... entorno da maior favela da cidade: <strong>Heliópolis</strong>.</p>
+                    <p>Desde o início, nossa missão é <strong>enfrentar os problemas vividos pela comunidade</strong>... criação de <strong>políticas públicas que enfrentem, de forma direta, a miséria e a desinformação.</strong></p>
+                    <p>Nossa história é feita por <strong>lideranças nascidas e criadas dentro de Heliópolis</strong>... dor enfadonha e cruel da fome que o <strong>impulso visceral por fazer acontecer ultrapassou barreiras.</strong></p>
+                    <p>Em 2019... equipe voluntária iniciou a produção de <strong>quase mil refeições por dia</strong>. Com muita luta, assim começamos nossa caminhada no <strong>combate à fome.</strong></p>
+                  </div>
+
+                  {/* CARROSSEL 2 COM EFEITO FADE */}
+                  <div 
+                    className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
+                    style={{ 
+                      // Usando o mesmo padrão de azul que você tem nos outros cards
+                      background: 'radial-gradient(circle, #ffffff 0%, #e2e8f0 60%, #0159A1 120%)',
+                      boxShadow: 'inset 0 0 50px rgba(1, 89, 161, 0.3)' 
+                    }}
+                  ><AnimatePresence initial={false}>
+                      <motion.img
+                        key={currentImage2}
+                        src={secondCarouselImages[currentImage2]}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        className="absolute w-auto h-auto max-w-full max-h-full m-auto object-contain"
+                      />
+                    </AnimatePresence>
+                  </div>
                 </div>
 
-                {/* CARROSSEL 2 COM EFEITO FADE */}
-                <div 
-                  className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
-                  style={{ 
-                    // Usando o mesmo padrão de azul que você tem nos outros cards
-                    background: 'radial-gradient(circle, #ffffff 0%, #e2e8f0 60%, #0159A1 120%)',
-                    boxShadow: 'inset 0 0 50px rgba(1, 89, 161, 0.3)' 
-                  }}
-                ><AnimatePresence initial={false}>
-                    <motion.img
-                      key={currentImage2}
-                      src={secondCarouselImages[currentImage2]}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 1.5, ease: "easeInOut" }}
-                      className="absolute w-auto h-auto max-w-full max-h-full m-auto object-contain"
-                    />
-                  </AnimatePresence>
+                {/* ➡️ GRID 2: Carrossel 3 à Esquerda | Texto à Direita */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                  
+                  {/* CARROSSEL 3 DA SEGUNDA PARTE */}
+                  <div 
+                    className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
+                    style={{ 
+                      // Usando o mesmo padrão de azul que você tem nos outros cards
+                      background: 'radial-gradient(circle, #ffffff 0%, #e2e8f0 60%, #0159A1 120%)',
+                      boxShadow: 'inset 0 0 50px rgba(1, 89, 161, 0.3)' 
+                    }}
+                  >
+                    <AnimatePresence initial={false}>
+                      <motion.img
+                        key={currentImage3}
+                        src={thirdCarouselImages[currentImage3]}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1.5, ease: "easeInOut" }}
+                        className="absolute w-auto h-auto max-w-full max-h-full m-auto object-contain"
+                      />
+                    </AnimatePresence>
+                  </div>
+
+                  <div className="order-1 md:order-2 space-y-4 text-justify" style={{ fontFamily: '"Roboto", sans-serif', fontSize: '17px', fontWeight: 300, lineHeight: '1.8', color: '#54595f' }}>
+                    <p>Hoje, seguimos atuando diretamente no <strong>enfrentamento da insegurança alimentar</strong>, por meio do programa <strong>Rede Cozinha Escola</strong>... são servidas, em média, <strong>400 refeições por dia</strong>.</p>
+                    <p>Também atuamos na <strong>geração de renda</strong>... destaque para o nosso <strong>Curso de Alta Gastronomia</strong>... <strong>restaurantes de alto padrão gastronômico.</strong></p>
+                    <p>Atuamos como <strong>entidade gestora do Programa Cozinha Solidária</strong>... acompanhando <strong>mais de 30 cozinhas</strong>... ajudando a <strong>engajar e impulsionar outros espaços de solidariedade e combate à fome.</strong></p>
+                    <p className="italic font-medium text-blue-800 pt-4 border-t border-gray-100 mt-6">Nossa essência é essa: transformar realidades, criando oportunidades e garantindo direitos.</p>
+                  </div>
                 </div>
               </div>
-
-              {/* ➡️ GRID 2: Carrossel 3 à Esquerda | Texto à Direita */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                
-                {/* CARROSSEL 3 DA SEGUNDA PARTE */}
-                <div 
-                  className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
-                  style={{ 
-                    // Usando o mesmo padrão de azul que você tem nos outros cards
-                    background: 'radial-gradient(circle, #ffffff 0%, #e2e8f0 60%, #0159A1 120%)',
-                    boxShadow: 'inset 0 0 50px rgba(1, 89, 161, 0.3)' 
-                  }}
-                >
-                  <AnimatePresence initial={false}>
-                    <motion.img
-                      key={currentImage3}
-                      src={thirdCarouselImages[currentImage3]}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 1.5, ease: "easeInOut" }}
-                      className="absolute w-auto h-auto max-w-full max-h-full m-auto object-contain"
-                    />
-                  </AnimatePresence>
-                </div>
-
-                <div className="order-1 md:order-2 space-y-4 text-justify" style={{ fontFamily: '"Roboto", sans-serif', fontSize: '17px', fontWeight: 300, lineHeight: '1.8', color: '#54595f' }}>
-                  <p>Hoje, seguimos atuando diretamente no <strong>enfrentamento da insegurança alimentar</strong>, por meio do programa <strong>Rede Cozinha Escola</strong>... são servidas, em média, <strong>400 refeições por dia</strong>.</p>
-                  <p>Também atuamos na <strong>geração de renda</strong>... destaque para o nosso <strong>Curso de Alta Gastronomia</strong>... <strong>restaurantes de alto padrão gastronômico.</strong></p>
-                  <p>Atuamos como <strong>entidade gestora do Programa Cozinha Solidária</strong>... acompanhando <strong>mais de 30 cozinhas</strong>... ajudando a <strong>engajar e impulsionar outros espaços de solidariedade e combate à fome.</strong></p>
-                  <p className="italic font-medium text-blue-800 pt-4 border-t border-gray-100 mt-6">Nossa essência é essa: transformar realidades, criando oportunidades e garantindo direitos.</p>
-                </div>
-              </div>
-
             </div>
           </section>
 
           {/* 📦 SEÇÃO: MISSÃO, VISÃO E VALORES */}
-          <section className="py-20 bg-transparent">
+          <section id="quem somos" className="py-20 bg-transparent scroll-mt-26">
             <div className="max-w-6xl mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
@@ -682,7 +714,7 @@ useEffect(() => {
           </section>
 
           {/* 📦 SEÇÃO: PROJETOS */}
-          <section id="projetos" className="py-20 px-4 bg-transparent">
+          <section id="projetos" className="py-20 px-4 bg-transparent scroll-mt-26">
             
             {/* 🟦 1. CAIXA GRADIENTE MESTRE (Moldura com a largura do site) */}
             <div 
@@ -741,7 +773,7 @@ useEffect(() => {
           </section>
 
           {/* 📦 SEÇÃO: PROGRAMAS */}
-          <section id="programas" className="py-20 px-4 bg-transparent">
+          <section id="programas" className="py-20 px-4 bg-transparent scroll-mt-26">
 
             {/* 🟦 1. CAIXA GRADIENTE MESTRE (Moldura com a largura do site) */}
             <div 
@@ -792,12 +824,28 @@ useEffect(() => {
                   </div>
                 </div>
 
+                {/* Card 3: Cozinha Solidária Nacional */}
+                <div
+                  onClick={() => navigate('/cozinha-solidaria-nacional')}
+                  className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
+                    <div className="h-64 w-full overflow-hidden bg-gray-50 flex items-center justify-center p-4 relative">
+                      <img 
+                        src={img_34_site} 
+                        alt="Cozinha Solidária" 
+                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto h-auto min-w-[60%] min-h-[60%] object-contain group-hover:scale-125 transition duration-500"/>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Cozinha Solidária</h3>
+                      <p className="text-gray-600 text-sm">Combate à fome com dignidade e nutrição.</p>
+                    </div>
+                  </div>
+
               </div> {/* Fim da Grid */}
             </div> {/* Fim da Caixa Gradiente Mestre */}
           </section>
 
           {/* 📊 SEÇÃO: NOSSO TRABALHO (Estatísticas) */}
-          <section id="galeria" className="py-20 px-4 bg-transparent">
+          <section id="nosso trabalho" className="py-20 px-4 bg-transparent scroll-mt-26">
             
             {/* 🟦 1. CAIXA GRADIENTE MESTRE */}
             <div 
@@ -862,7 +910,7 @@ useEffect(() => {
           </section>
 
           {/* Contato 🎨 Seção CONTATO*/}
-          <section id="contato" className="py-20 px-4 bg-white relative overflow-hidden">
+          <section className="py-20 px-4 bg-white relative overflow-hidden">
             {/* Container Principal com o Estilo Padronizado */}
             <div 
               className="max-w-6xl mx-auto rounded-3xl p-12 grid md:grid-cols-2 gap-12 relative z-10"
@@ -996,7 +1044,7 @@ useEffect(() => {
         </a>
 
         {/* 📦 SEÇÃO: MISSÃO + MAPA COM BORDAS DEGRADÊ (ESTILO KABELO ROCK) */}
-        <section className="py-16 bg-gray-50">
+        <section id="contato" className="py-16 bg-gray-50 scroll-mt-26">
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch justify-items-center">
               
@@ -1075,7 +1123,7 @@ useEffect(() => {
                         <FaWhatsapp 
                           size={20} 
                           style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
-                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                          className="transition-colors flex-shrink-0 transform md:translate-y-[1.5px]"
                         />
                         
                         <span className="text-sm text-gray-700">
@@ -1132,7 +1180,7 @@ useEffect(() => {
                         <FaWhatsapp 
                           size={20} 
                           style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
-                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                          className="transition-colors flex-shrink-0 transform md:translate-y-[1.5px]"
                         />
                         
                         <span className="text-sm text-gray-700">
@@ -1176,7 +1224,7 @@ useEffect(() => {
                         <FaWhatsapp 
                           size={20} 
                           style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
-                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                          className="transition-colors flex-shrink-0 transform md:translate-y-[1.5px]"
                         />
                         
                         <span className="text-sm text-gray-700">
@@ -1220,7 +1268,7 @@ useEffect(() => {
                         <FaWhatsapp 
                           size={20} 
                           style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
-                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                          className="transition-colors flex-shrink-0 transform md:translate-y-[1.5px]"
                         />
                         
                         <span className="text-sm text-gray-700">
@@ -1264,7 +1312,7 @@ useEffect(() => {
                         <FaWhatsapp 
                           size={20} 
                           style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
-                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                          className="transition-colors flex-shrink-0 transform md:translate-y-[1.5px]"
                         />
                         
                         <span className="text-sm text-gray-700">
@@ -1308,7 +1356,7 @@ useEffect(() => {
                         <FaWhatsapp 
                           size={20} 
                           style={{ color: '#25D366' }} // Usei o verde padrão do WhatsApp aqui
-                          className="transition-colors flex-shrink-0 transform translate-y-[1.5px]"
+                          className="transition-colors flex-shrink-0 transform md:translate-y-[1.5px]"
                         />
                         
                         <span className="text-sm text-gray-700">
@@ -1365,10 +1413,13 @@ useEffect(() => {
       </div> // 🏁 FECHA A SEÇÃO GERAL - Fecha o id="page"
     } />
 
-    {/* 💰 ROTA 2: A PÁGINA NOVA (DOE AGORA) */}
-    <Route path="/doeagora" element={<DoeAgora />} />
+    {/* 💰 ROTA 2: DOE AGORA */}
+  <Route path="/doeagora" element={<DoeAgora />} />
 
-  </Routes>
+  {/* 🍳 ROTA 3: COZINHA SOLIDÁRIA NACIONAL */}
+  <Route path="/cozinha-solidaria-nacional" element={<CozinhaSolidariaNacional />} />
+
+</Routes>
 
   ); // Fecha o return (
 } // Fecha a function App() {
