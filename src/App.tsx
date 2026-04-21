@@ -21,8 +21,15 @@ import img_18_site from './assets/images/image_18_site_rede_cozinha.webp';
 import img_5_site from './assets/images/image_5_site_centro_qualificacao.webp';
 import img_10_site from './assets/images/image_10_site_rede_cozinha.webp';
 
-// 5. Imagens para Programas
+// 5. Capa dos Projetos e Programas (1 e 3 no carrossel 1)
+//import img_1_site from './assets/images/XXXXXXXXXXXXXX.webp';
+import img_1_site from './assets/images/image_1_site_capa_centro_qualificacao.webp';
+import img_3_site from './assets/images/image_3_site_capa_cozinha_escola.webp';
 import img_34_site from './assets/images/image_34_site_logo_cozinha_solidaria_nacional.webp';
+import img_37_site from './assets/images/image_37_site_cozinha_solidaria.webp';
+import img_38_site from './assets/images/image_38_site_madalena.webp';
+import img_39_site from './assets/images/image_39_site_sao_mateus.webp';
+import img_40_site from './assets/images/image_40_site_heliopolis.webp';
 
 // 5. Logos (Pasta logos)
 import logo_1_site from './assets/logos/logo_1_site_mover_helipa.webp';
@@ -39,9 +46,7 @@ import { useNavigate, Routes, Route } from 'react-router-dom'; // Adicione Route
 import DoeAgora from './DoeAgora'; // 👈 Chamando o seu arquivo
 import CozinhaSolidariaNacional from './CozinhaSolidariaNacional';
 
-// 8. Capa dos Projetos e Programas (1 e 3 no carrossel 1)
-import img_1_site from './assets/images/image_1_site_capa_centro_qualificacao.webp';
-import img_3_site from './assets/images/image_3_site_capa_cozinha_escola.webp';
+
 
 
 
@@ -746,15 +751,15 @@ useEffect(() => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 {/* Projeto 1: Heliópolis */}
-                <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
-                  <div className="h-64 overflow-hidden">
+                <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 md:col-span-2 md:w-1/2 md:mx-auto">
+                  <div className="h-80 overflow-hidden">
                     <img 
-                      src="https://moverhelipa.org.br/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-17-at-19.25.45.webp" 
+                      src={img_40_site}   
                       alt="CPQ Heliópolis" 
                       className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-4">
                     <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Unidade: Heliópolis</h3>
                     <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia para a comunidade de Heliópolis.</p>
                   </div>
@@ -762,15 +767,31 @@ useEffect(() => {
 
                 {/* Projeto 2: Parque Santa Madalena */}
                 <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
-                  <div className="h-64 overflow-hidden">
+                  <div className="h-80 overflow-hidden">
                     <img 
-                      src="https://moverhelipa.org.br/wp-content/uploads/2025/06/WhatsApp-Image-2025-06-17-at-19.25.45.webp" 
+                      src={img_38_site}  
                       alt="CPQ Parque Santa Madalena" 
                       className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-4">
                     <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Unidade: Parque Santa Madalena</h3>
+                    <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia para a comunidade do Parque Santa Madalena.</p>
+                  </div>
+                </div>
+
+                {/* Projeto 3: São Mateus */}
+                <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
+                  <div className="h-80 overflow-hidden">
+                    <img 
+                      src={img_39_site}  
+                      alt="CPQ Parque Santa Madalena" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="text-xl font-bold mb-2" 
+                      style={{ color: '#0159A1' }}>Unidade: São Mateus</h3>
                     <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia para a comunidade do Parque Santa Madalena.</p>
                   </div>
                 </div>
@@ -784,7 +805,7 @@ useEffect(() => {
 
             {/* 🟦 1. CAIXA GRADIENTE MESTRE (Moldura com a largura do site) */}
             <div 
-              className="max-w-6xl mx-auto rounded-3xl pt-4 pb-8 md:pt-6 md:pb-16 px-8 md:px-16 relative overflow-hidden"
+              className="max-w-6xl mx-auto rounded-3xl pt-4 pb-8 md:pt-6 md:pb-16 px-8 md:px-16 relative overflow-hidden "
               style={{
                 background: 'linear-gradient(to right, #ffffff, #ffffff)',
                 border: '1px solid #e2e8f0',
@@ -802,15 +823,15 @@ useEffect(() => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 {/* Card 1: Rede Cozinha Escola */}
-                <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
-                  <div className="h-64 overflow-hidden">
+                <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 md:col-span-2 md:w-1/2 md:mx-auto">
+                  <div className="h-80 overflow-hidden">
                     <img 
                       src="https://moverhelipa.org.br/wp-content/uploads/2024/10/escola-1024x1024.jpg" 
                       alt="Cozinha Escola" 
                       className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-4">
                     <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Rede Cozinha Escola</h3>
                     <p className="text-gray-600 text-sm">Parceria com a Prefeitura de SP servindo 450 refeições/dia.</p>
                   </div>
@@ -818,14 +839,14 @@ useEffect(() => {
 
                 {/* Card 2: Cozinha Solidária */}
                 <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
-                  <div className="h-64 overflow-hidden">
+                  <div className="h-80 overflow-hidden">
                     <img 
-                      src="https://moverhelipa.org.br/wp-content/uploads/2023/03/WhatsApp-Image-2023-03-08-at-00.32.57.jpeg" 
+                      src={img_37_site} 
                       alt="Cozinha Solidária" 
                       className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-4">
                     <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Cozinha Solidária</h3>
                     <p className="text-gray-600 text-sm">Combate à fome com dignidade e nutrição.</p>
                   </div>
@@ -835,13 +856,13 @@ useEffect(() => {
                 <div
                   onClick={() => navigate('/cozinha-solidaria-nacional')}
                   className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
-                    <div className="h-64 w-full overflow-hidden bg-gray-50 flex items-center justify-center p-4 relative">
+                    <div className="h-80 w-full overflow-hidden bg-gray-50 flex items-center justify-center p-4 relative">
                       <img 
                         src={img_34_site} 
                         alt="Cozinha Solidária" 
                         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto h-auto min-w-[60%] min-h-[60%] object-contain group-hover:scale-110 transition duration-500"/>
                     </div>
-                    <div className="p-6">
+                    <div className="p-4">
                       <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Cozinha Solidária Nacional</h3>
                       <p className="text-gray-600 text-sm">Combate à fome com dignidade e nutrição.</p>
                     </div>
@@ -1221,7 +1242,7 @@ useEffect(() => {
 
                       {/* 📞 Bloco do Contato */}
                       <a 
-                        href="https://wa.me/5511996744126" 
+                        href="https://wa.me/5511997752135" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 transition-all duration-300 hover:scale-105 group"
@@ -1235,7 +1256,7 @@ useEffect(() => {
                         />
                         
                         <span className="text-sm text-gray-700">
-                          (11) 99674-4126
+                          (11) 99775-2135
                         </span>
                       </a>
 
@@ -1333,7 +1354,7 @@ useEffect(() => {
                   {/* Unidade 5: Mosaico Sociocultural */}
                   <div className="flex flex-col gap-2">
                     <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
-                      Mosaico Sociocultural
+                      Instituto Mosaico Sociocultural
                     </span>
 
                     {/* Container Flex que separa Endereço de Telefone */}
