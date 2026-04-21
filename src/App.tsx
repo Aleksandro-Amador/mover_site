@@ -571,7 +571,14 @@ useEffect(() => {
               }}
             >
               {/* Título Principal Interno à Moldura */}
-              <h2 className="text-4xl font-bold mb-16 uppercase" style={{ color: '#0159A1' }}>
+              <h2 
+                className="font-extrabold mb-12 uppercase tracking-tighter leading-none"
+                  style={{ 
+                    color: '#0159A1',
+                    fontSize: 'clamp(40px, 10vw, 10px)',
+                   fontWeight: '700'
+                 }}
+              >
                 Sobre nós
               </h2>
 
@@ -832,10 +839,10 @@ useEffect(() => {
                       <img 
                         src={img_34_site} 
                         alt="Cozinha Solidária" 
-                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto h-auto min-w-[60%] min-h-[60%] object-contain group-hover:scale-125 transition duration-500"/>
+                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto h-auto min-w-[60%] min-h-[60%] object-contain group-hover:scale-110 transition duration-500"/>
                     </div>
                     <div className="p-6">
-                      <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Cozinha Solidária</h3>
+                      <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Cozinha Solidária Nacional</h3>
                       <p className="text-gray-600 text-sm">Combate à fome com dignidade e nutrição.</p>
                     </div>
                   </div>
@@ -1374,41 +1381,34 @@ useEffect(() => {
           </div>
         </section>
 
-        {/* 🏁 7.0 RODAPÉ - Organização mobile empilha (col), no desktop separa (row) * */}
-        <footer className="bg-black py-0.5 px-1 border-t border-gray-900">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
-            
-            {/* 📸 6.1 Logo (Lado Esquerdo) */}
-            <img 
-              width="100" 
-              src={logo_mover_catavento} 
-              alt="Logo Footer" 
-              className="w-12 md:w-22 mx-auto md:mx-0 border-none shadow-none ring-0 outline-none" 
-            />
+        {/* 🏁 7.0 RODAPÉ */}
+        <div className="w-full -mt-10 relative z-40">
+            <footer className="bg-black/90 backdrop-blur-sm py-2 border-t border-gray-900">
+                <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-2">
+                
+                <img 
+                    src={logo_mover_catavento} 
+                    alt="Logo Footer" 
+                    className="w-10 md:w-12 opacity-80" 
+                />
 
-            {/* 📦 7.2 Bloco de Texto (Lado Direito, mas centralizado internamente) */}
-            <div className="flex flex-col items-center text-center leading-tight">
-              
-              {/* Nome Principal */}
-              <p className="font-bold text-gray-200 text-[16px] md:text-lg">
-                MOVER
-              </p>
-              
-              {/* Nome por Extenso */}
-              <p className="font-bold text-gray-300 text-[12px] md:text-sm mt-0.5 whitespace-normal md:whitespace-nowrap max-w-[280px] md:max-w-none">
-                Movimento Organizacional Vencer, Educar e Realizar
-              </p>
-              
-              {/* Direitos Autorais */}
-              <p className="text-gray-500 text-[10px] md:text-xs mt-2">
-                © 2026 MOVER. Todos os direitos reservados.
-              </p>
+                    <div className="flex flex-col items-center text-center gap-0 leading-none">
+                        <span className="font-bold text-gray-200 text-sm block">
+                        MOVER                  
+                        </span>                         
+                        <span className="text-gray-400 text-[10px] md:text-xs block">
+                            Movimento Organizacional Vencer, Educar e Realizar
+                        </span>
+                        
+                        <span className="text-gray-600 text-[9px] block mt-3 mb-0.5">
+                            {/* 🚀 2. O '-mt-0.5' é uma margem negativa, ele puxa o texto para cima */}
+                            © 2026 MOVER. Todos os direitos reservados.
+                        </span>
+                    </div>
 
-            </div>
-          </div>
-        </footer>
-
-        
+                </div>
+            </footer>
+        </div>     
 
       </div> // 🏁 FECHA A SEÇÃO GERAL - Fecha o id="page"
     } />
