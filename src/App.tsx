@@ -45,8 +45,7 @@ import { GiScales } from "react-icons/gi";       // Valores
 import { useNavigate, Routes, Route } from 'react-router-dom'; // Adicione Routes e Route aqui
 import DoeAgora from './DoeAgora'; // 👈 Chamando o seu arquivo
 import CozinhaSolidariaNacional from './CozinhaSolidariaNacional';
-
-
+import CozinhaSolidaria from './CozinhaSolidaria';
 
 
 
@@ -389,7 +388,7 @@ useEffect(() => {
 
               {/* 🟦 SEÇÃO 3.0 FAIXA AZUL DO MENU (Navegação Isolada) */}
               <section 
-                className="relative w-full py-1.5 shadow2x1 sticky top-0 z-50" 
+                className="relative w-full py-2 shadow2x1 sticky top-0 z-50" 
                 style={{ 
                   backgroundColor: '#1e428a',
                   borderBottom: '1px solid rgba(255,255,255,0.1)'
@@ -513,7 +512,7 @@ useEffect(() => {
                 />
               </AnimatePresence>
               {/* Overlay Escuro para dar leitura ao texto */}
-              <div className="absolute inset-0 bg-black/30 z-10"></div>
+              <div className="absolute inset-0 bg-black/60 z-10"></div>
             </div>
 
             {/* ✍️ Conteúdo Fixo (Por cima do carrossel) */}
@@ -536,10 +535,12 @@ useEffect(() => {
               </h1>
               
               <p className={`
-                max-w-4xl mx-auto mb-10 font-medium leading-tight drop-shadow-lg
-                text-base md:text-2xl text-white
-              `}>
-                Juntos podemos tornar sonhos em realidade, movendo e transformando vidas nós construímos o futuro.
+                  max-w-4xl mx-auto mb-10 font-medium leading-tight 
+                  /* 🚀 Sombra um pouco mais forte para compensar os 80% de branco */
+                  drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]
+                  text-base md:text-2xl text-white/80
+                `}>
+                  Juntos podemos tornar sonhos em realidade, movendo e transformando vidas nós construímos o futuro.
               </p>
               
               {/* BOTÃO: Inscreva-se */}
@@ -568,7 +569,7 @@ useEffect(() => {
             
             {/* 🟦 1. CAIXA GRADIENTE MESTRE (Moldura que abraça toda a história) */}
             <div 
-              className="max-w-6xl mx-auto rounded-3xl p-8 md:p-16 relative overflow-hidden"
+              className="max-w-6xl mx-auto rounded-3xl pt-4 pb-8 px-8 md:pt-8 md:pb-16 md:px-16 relative overflow-hidden"
               style={{
                 background: 'linear-gradient(to right, #ffffff, #ffffff)',
                 border: '1px solid #e2e8f0',
@@ -587,7 +588,7 @@ useEffect(() => {
                 Sobre nós
               </h2>
 
-              <div className="space-y-24">
+              <div className="space-y-6">
 
                 {/* ⬅️ GRID 1: Texto à Esquerda | Carrossel 2 à Direita */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -739,7 +740,12 @@ useEffect(() => {
             >
               {/* Título interno à moldura */}
               <div className="text-center mt-0 md:mt-[-10px] mb-6">
-                <h2 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>
+                <h2 className="text-4xl font-bold mb-4" 
+                  style={{ 
+                    color: '#0159A1',
+                    fontSize: 'clamp(40px, 10vw, 10px)',
+                    fontWeight: '700'
+                  }}>
                   Nossos Projetos
                   <span className="block mt-6 text-2xl md:text-3xl opacity-90 font-semibold">
                     Centro Popular de Qualificação
@@ -767,15 +773,23 @@ useEffect(() => {
 
                 {/* Projeto 2: Parque Santa Madalena */}
                 <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
-                  <div className="h-80 overflow-hidden">
+                  <div className="h-80 overflow-hidden relative w-full">
                     <img 
                       src={img_38_site}  
                       alt="CPQ Parque Santa Madalena" 
-                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+                      /* 🚀 Usamos style para garantir que o navegador ignore o aspect-ratio */
+                      style={{ 
+                        width: '100%', 
+                        height: '100%', 
+                        objectFit: 'fill', /* 👈 Estica a imagem para preencher tudo */
+                        display: 'block' 
+                      }}
+                      className="group-hover:scale-110 transition duration-500" 
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Unidade: Parque Santa Madalena</h3>
+                    <h3 className="text-xl font-bold mb-2" 
+                      style={{ color: '#0159A1' }}>Unidade: Parque Santa Madalena</h3>
                     <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia para a comunidade do Parque Santa Madalena.</p>
                   </div>
                 </div>
@@ -814,7 +828,12 @@ useEffect(() => {
             >
               {/* Título interno à moldura */}
               <div className="text-center mt-0 md:mt-[-0px] mb-12">
-                <h2 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>
+                <h2 className="text-4xl font-bold mb-4" 
+                  style={{ 
+                    color: '#0159A1',
+                    fontSize: 'clamp(40px, 10vw, 10px)',
+                     fontWeight: '700'
+                  }}>
                   Nossos Programas
                 </h2>
               </div>
@@ -838,7 +857,9 @@ useEffect(() => {
                 </div>
 
                 {/* Card 2: Cozinha Solidária */}
-                <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
+                <div 
+                  onClick={() => navigate('/cozinha-solidaria')}
+                  className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 cursor-pointer">
                   <div className="h-80 overflow-hidden">
                     <img 
                       src={img_37_site} 
@@ -855,7 +876,7 @@ useEffect(() => {
                 {/* Card 3: Cozinha Solidária Nacional */}
                 <div
                   onClick={() => navigate('/cozinha-solidaria-nacional')}
-                  className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100">
+                  className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 cursor-pointer">
                     <div className="h-80 w-full overflow-hidden bg-gray-50 flex items-center justify-center p-4 relative">
                       <img 
                         src={img_34_site} 
@@ -866,7 +887,7 @@ useEffect(() => {
                       <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Cozinha Solidária Nacional</h3>
                       <p className="text-gray-600 text-sm">Combate à fome com dignidade e nutrição.</p>
                     </div>
-                  </div>
+                </div>
 
               </div> {/* Fim da Grid */}
             </div> {/* Fim da Caixa Gradiente Mestre */}
@@ -885,8 +906,13 @@ useEffect(() => {
               }}
             >
               {/* Título interno à moldura */}
-              <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>
+              <div className="text-center -mt-6 mb-18">
+                <h2 className="text-4xl font-bold mb-4" 
+                  style={{ 
+                    color: '#0159A1',
+                    fontSize: 'clamp(40px, 10vw, 10px)',
+                    fontWeight: '700'
+                  }}>
                   Nosso Trabalho
                 </h2>
               </div>
@@ -1435,10 +1461,13 @@ useEffect(() => {
     } />
 
     {/* 💰 ROTA 2: DOE AGORA */}
-  <Route path="/doeagora" element={<DoeAgora />} />
+    <Route path="/doeagora" element={<DoeAgora />} />
 
-  {/* 🍳 ROTA 3: COZINHA SOLIDÁRIA NACIONAL */}
-  <Route path="/cozinha-solidaria-nacional" element={<CozinhaSolidariaNacional />} />
+    {/* 🍳 ROTA 3: COZINHA SOLIDÁRIA NACIONAL */}
+    <Route path="/cozinha-solidaria-nacional" element={<CozinhaSolidariaNacional />} />
+
+    {/* 🍳 ROTA 4: COZINHA SOLIDÁRIA */}
+    <Route path="/cozinha-solidaria" element={<CozinhaSolidaria />} />
 
 </Routes>
 
