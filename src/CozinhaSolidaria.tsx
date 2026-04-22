@@ -13,24 +13,53 @@ interface MarkerProps {
   lng: number;
 }
 
+// ✅ 1. Definimos o estilo do Pino (Marker) - Agora com Hover!
+interface MarkerProps {
+  text: string;
+  lat: number;
+  lng: number;
+}
+
 const Marker: React.FC<MarkerProps> = ({ text }) => (
-  <div style={{
-    color: 'white', 
-    background: '#8B3035', // Vermelho MOVER
-    padding: '8px 12px',
-    display: 'flex',
-    textAlign: 'center',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: '20px',
-    transform: 'translate(-50%, -50%)', // Centraliza o pino na coordenada exata
-    fontWeight: 'bold',
-    fontSize: '10px',
-    boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
-    whiteSpace: 'nowrap',
-    position: 'absolute'
-  }}>
-    📍 {text}
+  <div className="group relative" style={{ transform: 'translate(-50%, -50%)', cursor: 'pointer' }}>
+    
+    {/* 📍 O "ALFINETE" (Sempre visível) */}
+    <div className="text-2xl transition-transform duration-300 group-hover:scale-125 group-hover:filter group-hover:drop-shadow-[0_0_8px_rgba(139,48,53,0.8)]">
+      📍
+    </div>
+
+    {/* 🏷️ O BALÃO COM NOME (Invisível por padrão, aparece no Hover) */}
+    <div className={`
+      absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+      opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
+      pointer-events-none whitespace-nowrap z-50
+    `}>
+      <div style={{
+        color: 'white', 
+        background: '#8B3035', // Vermelho MOVER
+        padding: '6px 12px',
+        borderRadius: '12px',
+        fontWeight: 'bold',
+        fontSize: '11px',
+        boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+        position: 'relative'
+      }}>
+        {text}
+        {/* Triângulo do Balão (Pequena seta embaixo) */}
+        <div style={{
+          position: 'absolute',
+          top: '100%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '0',
+          height: '0',
+          borderLeft: '6px solid transparent',
+          borderRight: '6px solid transparent',
+          borderTop: '6px solid #8B3035'
+        }}></div>
+      </div>
+    </div>
+
   </div>
 );
 
@@ -89,7 +118,7 @@ const CozinhaSolidaria: React.FC = () => {
           </div>
 
           {/* 🗺️ MAPA */}
-          <div className="w-full h-[600px] rounded-2xl overflow-hidden shadow-inner border border-gray-200">
+          <div className="w-full h-[450px] md:h-[600px] rounded-2xl overflow-hidden shadow-inner border border-gray-100">
             <GoogleMapReact
               bootstrapURLKeys={{ key: 'AIzaSyBJpl4BjN5-I79fNhVkQqq55KTPDkw0O0g' }}
               defaultCenter={defaultProps.center}
