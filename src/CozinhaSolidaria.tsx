@@ -110,19 +110,34 @@ const CozinhaSolidaria: React.FC = () => {
             boxShadow: 'inset 0 0 25px 2px #0159A1'
           }}
         >
-          <div className="text-center mb-10">
-            <h2 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>
-              Nossa Atuação
-            </h2>
-            <p className="text-gray-600 font-medium">Acompanhe nossa rede em tempo real</p>
-          </div>
+
+          {/* Título e Subtítulo */}
+              <div className="text-center mt-0 md:mt-[-10px] mb-6">
+                <h2 className="text-4xl font-bold mb-4" 
+                  style={{ 
+                    color: '#0159A1',
+                    fontSize: 'clamp(40px, 10vw, 10px)',
+                    fontWeight: '700'
+                  }}>
+                  COZINHAS SOLIDÁRIAS
+                  <span className="block mt-6 text-2xl md:text-3xl opacity-90 font-semibold">
+                    ACOMPANHE NOSSA REDE EM TEMPO REAL
+                  </span>
+                </h2>
+              </div>
 
           {/* 🗺️ MAPA */}
-          <div className="w-full h-[450px] md:h-[600px] rounded-2xl overflow-hidden shadow-inner border border-gray-100">
+          <div className="w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-inner border border-gray-200 relative">
             <GoogleMapReact
               bootstrapURLKeys={{ key: 'AIzaSyBJpl4BjN5-I79fNhVkQqq55KTPDkw0O0g' }}
               defaultCenter={defaultProps.center}
               defaultZoom={defaultProps.zoom}
+              options={{ gestureHandling: 'greedy' }} 
+              onGoogleApiLoaded={({ map }) => {
+                setTimeout(() => {
+                window.dispatchEvent(new Event('resize'));
+                    }, 500);
+                }}
             >
               {cozinhas.map(cozinha => (
                 <Marker
