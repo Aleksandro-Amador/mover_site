@@ -2,6 +2,7 @@ import React from 'react';
 import GoogleMapReact from 'google-map-react';
 import { useNavigate } from 'react-router-dom'; // ✅ Import fundamental
 import { FaArrowLeft } from 'react-icons/fa';
+import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
 
 import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.webp';
 
@@ -112,6 +113,39 @@ const CozinhaSolidaria: React.FC = () => {
     zoom: 8
   };
 
+  const UnidadeItem = ({ nome, end, cidade, tel }: { nome: string, end: string, cidade: string, tel: string }) => (
+  <div className="flex flex-col gap-2">
+    {/* Título da Unidade */}
+    <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+      {nome}
+    </span>
+    
+    <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 w-full px-4">
+      {/* 📍 Endereço em duas linhas */}
+      <div className="flex items-start gap-1">
+        <span className="text-sm mt-0.5">📍</span>
+        <div className="flex flex-col text-sm text-gray-600 leading-tight">
+          <span>{end}</span>
+          <span>{cidade}</span>
+        </div>
+      </div>
+
+      {/* 📞 Contato WhatsApp */}
+      <a 
+        href={`https://wa.me/55${tel.replace(/\D/g, '')}`} 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="flex items-center gap-2 transition-all duration-300 hover:scale-105 group"
+      >
+        <FaWhatsapp size={20} style={{ color: '#25D366' }} className="flex-shrink-0 transform md:translate-y-[1.5px]" />
+        <span className="text-sm text-gray-700 font-normal">
+          {tel}
+        </span>
+      </a>
+    </div>
+  </div>
+);
+
   return (
     <div className="min-h-screen bg-white">
       <main className="py-10 px-4">
@@ -213,6 +247,117 @@ const CozinhaSolidaria: React.FC = () => {
         
       </main>
 
+      {/* 📋 LISTA DE UNIDADES - GRADIENTE BOX */}
+      <div 
+        className="max-w-7xl mx-auto rounded-3xl p-6 md:p-10 relative overflow-hidden bg-white shadow-2xl mt-12"
+        style={{
+          border: '1px solid #e2e8f0',
+          boxShadow: 'inset 0 0 25px 2px #0159A1'
+        }}
+      >
+        {/* Título interno da caixa (Opcional, se quiser manter o padrão) */}
+        <div className="text-center mb-10">
+          <h2 className="text-3xl font-bold mb-2" style={{ color: '#0159A1' }}>
+            Nossas Cozinhas Solidárias
+          </h2>
+          <p className="text-gray-500 font-medium">Endereços e Contatos Oficiais</p>
+        </div>
+
+        {/* Aqui entra o Grid das Colunas (Esquerda 13 / Direita 12) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12">
+  
+          {/* ⬅️ COLUNA DA ESQUERDA (13 ITENS) */}
+          <div className="flex flex-col gap-10">
+            {[
+              { nome: "Artc - Associação Recanto Tia Cecília", end: "Rua Elza Dalmolin Astolfi, 173 - Jardim Manchester", cidade: "Sumaré - SP, 13178-450", tel: "(19) 99637-1476" },
+              { nome: "Assomary", end: "R. Antônio Alcazar, 5153 - Centro", cidade: "Bauru - SP, 17026-030", tel: "(14) 99182-4446" },
+              { nome: "Baiano Zé Firmino", end: "R. Liberato Mendes, N° 251 - Jardim Sertaozinho", cidade: "São Paulo - SP, 04826-090", tel: "(11) 9817-6935" },
+              { nome: "Benvinda de Jesus", end: "R. das Giestas, 362 - Vila Bela", cidade: "São Paulo - SP, 03147-000", tel: "(11) 5497-9928" },
+              { nome: "Bom prato", end: "R. João Manoel de Lima, 981, Barrinha", cidade: "Barrinha - SP, 14860-000", tel: "(16) 9338-3017" },
+              { nome: "Comida para quem tem Fome", end: "R. Belchior de Godói, 142 - Vila Matilde", cidade: "São Paulo - SP, 03522-070", tel: "(11) 9603-9584" },
+              { nome: "Comunidade Cura", end: "R. Palmiro Novi, 297 - Parque Jatobá (Nova Veneza)", cidade: "Sumaré - SP, 13181-101", tel: "(19) 3832-1748" },
+              { nome: "Cozinha Angel", end: "Praça Eduardo Rudge, 40 - Pari", cidade: "São Paulo - SP, 03028-010", tel: "(11) 97891-3116" },
+              { nome: "Cozinha Da Infam", end: "Praça Leonardo de Barros Carvalho, 807 - Vila Nhocuné", cidade: "São Paulo - SP, 03559-090", tel: "(11) 27422-163" },
+              { nome: "Cozinha Do Filzao", end: "R. Dr. Rafael Parisi, 348 - Americanópolis", cidade: "São Paulo - SP, 04410-110", tel: "(11) 5917-1637" },
+              { nome: "Cozinha Escola Instituto Prac", end: "Av. Ipê Roxo, 282 - Parque Industrial", cidade: "São Paulo - SP, 08140-200", tel: "(11) 25614-688" },
+              { nome: "Cozinha Experimental Lia Esperança", end: "R. Caixa d'Água, 45 - Jardim Amaralina", cidade: "São Paulo – SP", tel: "(11) 99842-5187" },
+              { nome: "Cozinha Família Povo de Rua", end: "R. Vila Caiz, 5 - Vila Nova das Belezas", cidade: "São Paulo - SP, 05777-170", tel: "(11) 95422-8373" }
+            ].map((unidade, idx) => (
+              <UnidadeItem key={idx} {...unidade} />
+            ))}
+          </div>
+
+          {/* ➡️ COLUNA DA DIREITA (12 ITENS) */}
+          <div className="flex flex-col gap-10">
+            {[
+              { nome: "Cozinha Fé Obras", end: "R. Balbina Blumer Hoffman, 445 - Parque Virgilio Viel", cidade: "Sumaré - SP, 13175-614", tel: "(19) 98828-0847" },
+              { nome: "Dona Lulu", end: "Av Cláudio da Costa, 60 - Jardim Aurora Guaianases", cidade: "São Paulo - SP, 08431-160", tel: "(11) 9866-8741" },
+              { nome: "Esperança", end: "R. Miguel Ferreira de Melo, 615 - Jardim Santo Andre", cidade: "São Paulo - SP, 08390-000", tel: "(11) 94040-764" },
+              { nome: "Fiel do Bem", end: "Rua Manuel Guilherme dos reis, 480 - Parque Grajau", cidade: "São Paulo - SP", tel: "(11) 96104-8998" },
+              { nome: "Grupo Ação Solidária", end: "R. Goiás, 768 - Campos Elísios", cidade: "Ribeirão Preto - SP, 14080-260", tel: "(16) 91564-826" },
+              { nome: "Instituto Comunitário Divas em Ação", end: "R. José Giordano, 411 - Parque Paineiras", cidade: "São Paulo - SP, 03694-010", tel: "(11) 9169-1236" },
+              { nome: "Irv", end: "R. Soror Maria Celeste, 140 - Parque Sao Luis", cidade: "São Paulo - SP, 02842-070", tel: "(11) 99314-5525" },
+              { nome: "Luz do Saber", end: "R. Gregório Bogossian, 16 - Conj. Hab. Sitio Conceicao", cidade: "São Paulo - SP, 08473-174", tel: "(11) 98300-8999" },
+              { nome: "Multiplicando os Alimentos", end: "Rua São José Bento Cottolengo, 90 - Jardim das Imbuias", cidade: "São Paulo - SP, 04829-460", tel: "(11) 9772-3584" },
+              { nome: "Projeto Alimenta para o corpo", end: "R. Rio Grande do Sul, 354 - Jardim do Algarve", cidade: "Itaquaquecetuba - SP, 08572-700", tel: "(11) 99234-9026" },
+              { nome: "Projeto Em Nome da Fé", end: "R. Maria Silvina Tavares, 403 - Morro do índio", cidade: "São Paulo - SP, 05873-270", tel: "(11) 94016-3241" },
+              { nome: "Projeto Suprir", end: "R. Mucugê, 400 - Jardim Maracana", cidade: "São Paulo - SP, 02839-060", tel: "(11) 96668-7563" }
+            ].map((unidade, idx) => (
+              <UnidadeItem key={idx} {...unidade} />
+            ))}
+          </div>  
+
+        </div>
+
+        {/* 🚀 BOTÃO VOLTAR (Original Kabelo Rock) */}
+        <div className="flex justify-center md:justify-center mt-8 w-full">
+            <button 
+                onClick={() => navigate('/')} 
+                className={`
+                    group flex flex-col items-center gap-2 
+                    px-8 py-4 rounded-3xl transition-all duration-300 
+                    !border-none outline-none shadow-lg hover:scale-105
+                `}
+                style={{ 
+                        borderRadius: '24px',
+                        background: 'linear-gradient(to right, #ffffff, #ffffff)',
+                        border: '1px solid #e2e8f0',
+                        boxShadow: 'inset 0 0 25px 2px #0159A1'
+                }}
+            >
+                {/* 1. TEXTO SUPERIOR (Azul MOVER) */}
+                <span 
+                    className="font-bold uppercase text-sm tracking-widest"
+                    style={{ color: '#0159A1' }}
+                >
+                    Voltar para o Site
+                </span>
+                
+                {/* 2. CÍRCULO COM GRADIENTE E MARCA 'MOVER' */}
+                <div className="flex items-center justify-center w-full rounded-3xl p-8 md:p-2 relative overflow-hidden">
+                    <span className="text-xl font-bold drop-shadow-sm flex items-center">
+                        <span 
+                            className="italic tracking-tighter leading-none"
+                            style={{ 
+                                fontFamily: "'BookmanSwash', serif", 
+                                filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6))",
+                                display: "inline-flex",
+                                marginLeft: "-6px"
+                            }}
+                        >
+                            <span style={{ color: '#0159A1' }}>M</span>
+                            <span style={{ color: '#8B3035' }}>O</span>
+                            <span style={{ color: '#0C5F43' }}>V</span>
+                            <span style={{ color: '#CFA922' }}>E</span>
+                            <span style={{ color: '#575756' }}>R</span>
+                        </span>
+                    </span>
+                </div>
+            </button>
+        </div>
+
+      </div>  
+
       {/* 🚀 RODAPÉ (Original Kabelo Rock) */}
       <div className="w-full z-30">
           <footer className="bg-black/90 backdrop-blur-sm py-2 border-t border-gray-900">
@@ -239,11 +384,8 @@ const CozinhaSolidaria: React.FC = () => {
 
               </div>
           </footer>
-      </div>
-
-      
-
-    </div>
+      </div> 
+    </div>  
   );
 };
 
