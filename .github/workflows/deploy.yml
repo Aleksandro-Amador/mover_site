@@ -34,4 +34,6 @@ jobs:
           server-dir: /
 
           protocol: ftp
-          timeout: 60000
+          port: 21
+          timeout: 90000 # Aumentei para 90 segundos
+          log-level: verbose # Para sabermos exatamente onde ele trava
