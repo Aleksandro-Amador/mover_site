@@ -20,48 +20,60 @@ interface MarkerProps {
   lng: number;
 }
 
-const Marker: React.FC<MarkerProps> = ({ text }) => (
-  <div className="group relative" style={{ transform: 'translate(-50%, -50%)', cursor: 'pointer' }}>
-    
-    {/* 📍 O "ALFINETE" (Sempre visível) */}
-    <div className="text-2xl transition-transform duration-300 group-hover:scale-125 group-hover:filter group-hover:drop-shadow-[0_0_8px_rgba(139,48,53,0.8)]">
-      📍
-    </div>
+// ✅ 1. Marker com Suporte a Clique (Mobile) e Hover (PC)
+const Marker: React.FC<MarkerProps> = ({ text }) => {
+  const [show, setShow] = React.useState(false);
 
-    {/* 🏷️ O BALÃO COM NOME (Invisível por padrão, aparece no Hover) */}
-    <div className={`
-      absolute bottom-full left-1/2 -translate-x-1/2 mb-2
-      opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
-      pointer-events-none whitespace-nowrap z-50
-    `}>
-      <div style={{
-        color: 'white', 
-        background: '#8B3035', // Vermelho MOVER
-        padding: '6px 12px',
-        borderRadius: '12px',
-        fontWeight: 'bold',
-        fontSize: '11px',
-        boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
-        position: 'relative'
-      }}>
-        {text}
-        {/* Triângulo do Balão (Pequena seta embaixo) */}
+  return (
+    <div 
+      className="group relative" 
+      style={{ transform: 'translate(-50%, -50%)', cursor: 'pointer', zIndex: show ? 100 : 1 }}
+      onMouseEnter={() => setShow(true)}
+      onMouseLeave={() => setShow(false)}
+      onClick={() => setShow(!show)} // 👈 Clique para abrir/fechar no celular
+    >
+      
+      {/* 📍 O "ALFINETE" */}
+      <div className={`text-2xl transition-transform duration-300 ${show ? 'scale-125' : 'scale-100'}`}>
+        📍
+      </div>
+
+      {/* 🏷️ O BALÃO (Aparece se 'show' for true) */}
+      <div className={`
+        absolute bottom-full left-1/2 -translate-x-1/2 mb-2
+        transition-all duration-300 transform
+        ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'}
+        z-50
+      `}>
         <div style={{
-          position: 'absolute',
-          top: '100%',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '0',
-          height: '0',
-          borderLeft: '6px solid transparent',
-          borderRight: '6px solid transparent',
-          borderTop: '6px solid #8B3035'
-        }}></div>
+          color: 'white', 
+          background: '#8B3035', 
+          padding: '6px 12px',
+          borderRadius: '12px',
+          fontWeight: 'bold',
+          fontSize: '11px',
+          boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+          position: 'relative',
+          whiteSpace: 'nowrap'
+        }}>
+          {text}
+          {/* Seta do Balão */}
+          <div style={{
+            position: 'absolute',
+            top: '100%',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '0',
+            height: '0',
+            borderLeft: '6px solid transparent',
+            borderRight: '6px solid transparent',
+            borderTop: '6px solid #8B3035'
+          }}></div>
+        </div>
       </div>
     </div>
-
-  </div>
-);
+  );
+};
 
 const CozinhaSolidaria: React.FC = () => {
   const navigate = useNavigate();
