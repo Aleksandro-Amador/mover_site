@@ -8,10 +8,10 @@ const DoeAgora: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    /* 1️⃣ DIV GERAL: Ocupa a tela toda e define o fundo escuro */
+    // {/* 1️⃣ DIV GERAL: Ocupa a tela toda e define o fundo escuro */}
     <div className="relative min-h-screen w-full bg-slate-900 flex flex-col overflow-hidden">
       
-      /* 2️⃣ CAMADA DA IMAGEM: Preenche a tela toda sem empurrar nada */
+      {/* 2️⃣ CAMADA DA IMAGEM: Preenche a tela toda sem empurrar nada */}
       <div className="absolute inset-0 z-0">
         <img 
           src={img_20_site} 
@@ -21,8 +21,8 @@ const DoeAgora: React.FC = () => {
         <div className="absolute inset-0 bg-black/30"></div>
       </div>
 
-      /* 3️⃣ ÁREA DE CONTEÚDO: Onde a mágica da centralização acontece */
-      /* O 'flex-1' faz essa div ocupar todo o espaço entre o topo e o rodapé */
+      {/* 3️⃣ ÁREA DE CONTEÚDO: Onde a mágica da centralização acontece */}
+      {/* O 'flex-1' faz essa div ocupar todo o espaço entre o topo e o rodapé */}
       <main className="relative z-10 flex-1 flex items-center justify-center p-4">
         
         {/* 📦 CAIXA GRADIENTE: Centralizada no meio do 'main' */}
