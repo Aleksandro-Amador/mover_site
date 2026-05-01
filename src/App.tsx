@@ -1108,7 +1108,7 @@ useEffect(() => {
                 
                 {/* 🟦 CAIXA DO MAPA (Sua caixa atual) */}
                 <div 
-                className="bg-white rounded-t-3xl rounded-b-none p-8 flex flex-col flex-grow justify-between w-full max-w-xl relative overflow-hidden"
+                className="bg-white rounded-t-3xl rounded-b-none p-4 md:p-8 flex flex-col min-h-[300px] md:min-h-[450px] flex-grow justify-between w-full max-w-xl relative overflow-hidden"
                 style={{
                   background: 'linear-gradient(to right, #ffffff, #ffffff)', // Fundo branco puro
                   border: '1px solid #e2e8f0', // Borda fininha de acabamento
