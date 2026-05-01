@@ -34,7 +34,8 @@ const DoeAgora: React.FC = () => {
           }}
         >
           {/* Bloco Título */}
-          <h2 className="font-extrabold text-6xl md:text-8xl uppercase tracking-tighter leading-none scale-x-150 scale-y-150 my-12" style={{ color: '#0159A1' }}>
+          <h2 className="font-extrabold text-5xl md:text-5xl uppercase tracking-tighter leading-none scale-x-150 scale-y-150 my-12" 
+            style={{ color: '#0159A1' }}>
             DOE AGORA!
           </h2>
 
@@ -62,12 +63,12 @@ const DoeAgora: React.FC = () => {
           </div>
 
           {/* 🚀 BOTÃO VOLTAR (Original Kabelo Rock) */}
-          <div className="flex justify-center md:justify-center mt-8 w-full">
+          <div className="flex justify-center mt-8 w-full">
               <button 
                   onClick={() => navigate('/')} 
                   className={`
-                      group flex flex-col items-center gap-2 
-                      px-8 py-4 rounded-3xl transition-all duration-300 
+                      group flex flex-col items-center gap-2.5 
+                      px-6 py-2 rounded-3xl transition-all duration-300 
                       !border-none outline-none shadow-lg hover:scale-105
                   `}
                   style={{ 
@@ -86,7 +87,7 @@ const DoeAgora: React.FC = () => {
                   </span>
                   
                   {/* 2. CÍRCULO COM GRADIENTE E MARCA 'MOVER' */}
-                  <div className="flex items-center justify-center w-full rounded-3xl p-8 md:p-2 relative overflow-hidden">
+                  <div className="flex items-center justify-center w-full rounded-3xl p-1 md:p-2 relative overflow-hidden">
                       <span className="text-xl font-bold drop-shadow-sm flex items-center">
                           <span 
                               className="italic tracking-tighter leading-none"
@@ -111,7 +112,7 @@ const DoeAgora: React.FC = () => {
         </div>
       </main>
 
-      /* 4️⃣ DIV RODAPÉ: Fixada no pé, sem roubar espaço da centralização */
+      {/* 4️⃣ DIV RODAPÉ: Fixada no pé, sem roubar espaço da centralização */}
       {/* 🚀 RODAPÉ (Original Kabelo Rock) */}
       <div className="w-full z-30">
           <footer className="bg-black/90 backdrop-blur-sm py-2 border-t border-gray-900">

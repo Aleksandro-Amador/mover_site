@@ -1140,7 +1140,7 @@ useEffect(() => {
                 }}
               >
                   {/* 📍 Container do Título e Logotipo - Alinhamento Flex horizontal e centralizado verticalmente */}
-                  <div className="flex items-center gap-4 mb-4 mt-2 justify-center lg:justify-start">
+                  <div className="flex items-center gap-4 mb-4 mt-2">
                     
                     {/* 1. O Logo Catavento (Tamanho reduzido para alinhar com o texto) */}
                     <div className="flex-shrink-0">
@@ -1152,7 +1152,7 @@ useEffect(() => {
                       MOVER - Sede
                     </span>
                   </div>
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 w-full px-4">
+                  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 w-full px-4 md:px-4">
   
                     {/* 📍 Bloco do Endereço */}
                     <div className="flex items-start gap-0">
