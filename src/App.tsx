@@ -781,7 +781,7 @@ useEffect(() => {
                       style={{ 
                         width: '100%', 
                         height: '100%', 
-                        objectFit: 'fill', /* 👈 Estica a imagem para preencher tudo */
+                        objectFit: 'cover', /* 👈 Estica a imagem para preencher tudo */
                         display: 'block' 
                       }}
                       className="group-hover:scale-110 transition duration-500" 
