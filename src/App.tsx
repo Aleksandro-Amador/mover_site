@@ -739,7 +739,7 @@ useEffect(() => {
               }}
             >
               {/* Título interno à moldura */}
-              <div className="text-center mt-0 md:mt-[-10px] mb-6">
+              <div className="text-center mt-0 md:mt-[-0px] mb-6">
                 <h2 className="text-4xl font-bold mb-4" 
                   style={{ 
                     color: '#0159A1',
@@ -758,7 +758,7 @@ useEffect(() => {
                 
                 {/* Projeto 1: Heliópolis */}
                 <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 md:col-span-2 md:w-1/2 md:mx-auto">
-                  <div className="h-80 overflow-hidden">
+                  <div className="overflow-hidden">
                     <img 
                       src={img_40_site}   
                       alt="CPQ Heliópolis" 
@@ -782,6 +782,7 @@ useEffect(() => {
                         width: '100%', 
                         height: '100%', 
                         objectFit: 'cover', /* 👈 Estica a imagem para preencher tudo */
+                        objectPosition: 'top', // 👈 Dica: foca no topo da imagem (onde geralmente estão os logos/pessoas)
                         display: 'block' 
                       }}
                       className="group-hover:scale-110 transition duration-500" 
@@ -800,7 +801,7 @@ useEffect(() => {
                     <img 
                       src={img_39_site}  
                       alt="CPQ Parque Santa Madalena" 
-                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+                      className="w-full h-full object-cover scale-150 group-hover:scale-[1.6] transition duration-500 origin-top" 
                     />
                   </div>
                   <div className="p-4">
@@ -843,7 +844,7 @@ useEffect(() => {
                 
                 {/* Card 1: Rede Cozinha Escola */}
                 <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 md:col-span-2 md:w-1/2 md:mx-auto">
-                  <div className="h-80 overflow-hidden">
+                  <div className="h-auto md:h-80 overflow-hidden w-full">
                     <img 
                       src="https://moverhelipa.org.br/wp-content/uploads/2024/10/escola-1024x1024.jpg" 
                       alt="Cozinha Escola" 
@@ -860,7 +861,7 @@ useEffect(() => {
                 <div 
                   onClick={() => navigate('/cozinha-solidaria')}
                   className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 cursor-pointer">
-                  <div className="h-80 overflow-hidden">
+                  <div className="h-auto md:h-80 overflow-hidden w-full">
                     <img 
                       src={img_37_site} 
                       alt="Cozinha Solidária" 
