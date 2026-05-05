@@ -3,6 +3,13 @@ import React, { useEffect, useState, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { FaPhoneAlt, FaTimes } from 'react-icons/fa';
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube, FaEnvelope, FaPaperPlane, FaRobot } from 'react-icons/fa6';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
+
+// Importação obrigatória dos estilos do Swiper
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/effect-fade';
 
 // 2. Imagens para o Primeiro Carrossel (Sobre Nós)
 import img_20_site from './assets/images/image_20_site_espaco_mover_origem.webp';
@@ -30,6 +37,9 @@ import img_37_site from './assets/images/image_37_site_cozinha_solidaria.webp';
 import img_38_site from './assets/images/image_38_site_madalena.webp';
 import img_39_site from './assets/images/image_39_site_sao_mateus.webp';
 import img_40_site from './assets/images/image_40_site_heliopolis.webp';
+import img_41_site from './assets/images/image_41_site_rede.webp';
+import img_42_site from './assets/images/image_42_site_rede.webp';
+import img_43_site from './assets/images/image_43_site_rede.webp';
 
 // 5. Logos (Pasta logos)
 import logo_1_site from './assets/logos/logo_1_site_mover_helipa.webp';
@@ -758,11 +768,11 @@ useEffect(() => {
                 
                 {/* Projeto 1: Heliópolis */}
                 <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 md:col-span-2 md:w-1/2 md:mx-auto">
-                  <div className="overflow-hidden">
+                  <div className="h-80 overflow-hidden">
                     <img 
                       src={img_40_site}   
                       alt="CPQ Heliópolis" 
-                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+                      className="w-full h-full object-cover scale-[1.3] group-hover:scale-140 transition duration-500 origin-center" 
                     />
                   </div>
                   <div className="p-4">
@@ -801,7 +811,7 @@ useEffect(() => {
                     <img 
                       src={img_39_site}  
                       alt="CPQ Parque Santa Madalena" 
-                      className="w-full h-full object-cover scale-150 group-hover:scale-[1.6] transition duration-500 origin-top" 
+                      className="w-full h-full object-cover object-bottom scale-150 group-hover:scale-[1.6] transition duration-500" 
                     />
                   </div>
                   <div className="p-4">
@@ -845,11 +855,24 @@ useEffect(() => {
                 {/* Card 1: Rede Cozinha Escola */}
                 <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 md:col-span-2 md:w-1/2 md:mx-auto">
                   <div className="h-auto md:h-80 overflow-hidden w-full">
-                    <img 
-                      src="https://moverhelipa.org.br/wp-content/uploads/2024/10/escola-1024x1024.jpg" 
-                      alt="Cozinha Escola" 
-                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
-                    />
+                    {/* 🚀 Adicionado apenas o Swiper para rodar as imagens */}
+                    <Swiper
+                      modules={[Autoplay, Pagination, EffectFade]}
+                      autoplay={{ delay: 3000, disableOnInteraction: false }}
+                      pagination={{ clickable: true }}
+                      effect="fade"
+                      className="h-full w-full"
+                    >
+                      {[img_41_site, img_42_site, img_43_site].map((foto, index) => (
+                        <SwiperSlide key={index}>
+                          <img 
+                            src={foto} 
+                            alt="Cozinha Escola" 
+                            className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+                          />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
                   </div>
                   <div className="p-4">
                     <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Rede Cozinha Escola</h3>
@@ -861,11 +884,11 @@ useEffect(() => {
                 <div 
                   onClick={() => navigate('/cozinha-solidaria')}
                   className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 cursor-pointer">
-                  <div className="h-auto md:h-80 overflow-hidden w-full">
+                  <div className="h-64 md:h-80 overflow-hidden w-full">
                     <img 
                       src={img_37_site} 
                       alt="Cozinha Solidária" 
-                      className="w-full h-full object-cover group-hover:scale-110 transition duration-500" 
+                      className="w-full h-full object-cover object-bottom scale-[1.0] group-hover:scale-[1.4] transition duration-500 origin-bottom" 
                     />
                   </div>
                   <div className="p-4">
@@ -882,7 +905,7 @@ useEffect(() => {
                       <img 
                         src={img_34_site} 
                         alt="Cozinha Solidária" 
-                        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto h-auto min-w-[60%] min-h-[60%] object-contain group-hover:scale-110 transition duration-500"/>
+                        className="object-bottom scale-[1.2] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto h-auto min-w-[60%] min-h-[60%] object-contain group-hover:scale-110 transition duration-500"/>
                     </div>
                     <div className="p-4">
                       <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Cozinha Solidária Nacional</h3>
@@ -1103,7 +1126,7 @@ useEffect(() => {
           <div className="max-w-7xl mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch justify-items-center">
               
-              {/* --- COLUNA DA DIREITA: MAPA + NOVA CAIXINHA --- */}
+              {/* --- COLUNA DA ESQUERDA: MAPA + NOVA CAIXINHA --- */}
               <div className="flex flex-col gap-0 w-full h-full max-w-xl">
                 
                 {/* 🟦 CAIXA DO MAPA (Sua caixa atual) */}
@@ -1192,10 +1215,10 @@ useEffect(() => {
               </div>
 
               {/* --- COLUNA DA DIREITA: NOVA CAIXINHA --- */}
-              <div className="flex flex-col gap-0 w-full max-w-xl">
+              <div className="flex flex-col justify-center gap-0 w-full max-w-xl">
                 {/* 🟦 CAIXA INFO (Tudo deve ficar dentro desta div) */}
                 <div 
-                  className="bg-white rounded-3xl p-6 flex flex-col gap-6 w-full max-w-xl relative overflow-hidden h-full"
+                  className="bg-white rounded-3xl p-8 md:p-10 flex flex-col justify-between w-full max-w-xl relative overflow-hidden min-h-[500px] md:min-h-[550px] h-full"
                   style={{
                     background: 'linear-gradient(to right, #ffffff, #ffffff)',
                     border: '1px solid #e2e8f0',
