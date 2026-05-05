@@ -196,52 +196,7 @@ const CozinhaSolidaria: React.FC = () => {
             </GoogleMapReact>
           </div>
 
-          {/* 🚀 BOTÃO VOLTAR (Original Kabelo Rock) */}
-          <div className="flex justify-center md:justify-center mt-8 w-full">
-              <button 
-                  onClick={() => navigate('/')} 
-                  className={`
-                      group flex flex-col items-center gap-2 
-                      px-8 py-4 rounded-3xl transition-all duration-300 
-                      !border-none outline-none shadow-lg hover:scale-105
-                  `}
-                  style={{ 
-                          borderRadius: '24px',
-                          background: 'linear-gradient(to right, #ffffff, #ffffff)',
-                          border: '1px solid #e2e8f0',
-                          boxShadow: 'inset 0 0 25px 2px #0159A1'
-                  }}
-              >
-                  {/* 1. TEXTO SUPERIOR (Azul MOVER) */}
-                  <span 
-                      className="font-bold uppercase text-sm tracking-widest"
-                      style={{ color: '#0159A1' }}
-                  >
-                      Voltar para o Site
-                  </span>
-                  
-                  {/* 2. CÍRCULO COM GRADIENTE E MARCA 'MOVER' */}
-                  <div className="flex items-center justify-center w-full rounded-3xl p-8 md:p-2 relative overflow-hidden">
-                      <span className="text-xl font-bold drop-shadow-sm flex items-center">
-                          <span 
-                              className="italic tracking-tighter leading-none"
-                              style={{ 
-                                  fontFamily: "'BookmanSwash', serif", 
-                                  filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6))",
-                                  display: "inline-flex",
-                                  marginLeft: "-6px"
-                              }}
-                          >
-                              <span style={{ color: '#0159A1' }}>M</span>
-                              <span style={{ color: '#8B3035' }}>O</span>
-                              <span style={{ color: '#0C5F43' }}>V</span>
-                              <span style={{ color: '#CFA922' }}>E</span>
-                              <span style={{ color: '#575756' }}>R</span>
-                          </span>
-                      </span>
-                  </div>
-              </button>
-          </div>
+          
 
         </div>          
         
