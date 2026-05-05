@@ -863,7 +863,7 @@ useEffect(() => {
                       effect="fade"
                       className="h-full w-full"
                     >
-                      {[img_41_site, img_42_site].map((foto, index) => (
+                      {[img_41_site, img_42_site, img_43_site].map((foto, index) => (
                         <SwiperSlide key={index}>
                           <img 
                             src={foto} 
