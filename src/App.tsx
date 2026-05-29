@@ -363,7 +363,7 @@ useEffect(() => {
 
                     {/* 2.2 Nome Colorido 'MOVER' com fonte MoverReservada (.woff2)*/}
                     <span 
-                      className="text-2xl md:text-3xl font-bold italic tracking-tighter leading-none"
+                      className="text-2xl md:text-3xl font-bold tracking-tighter leading-none"
                       style={{ 
                         fontFamily: "'MoverReservada', sans-serif",
                         filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" 
@@ -566,7 +566,7 @@ useEffect(() => {
               <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-2xl">
                 {/* Trazendo o estilo da linha 248-263 para cá */}
                 <span 
-                  className="italic tracking-tighter leading-none"
+                  className="tracking-tighter leading-none"
                   style={{ 
                     fontFamily: "'MoverReservada', serif", 
                     filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6))"
