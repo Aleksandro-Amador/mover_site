@@ -1,15 +1,18 @@
+// font-family: "Bookman Old Style", "Bookman", "URW Bookman L", "serif";
+
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 // Imports das Imagens (Caminhos ajustados para ./assets)
 import img_34_site from './assets/images/image_34_site_logo_cozinha_solidaria_nacional.webp';
-import img_35_site from './assets/images/image_35_site_membros_logo_cozinha_solidaria_nacional.webp';
+import img_18_site from './assets/images/image_18_site_rede_cozinha.webp';
 import img_36_site from './assets/images/image_36_site_covenio_logo_cozinha_solidaria_nacional.webp';
 
 // Logos (Pasta logos)
 import logo_mover_catavento from './assets/logos/logo_2_site_mover_catavento.webp';
+import logo_rede_cozinha_escola from './assets/logos/Rede_Cozinha_Escola/logo_rede_cozinha_escola.webp';
 
-const CozinhaSolidariaNacional = () => {
+const RedeCozinhaEscola = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,20 +33,25 @@ const CozinhaSolidariaNacional = () => {
                 boxShadow: 'inset 0 0 25px 2px #0159A1'
             }}
             >
-            {/* 1. TÍTULO */}
+            {/* 1. TÍTULO ESTILIZADO (Estilo Bookman Cozinha Escola) */}
             <h1 
-                className="text-3xl md:text-5xl font-bold mb-12 text-center uppercase tracking-tight"
-                style={{ color: '#0159A1' }}
+                className="text-4xl md:text-6xl font-bold mb-12 text-center uppercase tracking-tight"
+                style={{ 
+                    color: '#0159A1',
+                    fontFamily: '"Bookman Old Style", "Bookman", "serif"', // Fonte da imagem
+                    fontWeight: 800, // Deixa bem robusta como na foto
+                    letterSpacing: '-1px' // Aproxima um pouco as letras para o estilo da logo
+                }}
             >
-                Programa Cozinha Solidária Nacional
+                Programa Rede Cozinha Escola
             </h1>
 
             {/* 2. LOGO PRINCIPAL */}
             <div className="w-full flex justify-center mt-14 mb-12">
                 <div className="rounded-2xl p-6 bg-white border border-gray-100 shadow-xl max-w-[450px]">
                 <img 
-                    src={img_34_site} 
-                    alt="Logo Cozinha Solidária Nacional" 
+                    src={logo_rede_cozinha_escola} 
+                    alt="Logo Rede Cozinha Escola" 
                     className="w-full h-auto object-contain"
                 />
                 </div>
@@ -59,15 +67,7 @@ const CozinhaSolidariaNacional = () => {
                 color: '#4b5563' 
                 }}
             >
-                <p>A parceria da <strong>MOVER Helipa</strong> como entidade gestora de <strong>39 cozinhas solidárias</strong> no âmbito do Programa Nacional de Cozinha Solidária do Ministério de Desenvolvimento e Assistência Social, Família e Combate A Fome, é crucial uma vez que para anteder a realidade das comunidades carentes anteriormente mencionadas, incluindo Heliópolis e outros bairros e cidades vulneráveis do Estado de São Paulo. Essas áreas enfrentam desafios significativos de desigualdade social, pobreza, falta de acesso a serviços básicos como assistência social, educação e saúde, e possem altos índices de insegurança alimentar e nutricional.</p>
-
-                <p>A <strong>MOVER Helipa</strong> exercendo o papel de entidade gestora das cozinhas solidárias, visa apoiar e beneficiar diretamente pessoas em situação de vulnerabilidade e risco social, incluindo população em situação de rua e em insegurança alimentar. Sobretudo apoiar as cozinhas solidárias em sua gestão, atuação e organização uma vez que estas terão o papel mais importante que é fornecer as refeições diárias para essas comunidades, não apenas garantindo acesso a alimentação adequada, mas também promovendo a inclusão social e o fortalecimento comunitário.</p>
-
-                <p>O Programa Nacional de Cozinha Solidária, estabelecido pela Lei nº 14.628 e regulamentado pelo Decreto nº 11.937 de 2024, oferece um arcabouço legal e operacional para a implementação dessas iniciativas. A MOVER Helipa, com sua expertise e comprometimento comunitário, está posicionada de maneira ideal para assumir a função de entidade gestora e apoiar o trabalho já realizado pelas cozinhas solidárias habilitadas de forma eficaz, utilizando práticas sustentáveis e inclusivas que beneficiarão diretamente o público beneficiário onde estão localizadas as cozinhas.</p>
-
-                <p>A realidade contemplada pela parceria é a de combater a fome e fortalecer a segurança alimentar e nutricional dessas populações, promovendo a inclusão social e melhorando a qualidade de vida. As ações propostas neste plano de trabalho e inerentes ao Programa Nacional de Cozinha Solidária, serão executadas através de <strong>39 cozinhas solidárias</strong> geridas pela MOVER Helipa. Estas cozinhas estão estrategicamente distribuídas em áreas periféricas e vulneráveis da cidade e estado de São Paulo, atendendo diretamente pessoas em situação de rua, em insegurança alimentar e nutricional, além de outros grupos em risco social.</p>
-
-                <p>A população diretamente beneficiada inclui pessoas vulneráveis, como famílias de baixa renda, mães solo, migrantes e trabalhadores informais das comunidades. A iniciativa não apenas fornecerá refeições diárias, mas também promoverá a capacitação de toda equipe gestora das cozinhas em diversas áreas, incentivando a autonomia, processos organizacionais e planejamento das entidades e pessoas responsáveis pelas cozinhas solidárias. Além disso, as cozinhas solidárias servirão como centros comunitários, facilitando o engajamento social e a criação de redes de apoio aos beneficiários.</p>
+                <p>Programa criado pela Prefeitura de São Paulo em parceria com 65 Organizações da Sociedade Civil, para atender a população que mais precisa, produzindo em cada cozinha, no mínimo, 400 refeições saudáveis de segunda a sábado e promovendo a capacitação profissional na área de serviços de alimentação.</p>
 
                 {/* INFO BOX TÉCNICO */}
                 <div 
@@ -78,24 +78,25 @@ const CozinhaSolidariaNacional = () => {
                         boxShadow: 'inset 0 0 25px 2px #0159A1'
                     }}
                 >
-                        <p className="text-xl font-bold text-[#0159A1]">Termo de colaboração nº 968936/2024</p>
-                        <p className="text-lg text-gray-700"><strong>Período de execução:</strong> 22/11/2024 à 31/08/2026</p>
+                        <p className="text-xl font-bold text-[#0159A1]">Termo de Aditivo 03 ao Termo de Colaboração TCL 029/2023/SMDHC/SESANA</p>
+                        <p className="text-lg text-gray-700"><strong>Período de execução:</strong> 18/08/2025 à 17/08/2026</p>
 
                     <div className="pt-4 border-t border-blue-100">
                         <p className="text-sm font-bold uppercase text-gray-500 mb-2">
-                            Conheça mais sobre o programa Cozinha Solidária Nacional:
+                            Conheça mais sobre o programa Rede Cozinha Escola:
                         </p>
                         <a 
-                            href="https://www.gov.br/mds/pt-br/acoes-e-programas/acesso-a-alimentos-e-a-agua/programa-cozinha-solidaria" 
+                            href="https://prefeitura.sp.gov.br/web/direitos_humanos/rede_cozinha_escola" 
                             target="_blank" 
                             rel="noopener noreferrer"
+                            title="Acesse o site oficial da Rede Cozinha Escola - Prefeitura de SP"
                             className={`
                                 !text-[#0159A1] font-bold underline text-lg inline-flex 
                                 items-center gap-2 transition-transform duration-300 
                                 hover:scale-105 origin-left                    
                             `}
-                    >
-                            <span>Acesse aqui o Site do Governo Federal</span>
+                        >
+                            <span>Clique aqui para acessar o site da PMSP</span>
 
                             {/* Ícone para reforçar que é um link e não apenas texto */}
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -109,15 +110,15 @@ const CozinhaSolidariaNacional = () => {
                 <div className="flex flex-col"> 
                     {/* 🚀 Trocamos o 'grid' por 'flex-col' para ficar uma abaixo da outra */}
                     <img 
-                        src={img_35_site} 
+                        src={img_18_site} 
                         alt="Equipe Cozinha Solidária" 
                         className="w-full rounded-t-2xl shadow-md border border-gray-100 object-cover h-auto max-h-[500px]"
                     />
-                    <img 
+                   {/* <img 
                         src={img_36_site} 
                         alt="Convênio Cozinha Solidária" 
                         className="w-full rounded-b-2xl shadow-md border border-gray-100 object-cover h-auto max-h-[150px]"
-                    />
+                    />*/}
                 </div>
 
             </div> {/* Fim do bloco de texto */}
@@ -211,4 +212,4 @@ const CozinhaSolidariaNacional = () => {
   );
 };
 
-export default CozinhaSolidariaNacional;
+export default RedeCozinhaEscola;

@@ -56,6 +56,7 @@ import { useNavigate, Routes, Route } from 'react-router-dom'; // Adicione Route
 import DoeAgora from './DoeAgora'; // 👈 Chamando o seu arquivo
 import CozinhaSolidariaNacional from './CozinhaSolidariaNacional';
 import CozinhaSolidaria from './CozinhaSolidaria';
+import RedeCozinhaEscola from './RedeCozinhaEscola';
 
 
 
@@ -337,12 +338,12 @@ useEffect(() => {
                     <a style={{ background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="https://wa.me/5511996744126" target="_blank" rel="noopener noreferrer">
                       <FaWhatsapp size={16} />
                     </a>
-                    <a style={{ background: 'linear-gradient(135deg, #0077B5 0%, #005983 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="#" target="_blank" rel="noopener noreferrer">
+                    {/*<a style={{ background: 'linear-gradient(135deg, #0077B5 0%, #005983 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="#" target="_blank" rel="noopener noreferrer">
                       <FaLinkedinIn size={14} />
                     </a>
                     <a style={{ background: 'linear-gradient(135deg, #FF0000 0%, #C4302B 100%)', color: '#ffffff', width: '28px', height: '28px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }} className="hover:scale-110 transition-all" href="#" target="_blank" rel="noopener noreferrer">
                       <FaYoutube size={14} />
-                    </a>
+                    </a>*/}
                   </div>
                   {/* Final do bloco 1.2.1 - Redes Sociais */}
 
@@ -353,18 +354,18 @@ useEffect(() => {
                   Responsável por: Navegação estrutural e Logotipo principal.
                   Nota: 'sticky top-0' mantém o menu fixo no topo ao rolar a página. */}
               <header className="bg-white py-0.5 border-b border-gray-100 w-full sticky top-0 z-50">
-                <div className="max-w-7xl mx-auto px-0.5 flex flex-col md:flex-row items-center justify-center gap-0.5 md:gap-6">
+                <div className="max-w-5xl mx-auto px-0.5 flex flex-col md:flex-row items-center justify-center gap-0.5 md:gap-6">
                   
                   {/* 🖼️ Logo 2.1: Lado Esquerdo: Logo + MOVER 'animate-spin-slow sem brilho - h-16 md:h-20 '*/}
                   <div className="flex items-center justify-center gap-4 md:gap-6">
                     <a href="/" className="flex items-center gap-4">
                     <LogoCatavento tamanho="h-10 md:h-14" comBrilho={false} /> 
 
-                    {/* 2.2 Nome Colorido 'MOVER' com BookmanSwash (.woff2)*/}
+                    {/* 2.2 Nome Colorido 'MOVER' com fonte MoverReservada (.woff2)*/}
                     <span 
-                      className="text-2xl md:text-4xl font-bold italic tracking-tighter leading-none"
+                      className="text-2xl md:text-3xl font-bold italic tracking-tighter leading-none"
                       style={{ 
-                        fontFamily: "'BookmanSwash', serif", 
+                        fontFamily: "'MoverReservada', sans-serif",
                         filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" 
                       }}
                     >
@@ -377,12 +378,12 @@ useEffect(() => {
                   </a>
                 </div>  
 
-                  {/* 🎯 Bloco 2.3: Texto Explicativo (Lado Direito do Centro) */}
+                  {/* 🎯 Bloco 2.3: Texto Explicativo com fonte MoverReservada (.woff2) (Lado Direito do Centro) */}
                   <div className="flex flex-col items-center justify-center text-center text-[#1e428a] leading-none md:border-l-2 md:border-gray-100 md:pl-8 md:ml-4">
                     <span 
                       className="w-full md:max-w-none whitespace-normal md:whitespace-nowrap"
                         style={{ 
-                        fontFamily: "'Alice', serif", 
+                        fontFamily: "'MoverReservada', sans-serif", 
                         fontSize: '20px', 
                         fontWeight: '400',
                         color: '#1e428a',
@@ -403,61 +404,95 @@ useEffect(() => {
                   backgroundColor: '#1e428a',
                   borderBottom: '1px solid rgba(255,255,255,0.1)'
                 }}>
-                <div className="max-w-7xl mx-auto px-6 flex items-center justify-center"> 
+                <div className="max-w-7xl mx-auto px-0.5 flex items-center justify-center"> 
 
                   {/* 3.1 Menu com Links e o Botão 'DOAR' */}
-                  <nav className={`
-                    flex flex-wrap justify-center items-center 
-                    gap-x-4 gap-y-2 md:gap-12 
-                    font-bold uppercase text-base 
-                    leading-tight
-                  `}>
+                  <nav 
+                    className={`
+                      flex flex-wrap justify-center items-center 
+                      gap-x-1.5 md:gap-x-10       /* 👈 Reduzimos o espaço horizontal para forçar o botão a subir */
+                      gap-y-3 md:gap-y-3         /* 👈 DIMINUI O ESPAÇO ENTRE AS LINHAS (Caso ainda quebre em telas menores) */
+                      font-bold uppercase 
+                      text-[16px]    /* 👈 Ajustamos o tamanho da fonte para a MoverReservada caber linda */
+                      leading-none               /* 👈 Remove a folga vertical padrão do texto */
+                    `}>
                     <a 
                       href="#início" 
                       className="text-white hover:brightness-125 transition-all"
-                      style={{ color: 'white', textDecoration: 'none' }}
+                      style={{
+                        fontFamily: "'MoverReservada', serif", 
+                        color: 'white', 
+                        textDecoration: 'none' 
+                      }}
                       >
-                        Início
+                        Inicio
                       </a>
                     <a 
                       href="#sobre-nos" 
                       className="text-white hover:brightness-125 transition-all"
-                      style={{ color: 'white', textDecoration: 'none' }}
+                      style={{
+                        fontFamily: "'MoverReservada', serif", 
+                        color: 'white', 
+                        textDecoration: 'none',
+                        wordSpacing: '-8px' 
+                      }}
                       >
-                        Sobre nós
+                        Sobre nos
                       </a>
                     <a 
                       href="#quem somos" 
                       className="text-white hover:brightness-125 transition-all"
-                      style={{ color: 'white', textDecoration: 'none' }}
+                      style={{
+                        fontFamily: "'MoverReservada', serif", 
+                        color: 'white', 
+                        textDecoration: 'none',
+                        wordSpacing: '-8px'  
+                      }}
                       >
                         Quem Somos
                       </a>     
                     <a
                       href="#projetos" 
                       className="text-white hover:brightness-125 transition-all"
-                      style={{ color: 'white', textDecoration: 'none' }}
+                      style={{
+                        fontFamily: "'MoverReservada', serif", 
+                        color: 'white', 
+                        textDecoration: 'none' 
+                      }}
                       >
                         Projetos
                       </a>
                       <a
                       href="#programas" 
                       className="text-white hover:brightness-125 transition-all"
-                      style={{ color: 'white', textDecoration: 'none' }}
+                      style={{
+                        fontFamily: "'MoverReservada', serif", 
+                        color: 'white', 
+                        textDecoration: 'none' 
+                      }}
                       >
                         Programas
                       </a>
                     <a 
                       href="#nosso trabalho" 
                       className="text-white hover:brightness-125 transition-all"
-                      style={{ color: 'white', textDecoration: 'none' }}
+                      style={{
+                        fontFamily: "'MoverReservada', serif", 
+                        color: 'white', 
+                        textDecoration: 'none',
+                        wordSpacing: '-8px'  
+                      }}
                       >
                         Nosso Trabalho
                       </a>  
                     <a 
                       href="#contato" 
                       className="text-white hover:brightness-125 transition-all"
-                      style={{ color: 'white', textDecoration: 'none' }}
+                      style={{
+                        fontFamily: "'MoverReservada', serif", 
+                        color: 'white', 
+                        textDecoration: 'none' 
+                      }}
                       >
                         Contato
                       </a>
@@ -483,7 +518,8 @@ useEffect(() => {
                         justifyContent: 'center',
                         textTransform: 'uppercase',
                         letterSpacing: '0.5px',
-                        boxShadow: '0 10px 15px -3px rgba(237, 30, 36, 0.3)'
+                        boxShadow: '0 10px 15px -3px rgba(237, 30, 36, 0.3)',
+                        wordSpacing: '-8px' 
                       }}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
@@ -527,12 +563,12 @@ useEffect(() => {
 
             {/* ✍️ Conteúdo Fixo (Por cima do carrossel) */}
             <div className="relative z-20 text-center px-4">
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 drop-shadow-2xl">
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 drop-shadow-2xl">
                 {/* Trazendo o estilo da linha 248-263 para cá */}
                 <span 
                   className="italic tracking-tighter leading-none"
                   style={{ 
-                    fontFamily: "'BookmanSwash', serif", 
+                    fontFamily: "'MoverReservada', serif", 
                     filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6))"
                   }}
                 >
@@ -557,11 +593,14 @@ useEffect(() => {
               <a 
                 href="#" 
                 className={`
-                  inline-block rounded-xl font-bold text-xl shadow-2xl transition-all duration-300
-                  !text-white px-12 py-4 mt-10 md:mt-16
+                  inline-block rounded-xl font-bold shadow-2xl transition-all duration-300
+                  !text-white px-8 py-4 mt-10 md:mt-16
                   border-3 border-white/60
                   hover:border-white/40 hover:!scale-110
-                `}style={{ 
+                `}
+                style={{
+                  fontFamily: "'MoverReservada', serif",  
+                  fontSize: '18px',  
                   backgroundColor: '#27272a99', 
                   color: '#ffffff', 
                   textDecoration: 'none',
@@ -569,7 +608,7 @@ useEffect(() => {
                   backdropFilter: 'blur(4px)'
                 }} 
               >
-                Inscreva-se
+                INSCREVA-SE
               </a>
             </div>
           </section>
@@ -592,10 +631,11 @@ useEffect(() => {
                   style={{ 
                     color: '#0159A1',
                     fontSize: 'clamp(40px, 10vw, 10px)',
-                   fontWeight: '700'
+                    fontWeight: '700',
+                    wordSpacing: '-8px' 
                  }}
               >
-                Sobre nós
+                Sobre nos
               </h2>
 
               <div className="space-y-6">
@@ -853,7 +893,10 @@ useEffect(() => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 {/* Card 1: Rede Cozinha Escola */}
-                <div className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 md:col-span-2 md:w-1/2 md:mx-auto">
+                <div 
+                  onClick={() => navigate('/rede-cozinha-escola')}
+                  className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 md:col-span-2 md:w-1/2 md:mx-auto cursor-pointer"
+                >  
                   <div className="h-auto md:h-80 overflow-hidden w-full">
                     {/* 🚀 Adicionado apenas o Swiper para rodar as imagens */}
                     <Swiper
@@ -1492,6 +1535,9 @@ useEffect(() => {
 
     {/* 🍳 ROTA 4: COZINHA SOLIDÁRIA */}
     <Route path="/cozinha-solidaria" element={<CozinhaSolidaria />} />
+
+    {/* 🍳 ROTA 5: REDE COZINHA ESCOLA */}
+    <Route path="/rede-cozinha-escola" element={<RedeCozinhaEscola />} />
 
 </Routes>
 

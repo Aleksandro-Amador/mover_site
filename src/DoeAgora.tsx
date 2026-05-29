@@ -34,7 +34,8 @@ const DoeAgora: React.FC = () => {
           }}
         >
           {/* Bloco Título */}
-          <h2 className="font-extrabold text-5xl md:text-5xl uppercase tracking-tighter leading-none scale-x-150 scale-y-150 my-12" 
+          <h2 className="font-extrabold text-5xl md:text-5xl uppercase tracking-tighter leading-none 
+               scale-x-130 scale-y-130 md:scale-x-150 md:scale-y-150 my-12" 
             style={{ color: '#0159A1' }}>
             DOE AGORA!
           </h2>
