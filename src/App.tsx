@@ -883,8 +883,11 @@ useEffect(() => {
             
             {/* 🟦 1. CAIXA GRADIENTE MESTRE (Moldura com a largura do site) */}
             <div 
-              className="max-w-6xl mx-auto rounded-3xl pt-4 pb-8 md:pt-6 md:pb-16 px-8 md:px-16 relative overflow-hidden"
-              style={{
+              className={`
+                max-w-6xl mx-auto rounded-3xl relative overflow-hidden
+                pt-4 pb-8 px-8 
+                md:pt-8 md:pb-16 md:px-16
+              `}style={{
                 background: 'linear-gradient(to right, #ffffff, #ffffff)',
                 border: '1px solid #e2e8f0',
                 boxShadow: 'inset 0 0 25px 2px #0159A1'
@@ -892,12 +895,14 @@ useEffect(() => {
             >
               {/* Título interno à moldura */}
               <div className="text-center mt-0 md:mt-[-0px] mb-6">
-                <h2 className="text-4xl font-bold mb-4" 
+                <h2 
+                  className="text-4xl font-bold mb-4" 
                   style={{ 
                     color: '#0159A1',
                     fontSize: 'clamp(40px, 10vw, 10px)',
                     fontWeight: '700'
-                  }}>
+                  }}
+                >
                   Nossos Projetos
                   <span className="block mt-6 text-2xl md:text-3xl opacity-90 font-semibold">
                     Centro Popular de Qualificação
@@ -918,8 +923,12 @@ useEffect(() => {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Unidade: Heliópolis</h3>
-                    <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia para a comunidade de Heliópolis.</p>
+                    <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>
+                      Unidade: Heliópolis
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      Cursos de qualificação profissional e alta gastronomia para a comunidade de Heliópolis.
+                    </p>
                   </div>
                 </div>
 
@@ -941,9 +950,15 @@ useEffect(() => {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-xl font-bold mb-2" 
-                      style={{ color: '#0159A1' }}>Unidade: Parque Santa Madalena</h3>
-                    <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia para a comunidade do Parque Santa Madalena.</p>
+                    <h3 
+                      className="text-xl font-bold mb-2" 
+                      style={{ color: '#0159A1' }}
+                    >
+                      Unidade: Parque Santa Madalena
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      Cursos de qualificação profissional e alta gastronomia para a comunidade do Parque Santa Madalena.
+                    </p>
                   </div>
                 </div>
 
@@ -957,9 +972,15 @@ useEffect(() => {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-xl font-bold mb-2" 
-                      style={{ color: '#0159A1' }}>Unidade: São Mateus</h3>
-                    <p className="text-gray-600 text-sm">Cursos de qualificação profissional e alta gastronomia para a comunidade do Parque Santa Madalena.</p>
+                    <h3 
+                      className="text-xl font-bold mb-2" 
+                      style={{ color: '#0159A1' }}
+                    >
+                      Unidade: São Mateus
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      Cursos de qualificação profissional e alta gastronomia para a comunidade do Parque Santa Madalena.
+                    </p>
                   </div>
                 </div>
 
