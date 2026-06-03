@@ -440,7 +440,7 @@ useEffect(() => {
                         Sobre nos
                       </a>
                     <a 
-                      href="#quem somos" 
+                      href="#nossa essencia" 
                       className="text-white hover:brightness-125 transition-all"
                       style={{
                         fontFamily: "'MoverReservada', serif", 
@@ -449,7 +449,7 @@ useEffect(() => {
                         wordSpacing: '-8px'  
                       }}
                       >
-                        Quem Somos
+                        Nossa Essência
                       </a>     
                     <a
                       href="#projetos" 
@@ -628,36 +628,76 @@ useEffect(() => {
               {/* Título Principal Interno à Moldura */}
               <h2 
                 className="font-extrabold mb-12 uppercase tracking-tighter leading-none"
-                  style={{ 
-                    color: '#0159A1',
-                    fontSize: 'clamp(40px, 10vw, 10px)',
-                    fontWeight: '700',
-                    wordSpacing: '-8px' 
-                 }}
+                style={{ 
+                  color: '#0159A1',
+                  fontSize: '40px', // Corrigido o clamp anterior que travava em 10px
+                  fontWeight: '700',
+                  wordSpacing: '-8px' 
+                }}
               >
                 Sobre nos
               </h2>
 
-              <div className="space-y-6">
+              <div className="space-y-12">
 
-                {/* ⬅️ GRID 1: Texto à Esquerda | Carrossel 2 à Direita */}
+                {/* ⬅️ GRID 1: Parte Inicial do Texto (Parágrafos 1 ao 4) | Carrossel 2 à Direita */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                  <div className="space-y-4 text-justify" style={{ fontFamily: '"Roboto", sans-serif', fontSize: '17px', fontWeight: 300, lineHeight: '1.8', color: '#54595f' }}>
-                    <p>O <strong>Movimento Organizacional Vencer, Educar e Realizar – MOVER</strong> é uma organização da sociedade civil... entorno da maior favela da cidade: <strong>Heliópolis</strong>.</p>
-                    <p>Desde o início, nossa missão é <strong>enfrentar os problemas vividos pela comunidade</strong>... criação de <strong>políticas públicas que enfrentem, de forma direta, a miséria e a desinformação.</strong></p>
-                    <p>Nossa história é feita por <strong>lideranças nascidas e criadas dentro de Heliópolis</strong>... dor enfadonha e cruel da fome que o <strong>impulso visceral por fazer acontecer ultrapassou barreiras.</strong></p>
-                    <p>Em 2019... equipe voluntária iniciou a produção de <strong>quase mil refeições por dia</strong>. Com muita luta, assim começamos nossa caminhada no <strong>combate à fome.</strong></p>
+                  <div 
+                    className="space-y-4 text-justify" 
+                    style={{ 
+                      fontFamily: '"Roboto", sans-serif', 
+                      fontSize: '17px', 
+                      fontWeight: 400, 
+                      lineHeight: '1.8', 
+                      color: '#54595f' 
+                    }}
+                  >
+                    <p>
+                      O <strong>Movimento Organizacional Vencer, Educar e Realizar – MOVER</strong> é uma 
+                      organização da sociedade civil, sem fins lucrativos, fundada em 2008, com atuação 
+                      voltada à promoção da cidadania, inclusão social, <strong>segurança alimentar, 
+                      qualificação profissional e desenvolvimento comunitário</strong>. Nascida em 
+                      <strong>Heliópolis</strong>, a maior favela da cidade de São Paulo, a organização 
+                      construiu sua trajetória a partir da reality, das necessidades e das 
+                      potencialidades do território.
+                    </p>
+                    
+                    <p>
+                      Desde sua criação, a MOVER atua no <strong>enfrentamento das desigualdades 
+                      sociais</strong>, desenvolvendo projetos e ações que promovem acesso a direitos, 
+                      fortalecimento comunitário e <strong>oportunidades de transformação</strong> para 
+                      crianças, adolescentes, jovens, adultos e pessoas idosas em situação de 
+                      vulnerabilidade social.
+                    </p>
+                    
+                    <p>
+                      Nossa história foi construída por <strong>lideranças comunitárias</strong> que 
+                      nasceram, cresceram e vivenciaram os desafios cotidianos da periferia. O 
+                      conhecimento da realidade local, aliado ao compromisso com a transformação 
+                      social, impulsionou a criação de initiatives voltadas ao <strong>combate à 
+                      fome, à geração de renda, à educação, à cultura, ao esporte e à inclusão 
+                      produtiva</strong>.
+                    </p>
+                    
+                    <p>
+                      Durante os períodos mais difíceis enfrentados pelas famílias da comunidade, 
+                      especialmente a partir de 2020, a MOVER ampliou sua atuação no combate à 
+                      insegurança alimentar. Com o apoio de voluntários, parceiros e doadores, 
+                      iniciou a produção e distribuição de centenas de refeições diárias para pessoas 
+                      e famílias em situação de vulnerabilidade, consolidando uma importante 
+                      <strong>rede de solidariedade e proteção social</strong>.
+                    </p>
                   </div>
 
                   {/* CARROSSEL 2 COM EFEITO FADE */}
                   <div 
                     className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
                     style={{ 
-                      // Usando o mesmo padrão de azul que você tem nos outros cards
                       background: 'radial-gradient(circle, #ffffff 0%, #e2e8f0 60%, #0159A1 120%)',
                       boxShadow: 'inset 0 0 50px rgba(1, 89, 161, 0.3)' 
                     }}
-                  ><AnimatePresence initial={false}>
+                  >
+                    <AnimatePresence initial={false}>
                       <motion.img
                         key={currentImage2}
                         src={secondCarouselImages[currentImage2]}
@@ -671,14 +711,13 @@ useEffect(() => {
                   </div>
                 </div>
 
-                {/* ➡️ GRID 2: Carrossel 3 à Esquerda | Texto à Direita */}
+                {/* ➡️ GRID 2: Carrossel 3 à Esquerda | Parte Final do Texto (Parágrafos 5 ao 7) à Direita */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                   
                   {/* CARROSSEL 3 DA SEGUNDA PARTE */}
                   <div 
                     className="relative h-[480px] w-full rounded-2xl overflow-hidden shadow-2xl flex items-center justify-center"
                     style={{ 
-                      // Usando o mesmo padrão de azul que você tem nos outros cards
                       background: 'radial-gradient(circle, #ffffff 0%, #e2e8f0 60%, #0159A1 120%)',
                       boxShadow: 'inset 0 0 50px rgba(1, 89, 161, 0.3)' 
                     }}
@@ -696,20 +735,74 @@ useEffect(() => {
                     </AnimatePresence>
                   </div>
 
-                  <div className="order-1 md:order-2 space-y-4 text-justify" style={{ fontFamily: '"Roboto", sans-serif', fontSize: '17px', fontWeight: 300, lineHeight: '1.8', color: '#54595f' }}>
-                    <p>Hoje, seguimos atuando diretamente no <strong>enfrentamento da insegurança alimentar</strong>, por meio do programa <strong>Rede Cozinha Escola</strong>... são servidas, em média, <strong>400 refeições por dia</strong>.</p>
-                    <p>Também atuamos na <strong>geração de renda</strong>... destaque para o nosso <strong>Curso de Alta Gastronomia</strong>... <strong>restaurantes de alto padrão gastronômico.</strong></p>
-                    <p>Atuamos como <strong>entidade gestora do Programa Cozinha Solidária</strong>... acompanhando <strong>mais de 30 cozinhas</strong>... ajudando a <strong>engajar e impulsionar outros espaços de solidariedade e combate à fome.</strong></p>
-                    <p className="italic font-medium text-blue-800 pt-4 border-t border-gray-100 mt-6">Nossa essência é essa: transformar realidades, criando oportunidades e garantindo direitos.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+                  <div 
+                    className="order-1 md:order-2 space-y-4 text-justify" 
+                    style={{ 
+                      fontFamily: '"Roboto", sans-serif', 
+                      fontSize: '17px', 
+                      fontWeight: 400, 
+                      lineHeight: '1.8', 
+                      color: '#54595f' 
+                    }}
+                  >
+                    <p>
+                      Atualmente, a organização mantém projetos e programas permanentes de combate 
+                      à fome e segurança alimentar, garantindo alimentação digna e de qualidade a 
+                      centenas de pessoas todos os dias, promovendo a inclusão socioeconômica  
+                      oferecendo <strong>cursos de qualificação profissional</strong> com vista ao 
+                      mundo do trabalho  nas áreas como <strong>gastronomia, confeitaria, manutenção 
+                      de celular, estética facial, produções de eventos, elétrica residencial e 
+                      barbearia/cabeleireiro</strong>, ampliando oportunidades de trabalho, geração 
+                      de renda e autonomia para os participantes.
+                    </p>
+                    
+                    <p>
+                      A MOVER também atua como <strong>Entidade Gestora do Programa Cozinha Solidária 
+                      Nacional</strong>, acompanhando e fortalecendo dezenas de cozinhas solidárias 
+                      em diferentes territórios, promovendo capacitação, monitoramento, apoio 
+                      técnico e fortalecimento das ações de combate à fome.
+                    </p>
+                    
+                    <p>
+                      Mais do que executar projetos, a MOVER acredita na <strong>força da participação 
+                      comunitária</strong>, no protagonismo das pessoas e na construção coletiva de 
+                      soluções capazes de transformar realidades. Nossa missão é continuar 
+                      promovendo oportunidades, fortalecendo comunidades e contribuindo para 
+                      uma <strong>sociedade mais justa, inclusiva e solidária</strong>.
+                    </p>
+                  </div> {/* 👈 Fim da coluna de texto do Grid 2 */}
+                </div> {/* 👈 Fim do Grid 2 */}
 
-          {/* 📦 SEÇÃO: MISSÃO, VISÃO E VALORES */}
-          <section id="quem somos" className="py-20 bg-transparent scroll-mt-26">
-            <div className="max-w-6xl mx-auto px-4">
+              </div> {/* 👈 Fim do espaço de espaçamento vertical (space-y-12) */}
+            </div> {/* 👈 Fim da Caixa Mestre que aplica o md:pb-16 (Borda Azul interna) */}
+          </section> {/* 👈 Fim da Section Geral que aplica o py-20 */}
+
+          {/* 📦 SEÇÃO: NOSSA ESSÊNCIA (Missão, Visão e Valores - Versão Premium) */}
+          <section id="nossa essencia" className="py-20 px-4 bg-transparent scroll-mt-26">
+            
+            {/* 🟦 CAIXA GRADIENTE MESTRE (A moldura que abraça os três pilares) */}
+            <div 
+              className="max-w-6xl mx-auto rounded-3xl pt-4 pb-8 px-8 md:pt-8 md:pb-16 md:px-16 relative overflow-hidden"
+              style={{
+                background: 'linear-gradient(to right, #ffffff, #ffffff)',
+                border: '1px solid #e2e8f0',
+                boxShadow: 'inset 0 0 25px 2px #0159A1'
+              }}
+            >
+              {/* Título Principal Interno à Moldura (Idêntico ao Sobre Nos) */}
+              <h2 
+                className="font-extrabold mb-12 uppercase tracking-tighter leading-none"
+                style={{ 
+                  color: '#0159A1',
+                  fontSize: '40px',
+                  fontWeight: '700',
+                  wordSpacing: '-8px' 
+                }}
+              >
+                Nossa Essencia
+              </h2>
+
+              {/* GRID DOS TRÊS CARDS */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
                 {/* 🎯 CARD: MISSÃO */}
@@ -724,10 +817,15 @@ useEffect(() => {
                   <div className="mb-6 p-4 bg-blue-50 rounded-full text-[#0159A1]">
                     <TbTargetArrow size={48} />
                   </div>
-                  <h3 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>Missão</h3>
+                  <h3 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>
+                    Missao
+                  </h3>
                   <p className="text-gray-600 leading-relaxed text-base">
-                    Atuar com ações alternativas para efetivar a garantia de direitos na área de política pública, direitos humanos, justiça social, igualdade de gêneros e na melhoria da qualidade de vida das comunidades carentes e sua população de onde estiver atuando.
-                    </p>
+                    Atuar com ações alternativas para efetivar a garantia de direitos na 
+                    área de política pública, direitos humanos, justiça social, igualdade 
+                    de gêneros e na melhoria da qualidade de vida das comunidades carentes 
+                    e sua população de onde estiver atuando.
+                  </p>
                 </div>
 
                 {/* 👁️ CARD: VISÃO */}
@@ -742,10 +840,13 @@ useEffect(() => {
                   <div className="mb-6 p-4 bg-blue-50 rounded-full text-[#0159A1]">
                     <FaEye size={48} />
                   </div>
-                  <h3 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>Visão</h3>
+                  <h3 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>
+                    Visao
+                  </h3>
                   <p className="text-gray-600 leading-relaxed text-base">
-                    Transformar as comunidades que atua por meio de parcerias que visem a construção de uma sociedade sólida e pacífica.
-                    </p>
+                    Transformar as comunidades que atua por meio de parcerias que visem 
+                    a construção de uma sociedade sólida e pacífica.
+                  </p>
                 </div>
 
                 {/* ⚖️ CARD: VALORES */}
@@ -760,9 +861,10 @@ useEffect(() => {
                   <div className="mb-6 p-4 bg-blue-50 rounded-full text-[#0159A1]">
                     <GiScales size={48} />
                   </div>
-                  <h3 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>Valores</h3>
+                  <h3 className="text-4xl font-bold mb-4" style={{ color: '#0159A1' }}>
+                    Valores
+                  </h3>
                   
-                  {/* Lista de Tópicos Centralizada */}
                   <ul className="text-gray-600 space-y-2 text-sm font-base">
                     <li className="flex items-left justify-left gap-2">🔹 Respeito</li>
                     <li className="flex items-left justify-left gap-2">🔹 Humildade</li>
@@ -772,8 +874,8 @@ useEffect(() => {
                   </ul>
                 </div>
 
-              </div>
-            </div>
+              </div> {/* Fim do Grid dos Cards */}
+            </div> {/* Fim da Caixa Gradiente Mestre */}
           </section>
 
           {/* 📦 SEÇÃO: PROJETOS */}
@@ -1214,7 +1316,15 @@ useEffect(() => {
                     </div>
 
                     {/* 2. Matriz "MOVER"  */}
-                    <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+                    <span
+                      className="md:text-2xl font-bold tracking-tight" 
+                      style={{ 
+                        color: '#0159A1', 
+                        fontFamily: "'MoverReservada', sans-serif", 
+                        fontSize: '24px',
+                        wordSpacing: '-8px'  
+                      }}
+                    >
                       MOVER - Sede
                     </span>
                   </div>
@@ -1270,8 +1380,16 @@ useEffect(() => {
                 >
                   {/* Unidade 1 */}
                   <div className="flex flex-col gap-2">
-                    <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
-                      Centro Popular de Qualificação
+                    <span 
+                      className="md:text-2xl font-bold tracking-tight" 
+                      style={{ 
+                        color: '#0159A1', 
+                        fontFamily: "'MoverReservada', sans-serif", 
+                        fontSize: '18px',
+                        wordSpacing: '-8px'  
+                      }}
+                    >
+                      Centro Popular de Qualificacao
                     </span>
                     
                     {/* Container Flex que separa Endereço de Telefone */}
@@ -1314,7 +1432,15 @@ useEffect(() => {
 
                   {/* Unidade 2 */}
                   <div className="flex flex-col gap-2">
-                    <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+                    <span 
+                      className="md:text-2xl font-bold tracking-tight" 
+                      style={{ 
+                        color: '#0159A1', 
+                        fontFamily: "'MoverReservada', sans-serif", 
+                        fontSize: '18px',
+                        wordSpacing: '-8px'  
+                      }}
+                    >
                       Parque Santa Madalena
                     </span>
 
@@ -1358,7 +1484,15 @@ useEffect(() => {
 
                   {/* Unidade 3 */}
                   <div className="flex flex-col gap-2">
-                    <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+                    <span 
+                      className="md:text-2xl font-bold tracking-tight" 
+                      style={{ 
+                        color: '#0159A1', 
+                        fontFamily: "'MoverReservada', sans-serif", 
+                        fontSize: '18px',
+                        wordSpacing: '-8px'  
+                      }}
+                    >
                       Rede Cozinha Escola
                     </span>
 
@@ -1402,8 +1536,16 @@ useEffect(() => {
 
                   {/* Unidade 4 */}
                   <div className="flex flex-col gap-2">
-                    <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
-                      Cozinha Solidária
+                    <span 
+                      className="md:text-2xl font-bold tracking-tight" 
+                      style={{ 
+                        color: '#0159A1', 
+                        fontFamily: "'MoverReservada', sans-serif", 
+                        fontSize: '18px',
+                        wordSpacing: '-8px'  
+                      }}
+                    >
+                      Cozinha Solidaria
                     </span>
 
                     {/* Container Flex que separa Endereço de Telefone */}
@@ -1446,7 +1588,15 @@ useEffect(() => {
 
                   {/* Unidade 5: Mosaico Sociocultural */}
                   <div className="flex flex-col gap-2">
-                    <span className="text-xl md:text-2xl font-bold tracking-tight" style={{ color: '#0159A1' }}>
+                    <span 
+                      className="md:text-2xl font-bold tracking-tight" 
+                      style={{ 
+                        color: '#0159A1', 
+                        fontFamily: "'MoverReservada', sans-serif", 
+                        fontSize: '18px',
+                        wordSpacing: '-8px'  
+                      }}
+                    >
                       Instituto Mosaico Sociocultural
                     </span>
 
@@ -1506,17 +1656,37 @@ useEffect(() => {
                     className="w-10 md:w-12 opacity-80" 
                 />
 
-                    <div className="flex flex-col items-center text-center gap-0 leading-none">
-                        <span className="font-bold text-gray-200 text-sm block">
+                    <div className="flex flex-col items-center text-center gap-1 leading-none">
+                        <span
+                          className="font-bold text-gray-200 text-sm block" 
+                          style={{ 
+                            fontFamily: "'MoverReservada', sans-serif", 
+                            fontSize: '10px',
+                            wordSpacing: '-8px'  
+                          }}
+                        >
                         MOVER                  
                         </span>                         
-                        <span className="text-gray-400 text-[10px] md:text-xs block">
+                        <span className="text-gray-400 text-[10px] md:text-xs block"
+                        style={{ 
+                            fontFamily: "'MoverReservada', sans-serif", 
+                            fontSize: '10px',
+                            wordSpacing: '-8px'  
+                          }}
+                        >
                             Movimento Organizacional Vencer, Educar e Realizar
                         </span>
                         
-                        <span className="text-gray-600 text-[9px] block mt-3 mb-0.5">
-                            {/* 🚀 2. O '-mt-0.5' é uma margem negativa, ele puxa o texto para cima */}
-                            © 2026 MOVER. Todos os direitos reservados.
+                        <span 
+                          className="text-gray-500 text-[9px] block mt-2 mb-0.5"
+                          style={{ 
+                            fontFamily: "'MoverReservada', sans-serif", 
+                            fontSize: '9px',
+                            wordSpacing: '-6px'  
+                          }}
+                        >
+                        {/* 🚀 2. O '-mt-0.5' é uma margem negativa, ele puxa o texto para cima */}
+                         © 2026 MOVER. Todos os direitos reservados.
                         </span>
                     </div>
 

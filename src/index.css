@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');  /* Fonte Montserrat Alternates */
 @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap'); /* Fonte Satisfy */
 @import url('https://fonts.googleapis.com/css2?family=Alice&display=swap'); /* Fonte Alice */
+/* 🌐 IMPORTAÇÃO DO ROBOTO: Trazendo o peso 300 (texto) e o peso 700 (negrito) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 @import "tailwindcss";
 
 /* 📂 IDENTIDADE VISUAL MOVER - FONTE OFICIAL */
@@ -20,6 +22,11 @@ h1, h2, h3, h4, h5, h6 {
 
 nav, nav a, button, .menu-item {
   font-family: 'MoverReservada', sans-serif !important;
+}
+
+/* 💪 CORREÇÃO DO NEGRITO GLOBAL (Preflight Reset) */
+strong, b {
+  font-weight: 700 !important;
 }
 
 /* 🚀 NAVEGAÇÃO SUAVE: Faz a página deslizar ao clicar nos links do menu */
