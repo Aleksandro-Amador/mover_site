@@ -796,7 +796,8 @@ useEffect(() => {
                   color: '#0159A1',
                   fontSize: '40px',
                   fontWeight: '700',
-                  wordSpacing: '-8px' 
+                  wordSpacing: '-8px',
+                  lineHeight: '1.5' 
                 }}
               >
                 Nossa Essencia
@@ -1049,34 +1050,65 @@ useEffect(() => {
                 {/* Card 2: Cozinha Solidária */}
                 <div 
                   onClick={() => navigate('/cozinha-solidaria')}
-                  className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 cursor-pointer">
+                  className={`
+                    bg-white rounded-xl shadow-2xl overflow-hidden group 
+                    border border-gray-100 cursor-pointer
+                  `}
+                >
                   <div className="h-64 md:h-80 overflow-hidden w-full">
                     <img 
                       src={img_37_site} 
                       alt="Cozinha Solidária" 
-                      className="w-full h-full object-cover object-bottom scale-[1.0] group-hover:scale-[1.4] transition duration-500 origin-bottom" 
+                      className={`
+                        w-full h-full object-cover object-bottom scale-[1.0] 
+                        group-hover:scale-[1.4] transition duration-500 origin-bottom
+                      `}
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Cozinha Solidária</h3>
-                    <p className="text-gray-600 text-sm">Combate à fome com dignidade e nutrição.</p>
+                    <h3 
+                      className="text-xl font-bold mb-2" 
+                      style={{ color: '#0159A1' }}
+                    >
+                      Cozinha Solidária
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      Combate à fome com dignidade e nutrição.
+                    </p>
                   </div>
                 </div>
 
                 {/* Card 3: Cozinha Solidária Nacional */}
                 <div
                   onClick={() => navigate('/cozinha-solidaria-nacional')}
-                  className="bg-white rounded-xl shadow-2xl overflow-hidden group border border-gray-100 cursor-pointer">
-                    <div className="h-80 w-full overflow-hidden bg-gray-50 flex items-center justify-center p-4 relative">
-                      <img 
-                        src={img_34_site} 
-                        alt="Cozinha Solidária" 
-                        className="object-bottom scale-[1.2] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-auto h-auto min-w-[60%] min-h-[60%] object-contain group-hover:scale-110 transition duration-500"/>
-                    </div>
-                    <div className="p-4">
-                      <h3 className="text-xl font-bold mb-2" style={{ color: '#0159A1' }}>Cozinha Solidária Nacional</h3>
-                      <p className="text-gray-600 text-sm">Combate à fome com dignidade e nutrição.</p>
-                    </div>
+                  className={`
+                    bg-white rounded-xl shadow-2xl overflow-hidden group 
+                    border border-gray-100 cursor-pointer
+                  `}
+                >
+                  <div className="h-80 w-full overflow-hidden bg-gray-50 flex items-center justify-center p-4 relative">
+                    <img 
+                      src={img_34_site} 
+                      alt="Cozinha Solidária" 
+                      className={`
+                        object-bottom scale-[1.2] absolute top-1/2 left-1/2 
+                        transform -translate-x-1/2 -translate-y-1/2 w-auto h-auto 
+                        min-w-[60%] min-h-[60%] object-contain group-hover:scale-110 
+                        transition duration-500
+                      `}
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 
+                      className="text-xl font-bold mb-2" 
+                      style={{ color: '#0159A1' }}
+                    >
+                      Cozinha Solidária Nacional
+                    </h3>
+                    <p className="text-gray-600 text-sm">
+                      Combate à fome com dignidade e nutrição.
+                    </p>
+                  </div>
                 </div>
 
               </div> {/* Fim da Grid */}
