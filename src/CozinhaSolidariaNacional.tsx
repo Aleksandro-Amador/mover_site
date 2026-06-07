@@ -127,7 +127,7 @@ const CozinhaSolidariaNacional = () => {
                     <div className="flex items-center gap-3 wrap">
                         <p className="text-xl font-bold text-[#0159A1] m-0">
                             <a 
-                            href="/src/assets/arquivos/SEI 16158512 - Termo de Colaboração 968936.pdf" 
+                            href="/arquivos/SEI 16158512 - Termo de Colaboração 968936.pdf"
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="hover:underline cursor-pointer"
@@ -137,7 +137,7 @@ const CozinhaSolidariaNacional = () => {
                             </a>
                         </p>
                         <a 
-                            href="/src/assets/arquivos/SEI 16158512 - Termo de Colaboração 968936.pdf" 
+                            href="/arquivos/SEI 16158512 - Termo de Colaboração 968936.pdf"
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="inline-flex"
