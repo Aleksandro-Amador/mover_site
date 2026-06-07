@@ -71,6 +71,7 @@ const DoeAgora: React.FC = () => {
                       group flex flex-col items-center gap-2.5 
                       px-6 py-2 rounded-3xl transition-all duration-300 
                       !border-none outline-none shadow-lg hover:scale-105
+                      cursor-pointer {/* 👈 Classe adicionada para transformar a seta na mãozinha */}
                   `}
                   style={{ 
                           borderRadius: '24px',
@@ -90,20 +91,25 @@ const DoeAgora: React.FC = () => {
                   {/* 2. CÍRCULO COM GRADIENTE E MARCA 'MOVER' */}
                   <div className="flex items-center justify-center w-full rounded-3xl p-1 md:p-2 relative overflow-hidden">
                       <span className="text-xl font-bold drop-shadow-sm flex items-center">
-                          <span 
-                              className="italic tracking-tighter leading-none"
-                              style={{ 
-                                  fontFamily: "'BookmanSwash', serif", 
-                                  filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6))",
-                                  display: "inline-flex",
-                                  marginLeft: "-6px"
-                              }}
-                          >
-                              <span style={{ color: '#0159A1' }}>M</span>
-                              <span style={{ color: '#8B3035' }}>O</span>
-                              <span style={{ color: '#0C5F43' }}>V</span>
-                              <span style={{ color: '#CFA922' }}>E</span>
-                              <span style={{ color: '#575756' }}>R</span>
+
+                          {/* 🖼️ Nome 'MOVER' Colorido (Micro-versão da logo) */}
+                          <span className="text-xl font-bold drop-shadow-sm flex items-center">
+                              
+                              {/* 2.2 Nome Colorido 'MOVER' com fonte MoverReservada (.woff2)*/}
+                              <span 
+                                  className="text-2xl md:text-3xl font-bold tracking-tighter leading-none"
+                                  style={{ 
+                                      fontFamily: "'MoverReservada', sans-serif",
+                                      fontSize: '28px',
+                                      filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" 
+                                  }}
+                              >
+                                  <span style={{ color: '#0159A1' }}>M</span>
+                                  <span style={{ color: '#8B3035' }}>O</span>
+                                  <span style={{ color: '#0C5F43' }}>V</span>
+                                  <span style={{ color: '#CFA922' }}>E</span>
+                                  <span style={{ color: '#575756' }}>R</span>
+                              </span>
                           </span>
                       </span>
                   </div>

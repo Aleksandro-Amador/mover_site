@@ -158,19 +158,22 @@ const CozinhaSolidaria: React.FC = () => {
         >
 
           {/* Título e Subtítulo */}
-              <div className="text-center mt-0 md:mt-[-10px] mb-6">
-                <h2 className="text-4xl font-bold mb-4" 
-                  style={{ 
-                    color: '#0159A1',
-                    fontSize: 'clamp(40px, 10vw, 10px)',
-                    fontWeight: '700'
-                  }}>
-                  COZINHAS SOLIDÁRIAS
-                  <span className="block mt-6 text-2xl md:text-3xl opacity-90 font-semibold">
-                    ACOMPANHE NOSSA REDE EM TEMPO REAL
-                  </span>
-                </h2>
-              </div>
+          <div className="text-center mt-0 md:mt-[-10px] mb-6">
+            <h2 className="font-bold mb-4" 
+              style={{ 
+                color: '#0159A1',
+                fontSize: '42px', /* 👈 Ajuste aqui o tamanho do título principal (ex: 40px, 44px, 48px) */
+                fontWeight: '700'
+              }}>
+              COZINHAS SOLIDARIAS
+              <span className="block mt-6 opacity-90 font-semibold"
+                style={{
+                  fontSize: '24px' /* 👈 Ajuste aqui o tamanho do subtítulo (ex: 20px, 24px, 28px) */
+                }}>
+                ACOMPANHE NOSSA REDE EM TEMPO REAL
+              </span>
+            </h2>
+          </div>
 
           {/* 🗺️ MAPA */}
           <div className="w-full h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-inner border border-gray-200 relative">
@@ -197,13 +200,14 @@ const CozinhaSolidaria: React.FC = () => {
           </div>
 
           {/* 🚀 BOTÃO VOLTAR (Original Kabelo Rock) */}
-          <div className="flex justify-center md:justify-center mt-8 w-full">
+          <div className="flex justify-center mt-8 w-full">
               <button 
                   onClick={() => navigate('/')} 
                   className={`
-                      group flex flex-col items-center gap-2 
-                      px-8 py-4 rounded-3xl transition-all duration-300 
+                      group flex flex-col items-center gap-2.5 
+                      px-6 py-2 rounded-3xl transition-all duration-300 
                       !border-none outline-none shadow-lg hover:scale-105
+                      cursor-pointer {/* 👈 Classe adicionada para transformar a seta na mãozinha */}
                   `}
                   style={{ 
                           borderRadius: '24px',
@@ -221,22 +225,27 @@ const CozinhaSolidaria: React.FC = () => {
                   </span>
                   
                   {/* 2. CÍRCULO COM GRADIENTE E MARCA 'MOVER' */}
-                  <div className="flex items-center justify-center w-full rounded-3xl p-8 md:p-2 relative overflow-hidden">
+                  <div className="flex items-center justify-center w-full rounded-3xl p-1 md:p-2 relative overflow-hidden">
                       <span className="text-xl font-bold drop-shadow-sm flex items-center">
-                          <span 
-                              className="italic tracking-tighter leading-none"
-                              style={{ 
-                                  fontFamily: "'BookmanSwash', serif", 
-                                  filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6))",
-                                  display: "inline-flex",
-                                  marginLeft: "-6px"
-                              }}
-                          >
-                              <span style={{ color: '#0159A1' }}>M</span>
-                              <span style={{ color: '#8B3035' }}>O</span>
-                              <span style={{ color: '#0C5F43' }}>V</span>
-                              <span style={{ color: '#CFA922' }}>E</span>
-                              <span style={{ color: '#575756' }}>R</span>
+
+                          {/* 🖼️ Nome 'MOVER' Colorido (Micro-versão da logo) */}
+                          <span className="text-xl font-bold drop-shadow-sm flex items-center">
+                              
+                              {/* 2.2 Nome Colorido 'MOVER' com fonte MoverReservada (.woff2)*/}
+                              <span 
+                                  className="text-2xl md:text-3xl font-bold tracking-tighter leading-none"
+                                  style={{ 
+                                      fontFamily: "'MoverReservada', sans-serif",
+                                      fontSize: '28px',
+                                      filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" 
+                                  }}
+                              >
+                                  <span style={{ color: '#0159A1' }}>M</span>
+                                  <span style={{ color: '#8B3035' }}>O</span>
+                                  <span style={{ color: '#0C5F43' }}>V</span>
+                                  <span style={{ color: '#CFA922' }}>E</span>
+                                  <span style={{ color: '#575756' }}>R</span>
+                              </span>
                           </span>
                       </span>
                   </div>
@@ -310,50 +319,56 @@ const CozinhaSolidaria: React.FC = () => {
         </div>
 
         {/* 🚀 BOTÃO VOLTAR (Original Kabelo Rock) */}
-        <div className="flex justify-center md:justify-center mt-8 w-full">
-            <button 
-                onClick={() => navigate('/')} 
-                className={`
-                    group flex flex-col items-center gap-2.5 
-                    px-6 py-2 rounded-3xl transition-all duration-300 
-                    !border-none outline-none shadow-lg hover:scale-105
-                `}
-                style={{ 
-                        borderRadius: '24px',
-                        background: 'linear-gradient(to right, #ffffff, #ffffff)',
-                        border: '1px solid #e2e8f0',
-                        boxShadow: 'inset 0 0 25px 2px #0159A1'
-                }}
-            >
-                {/* 1. TEXTO SUPERIOR (Azul MOVER) */}
-                <span 
-                    className="font-bold uppercase text-sm tracking-widest"
-                    style={{ color: '#0159A1' }}
-                >
-                    Voltar para o Site
-                </span>
-                
-                {/* 2. CÍRCULO COM GRADIENTE E MARCA 'MOVER' */}
-                <div className="flex items-center justify-center w-full rounded-3xl p-8 md:p-2 relative overflow-hidden">
-                    <span className="text-xl font-bold drop-shadow-sm flex items-center">
-                        <span 
-                            className="italic tracking-tighter leading-none"
-                            style={{ 
-                                fontFamily: "'BookmanSwash', serif", 
-                                filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.6))",
-                                display: "inline-flex",
-                                marginLeft: "-6px"
-                            }}
-                        >
-                            <span style={{ color: '#0159A1' }}>M</span>
-                            <span style={{ color: '#8B3035' }}>O</span>
-                            <span style={{ color: '#0C5F43' }}>V</span>
-                            <span style={{ color: '#CFA922' }}>E</span>
-                            <span style={{ color: '#575756' }}>R</span>
-                        </span>
-                    </span>
-                </div>
-            </button>
+          <div className="flex justify-center mt-8 w-full">
+              <button 
+                  onClick={() => navigate('/')} 
+                  className={`
+                      group flex flex-col items-center gap-2.5 
+                      px-6 py-2 rounded-3xl transition-all duration-300 
+                      !border-none outline-none shadow-lg hover:scale-105
+                      cursor-pointer {/* 👈 Classe adicionada para transformar a seta na mãozinha */}
+                  `}
+                  style={{ 
+                          borderRadius: '24px',
+                          background: 'linear-gradient(to right, #ffffff, #ffffff)',
+                          border: '1px solid #e2e8f0',
+                          boxShadow: 'inset 0 0 25px 2px #0159A1'
+                  }}
+              >
+                  {/* 1. TEXTO SUPERIOR (Azul MOVER) */}
+                  <span 
+                      className="font-bold uppercase text-sm tracking-widest"
+                      style={{ color: '#0159A1' }}
+                  >
+                      Voltar para o Site
+                  </span>
+                  
+                  {/* 2. CÍRCULO COM GRADIENTE E MARCA 'MOVER' */}
+                  <div className="flex items-center justify-center w-full rounded-3xl p-1 md:p-2 relative overflow-hidden">
+                      <span className="text-xl font-bold drop-shadow-sm flex items-center">
+
+                          {/* 🖼️ Nome 'MOVER' Colorido (Micro-versão da logo) */}
+                          <span className="text-xl font-bold drop-shadow-sm flex items-center">
+                              
+                              {/* 2.2 Nome Colorido 'MOVER' com fonte MoverReservada (.woff2)*/}
+                              <span 
+                                  className="text-2xl md:text-3xl font-bold tracking-tighter leading-none"
+                                  style={{ 
+                                      fontFamily: "'MoverReservada', sans-serif",
+                                      fontSize: '28px',
+                                      filter: "drop-shadow(1px 1px 0px rgba(0,0,0,0.1))" 
+                                  }}
+                              >
+                                  <span style={{ color: '#0159A1' }}>M</span>
+                                  <span style={{ color: '#8B3035' }}>O</span>
+                                  <span style={{ color: '#0C5F43' }}>V</span>
+                                  <span style={{ color: '#CFA922' }}>E</span>
+                                  <span style={{ color: '#575756' }}>R</span>
+                              </span>
+                          </span>
+                      </span>
+                  </div>
+              </button>
         </div>
 
       </div>  
